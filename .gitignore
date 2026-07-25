@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# OS / cloud-sync junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+.tmp.driveupload/
+
+# Generated
+*.png
+!progress/radar_*.png
