@@ -10,8 +10,8 @@ A **self-contained, portable learning system** for one person's 5-month push tow
 
 It has two layers:
 
-- **This folder (`learning_system/`)** = the *method*: how to learn, what "done" means, sprint mechanics, progress log.
-- **`../` (parent `roadmap/`)** = the *content*: the 13-section interview topic encyclopedia (in `archive/section_*.md`) and legacy desk-strat build projects (in `archive/`).
+- **Root files (`00`–`05`, `SYLLABUS`, `AGENT_CONTEXT`) + `progress/`** = the *method*: how to learn, what "done" means, sprint mechanics, progress log.
+- **`topics/` + `problem_sets/`** = the *content*: `topics/section_*.md` is the 13-section inventory (911 problems, full scope, above current level); `problem_sets/` holds the study-level problems written per stage. [TOPIC_MAP.md](TOPIC_MAP.md) maps stages onto `topics/` sections and records what each stage deferred.
 
 Portable design: every file uses relative paths only. Clone the repo → open `AGENT_CONTEXT.md` → any new agent has full context in ~5 minutes.
 

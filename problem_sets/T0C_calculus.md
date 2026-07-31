@@ -10,7 +10,7 @@
 3. Chain rule / implicit differentiation
 4. Lagrange multipliers
 
-Everything else in `archive/section_VIII_calculus_des.md` (PDEs, Riccati, Carr-Madan, Euler-Lagrange, KKT) is **out of scope** — that file is an advanced backlog, not this stage.
+Everything else in `topics/section_VIII_calculus_des.md` (PDEs, Riccati, Carr-Madan, Euler-Lagrange, KKT) is **out of scope** — that file is the full inventory, not this stage. See [TOPIC_MAP.md](../TOPIC_MAP.md) for what this stage closed vs deferred.
 
 ---
 

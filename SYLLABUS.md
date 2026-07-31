@@ -21,7 +21,7 @@ Reboot the math and tools. **~10 hours total.**
 The core interview surface. **~120 hours across 9 sprints.**
 
 **Probability (S1)** — 6 stages: Combinatorics, Bayes, Discrete RVs, Continuous RVs, Joint/MVN, Expectation/Tower, MGF
-**Named Distributions (T1.X)** — 1 unified stage (9 distributions)
+**Distributions** — 2 stages: Discrete `S1.3` (Bernoulli/Binomial/Geometric/Poisson) · Continuous `S1.5` (Uniform/Exponential/Normal). *Log-normal → S6, χ² → S9.2.*
 **Puzzles (S2)** — 1 stage: dice/coin/urn/geometric
 **Statistics (S9)** — 4 stages: MLE, hypothesis testing, regression + time series, Bayesian
 **Linear algebra deepen (S7)** — 1 stage: PCA + covariance

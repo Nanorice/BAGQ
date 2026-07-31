@@ -40,7 +40,8 @@ Everything in this repo is scaffolding for that sentence.
 ├── 04_deliverables_spec.md   what "done" means
 ├── 05_commitment_contract.md time audit, cadence, circuit breakers
 ├── problem_sets/             per-stage problems, written at study level
-├── archive/                  13-section topic encyclopedia (advanced backlog)
+├── TOPIC_MAP.md              stage ↔ topics/ section mapping: what's in scope, what's deferred
+├── topics/                   13-section topic inventory (911 problems, full scope)
 └── progress/
     ├── tracker.md            daily driver + actuals log
     ├── baseline_scores.md    graded diagnostic + red flags
@@ -50,7 +51,7 @@ Everything in this repo is scaffolding for that sentence.
     └── mocks/                interview transcripts (from S26)
 ```
 
-**`problem_sets/` vs `archive/`** — `archive/` is an inherited backlog written for
+**`problem_sets/` vs `topics/`** — `topics/` is an inherited inventory written for
 someone who already has the material (Riccati equations, Carr-Madan FFT). It is kept
 for scope, not used as the curriculum. `problem_sets/` holds the actual study-level
 problems, written per stage as it comes up.
