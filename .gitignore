@@ -19,3 +19,6 @@ desktop.ini
 # Generated
 *.png
 !progress/radar_*.png
+
+# Pinescript
+pine_scripts/

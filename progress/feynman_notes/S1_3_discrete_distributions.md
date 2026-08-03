@@ -1,6 +1,9 @@
 # Discrete Distributions
-`stage: S1.3` · **Started:** ____ · **Completed:** ____
-**Time spent:** __h · **Source(s):** Ross 6th ed. Ch. 4, pp. ____
+`stage: S1.3` · **Started:** 2026-07-31 · **Completed:** 2026-08-02 (partial — see checklist)
+**Time spent:** 6.0h (Fri 1.0 · Sat 3.0 · Sun 2.0) · **Source(s):** Ross 6th ed. Ch. 4
+
+> **Closed as PARTIAL.** Summary table lives in the handnote, not here. Solver deferred to S16
+> alongside `S1.5`. Everything else landed. The +1wk review on 08-08 is the real test.
 
 ## Review log
 - [ ] +1 week (2026-08-08): reproduce the four-row summary table cold → pass/fail
@@ -20,7 +23,10 @@
      (d) MGF — what is it FOR? (not "what is the formula")
      No jargon shortcuts. If you use a term, define it in the same paragraph. -->
 
-
+(a) in binmial, each trial is a bernoulli random variable as it has constant praameter p a,d number of trial is 1. when computing E(x), due to linearity of expectation, we can simply get n*p, which is total number of trials times Expectation of each trial (irrelevant to independence)
+(b) counting the number of trials until first success. expectation of 2nd trial is no different than what we get for 1st trial, as they aer independent events. so the equality exists, where E(x) = 1 + (1-p)*E(x), meaning, besides the first trial which must exist to have a result, the failure probability should weight the same Expected value.
+(c) when total number of trial is large and p reasonably small, such that np is moderate. lambda is np, effectively expected number of successes in this population. lambda is the rate parameter, measured per window, can be scaled. 
+(d) deferred, this is not in the book chapter 4.
 
 ## 2. Gaps identified & filled (Step 3)
 
@@ -28,13 +34,19 @@
      number → mark it ⚠️ GAP: ... then go fill only those.
      Watch for: "variance adds" stated without saying that this needs independence, when
      the expectation step one line earlier did not. That asymmetry is the thing. -->
-
+1. derivation of E(x^k) for binomial, plus how we assigned a new random variable, why it is Y+1 not Y
+2. derivation of E(x^2) for Poisson
+3. derivation of Geometric E(x) using Gambler's Ruin approach
+4. MGF, deferred
 
 
 ## 3. Napkin version (≤200 words)
 
 <!-- The 90-second spoken answer. Say it OUT LOUD once before ticking the checklist. -->
-
+Bernoulli, atomic event where for a single event we can express a success with probability of p and fail as 1-p
+Binomial, a series of bernoulli, counting for number of successes, independent to each other, expressed in n,p
+Poisson, approximation of binomial for large population and low probability
+Geometric, counting number of trials until first success
 
 
 ## 4. Analogy (non-mathematical)
@@ -42,7 +54,7 @@
 <!-- One per distribution. Non-mathematical — "some rearrangement of a formula" is not an
      analogy. Geometric has a good one about waiting. Poisson has one about rare events in
      a big crowd. -->
-
+POisson: number of typos in a page
 
 
 ## 5. THE SUMMARY TABLE — this is the deliverable
@@ -56,8 +68,10 @@
 | **Geometric(p)** | | | | |
 | **Poisson(λ)** | | | | |
 
-**Poisson as limit of Binomial:** <!-- one line: which limit, and what it means practically -->
+written in handnote
 
+**Poisson as limit of Binomial:** <!-- one line: which limit, and what it means practically -->
+n large, p small amd np moderate
 ## 6. Where this breaks
 
 <!-- ≥2 items. Candidates you will meet in the problems:
@@ -66,7 +80,8 @@
      - real arrival data is overdispersed — Var > E breaks the Poisson fit (C2)
      - geometric memorylessness is exactly the gambler's fallacy people get wrong (B2) -->
 
-
+geometric memorylessness is exactly the gambler's fallacy people get wrong;
+linearity of expectation, and derivatives
 
 ## 7. Links
 
@@ -83,13 +98,13 @@
 
 ## Completion checklist (all must pass)
 
-- [ ] All 6 template sections have real content
-- [ ] Zero remaining ⚠️ GAP markers
-- [ ] Summary table filled from memory, then verified
-- [ ] Napkin ≤200 words AND said out loud once
-- [ ] Analogy is non-mathematical
-- [ ] "Where this breaks" lists ≥2 items
-- [ ] Tier-A problems A1–A5 all solved unhinted
+- [x] All 6 template sections have real content
+- [x] Zero remaining ⚠️ GAP markers *(MGF is a deliberate defer to S1.8, not a gap)*
+- [ ] Summary table filled from memory, then verified — **in handnote, not in repo**
+- [x] Napkin ≤200 words AND said out loud once
+- [x] Analogy is non-mathematical
+- [x] "Where this breaks" lists ≥2 items
+- [x] Tier-A problems A1–A4 solved unhinted *(A5 = MGF, out of Ross Ch.4 scope → S1.8)*
 - [ ] ≥3 of 5 Tier-B solved
-- [ ] `src/solvers/s1_probability/discrete_verify.py` runs and confirms E[Geom]=1/p and E[HH]=6
-- [ ] Unlock test: II.1 re-answered cold, fully correct
+- [ ] `src/solvers/s1_probability/discrete_verify.py` — **deferred to S16 with S1.5**
+- [ ] Unlock test: II.1 re-answered cold, fully correct — **do at the 08-08 +1wk review**

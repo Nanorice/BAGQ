@@ -1,5 +1,10 @@
 # Continuous Distributions — Problem Set
-`stage: S1.5` · **Sprint 15, Day 13 (Sat 2026-08-01)** · **Budget: 3h in three blocks**
+`stage: S1.5` · **Sprint 16, Days 3–4 + 6 (Wed 08-05, Thu 08-06, Sat 08-08)** · **Budget: 6h, two passes**
+
+> **Re-planned 2026-08-03.** Originally a 3h single-day stage; carried over from S15 unstarted.
+> `S1.3` ran 6h against a 3h budget on the same one-source design — the finding was that
+> **new probability material needs two passes, not one**. This stage is now sized at 2× and the
+> second pass is scheduled, not improvised. See the S15 retro.
 
 **Why this stage exists:** baseline I.3 asked for `E[X]` and `Var(X)` of `Exp(λ)` and got `e^λ`
 and `0`. Correct: `1/λ` and `1/λ²`. This is the **mandatory-deep** item of the pair — the
@@ -38,22 +43,31 @@ normal-approximation-to-binomial passage; it connects straight back to yesterday
 
 ---
 
-## The three-block shape
+## The two-pass shape
 
-| Block | When | Do | Out |
-|---|---|---|---|
-| **1** | 08:00–09:00 | Read (40 min, hard stop) → close book → start §1 teach-back | Teach-back drafted |
-| **2** | afternoon scrap, 30–45 min | Tier A, on paper, closed-book | A1–A5 done |
-| **3** | evening, 60 min | Gap-hunt §1 · Tier B · §3–§6 · MC verifier | Note closed |
+Three distributions across two study days, split by *difficulty*, not by page count. Uniform and
+exponential are Pass 1 because they are where baseline I.3 lives; the normal is harder and gets
+its own pass with a fresh head.
+
+| Pass | When | Scope | Do | Out |
+|---|---|---|---|---|
+| **1** | **Wed 08-05, 2.5h** | **Uniform + Exponential** | Read Ch.5 uniform + exponential subsections (40 min cap) → close book → §1 teach-back for those two → A1, A2 on paper | §1(a)(b) drafted · A1–A2 done |
+| **2** | **Thu 08-06, 2.5h** | **Normal** + re-read | **Start by re-reading only what Pass 1 didn't stick** (≤20 min, look at your `⚠️ GAP` list first) → normal subsection (40 min cap) → §1(c) → A3, A4, A5 | §1 complete · A3–A5 done |
+| **3** | **Sat 08-08, 3h** | close | Gap-hunt §1 · Tier B (≥3) · §3–§6 · summary table · MC verifier · unlock test I.3 | Note closed |
 
 Note skeleton: `progress/feynman_notes/S1_5_continuous_distributions.md`
 
-**If the day collapses: A2, A3, B1 only.** A2/A3 are baseline I.3 itself. B1 (memorylessness)
-is the interview one-liner.
+**When it gets hard and you start drifting** — that is the S1.3 failure mode, and it has a move
+now: **stop reading, write the sentence you can't finish into §2 as a `⚠️ GAP`, and switch to
+Tier A on paper.** Paper problems survive low focus; re-reading the same paragraph does not.
+Drifting means input is exhausted for this sitting, not that you need more discipline.
 
-**This is the sprint's designated cut** if Friday slips — it carries into S16 cleanly. But note
-what you lose by cutting: I.3 stays open, and it is one of only two red-flag items this sprint
-was built to close.
+**If a pass collapses: A2, A3, B1 only.** A2/A3 are baseline I.3 itself. B1 (memorylessness) is
+the interview one-liner and the direct continuation of S1.3-B2.
+
+**This stage is not cuttable.** It was the designated cut in S15 and it got cut — which is why
+baseline I.3 is still open eight days later. It is one of two red-flag items in the whole
+probability block.
 
 ---
 
@@ -142,10 +156,14 @@ coordinate trick. *This is where the `1/√(2π)` in the normal PDF comes from.*
 - [ ] ≥3 of 5 Tier B
 - [ ] **Summary table in the note** — three rows × six columns (PDF, CDF, E[X], Var, MGF,
       the one fact that matters). Sits directly under yesterday's discrete table.
-- [ ] **MC verifier:** `src/solvers/s1_probability/distributions_verify.py`. Sample `Exp(λ)`
-      via inverse transform (A1) — *not* `np.random.exponential`, the point is to use A1 — and
-      check the sample mean/var against `1/λ`, `1/λ²`. Add a normal check against the 68/95/99.7
-      rule. Docstring with complexity, per baseline adjustment #9.
+- [ ] **MC verifier — ONE file covering S1.3 + S1.5** (S1.3's was deferred here):
+      `src/solvers/s1_probability/distributions_verify.py`, ~30 lines. Creates `src/solvers/`.
+      - S1.3: geometric `E[X] = 1/p` · two-heads-in-a-row `E = 6` (baseline II.1)
+      - S1.5: sample `Exp(λ)` via **inverse transform** (A1) — *not* `np.random.exponential`,
+        the point is to use A1 — check mean/var against `1/λ`, `1/λ²`
+      - S1.5: normal check against the 68/95/99.7 rule
+      - Docstring with time + space complexity, per baseline adjustment #9. One `assert`-based
+        `__main__` self-check; no test framework yet.
 - [ ] **Unlock test:** re-answer baseline I.3 cold (`E` and `Var` of `Exp(λ)`), fully correct.
 
 ---
