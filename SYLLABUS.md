@@ -14,14 +14,14 @@ Reboot the math and tools. **~10 hours total.**
 
 - T0.A Python + NumPy env ✅
 - T0.B Git hygiene ✅
-- T0.C Calculus refresher — ODEs (separable + linear), Lagrange, chain rule
-- T0.D Linear algebra refresher — matrix ops, 2×2/3×3 eigenvalues by hand, PSD
+- Calculus refresher `R.calculus` — ODEs (separable + linear), Lagrange, chain rule
+- Linear algebra refresher `R.linalg` — matrix ops, 2×2/3×3 eigenvalues by hand, PSD
 
 ### Tier 1 — Probability + Puzzles + Stats + Algos (S16 → S24)
 The core interview surface. **~120 hours across 9 sprints.**
 
 **Probability (S1)** — 6 stages: Combinatorics, Bayes, Discrete RVs, Continuous RVs, Joint/MVN, Expectation/Tower, MGF
-**Distributions** — 2 stages: Discrete `S1.3` (Bernoulli/Binomial/Geometric/Poisson) · Continuous `S1.5` (Uniform/Exponential/Normal). *Log-normal → S6, χ² → S9.2.*
+**Distributions** — 2 stages: Discrete `F1.4a` (Bernoulli/Binomial/Geometric/Poisson) · Continuous `F1.4b` (Uniform/Exponential/Normal). *Log-normal → S6, χ² → S9.2.*
 **Puzzles (S2)** — 1 stage: dice/coin/urn/geometric
 **Statistics (S9)** — 4 stages: MLE, hypothesis testing, regression + time series, Bayesian
 **Linear algebra deepen (S7)** — 1 stage: PCA + covariance
@@ -55,7 +55,7 @@ S3.3 Branching · S4.4 Poisson/jump · S4.5 Stopping times · S5 Stochastic cont
 | S16 | 08-03 → 08-16 | Named distributions + S1.1 Combinatorics kickoff | 2 Feynman notes |
 | S17 | 08-17 → 08-30 | S1.1 finish + S1.2 Bayes + S1.7 Tower + S10.1 arrays/hash | 3 stages · 10 LC-easy |
 | S18 | 08-31 → 09-13 | S1.4 Discrete RVs + S10.2 DP | 20 LC-easy total |
-| S19 | 09-14 → 09-27 | S1.5 Continuous RVs + **S10.3 graphs/BFS (critical)** | Graph solvers |
+| S19 | 09-14 → 09-27 | F1.4b Continuous RVs + **S10.3 graphs/BFS (critical)** | Graph solvers |
 | S20 | 09-28 → 10-11 | S1.6 Joint/MVN + S7 LA deepen | PCA on toy covariance |
 | S21 | 10-12 → 10-25 | S1.8 MGF + S2.1 puzzles + **mid-checkpoint retest** | Radar update; adjust S22–S27 |
 | S22 | 10-26 → 11-08 | S3.1 Markov (start) + S10.2 DP deepen | 5 LC-medium |

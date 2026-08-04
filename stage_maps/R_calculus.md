@@ -1,6 +1,6 @@
-# T0.C — Calculus & ODE Refresher · Problem Set
+# R.calculus — Calculus & ODE Refresher · Problem Set
 
-**Stage:** T0.C · **Sprint:** 15 (Days 6–7, 2026-07-25 → 07-26) · **Budget:** ~105 min input+teach-back, ~60 min problems
+**Stage:** R.calculus · **Sprint:** 15 (Days 6–7, 2026-07-25 → 07-26) · **Budget:** ~105 min input+teach-back, ~60 min problems
 
 **Why this stage exists:** baseline VIII.1 asked `dy/dx = y, y(0)=1` and got `sqrt(2/(x-2))`. The answer is `eˣ`. That is the single most canonical ODE in existence and it gates everything downstream — GBM, OU mean reversion, discounting, Feynman-Kac. VIII.3 (Lagrange) was also fuzzy, and Lagrange is how Markowitz optimization is derived. This stage is mandatory-deep, not a skim (`baseline_scores.md` adjustment #6).
 
@@ -42,48 +42,48 @@ Cite these IDs in your Feynman note §7 ("Problems solved") and in the unlock te
 
 ## Tier A — the floor (must pass unhinted)
 
-**T0C-A1.** Solve `dy/dx = y` with `y(0) = 1`. Show every step of the separation, including where the constant of integration goes and why it becomes a multiplicative constant.
+**R.calculus-A1.** Solve `dy/dx = y` with `y(0) = 1`. Show every step of the separation, including where the constant of integration goes and why it becomes a multiplicative constant.
 *This is baseline VIII.1. If you cannot do this one cold, the stage is not complete.*
 
-**T0C-A2.** Solve `dy/dx = ky` with `y(0) = y₀`, for constant `k`. Then state in one sentence what this means when `y` is a bank balance and `k` is a continuously-compounded interest rate.
+**R.calculus-A2.** Solve `dy/dx = ky` with `y(0) = y₀`, for constant `k`. Then state in one sentence what this means when `y` is a bank balance and `k` is a continuously-compounded interest rate.
 
-**T0C-A3.** Solve `dy/dx = xy` with `y(0) = 1`. Note where the answer differs in *shape* from A1 and say why the `x` on the right changes the exponent.
+**R.calculus-A3.** Solve `dy/dx = xy` with `y(0) = 1`. Note where the answer differs in *shape* from A1 and say why the `x` on the right changes the exponent.
 
-**T0C-A4.** Differentiate `f(x) = e^{3x²}` with respect to `x`. Then differentiate `g(x) = ln(cos x)`. Name which rule you used at each step.
+**R.calculus-A4.** Differentiate `f(x) = e^{3x²}` with respect to `x`. Then differentiate `g(x) = ln(cos x)`. Name which rule you used at each step.
 
-**T0C-A5.** Minimize `f(x,y) = x² + y²` subject to `x + y = 1` using Lagrange multipliers. Give `x*`, `y*`, the minimum value, and `λ`.
+**R.calculus-A5.** Minimize `f(x,y) = x² + y²` subject to `x + y = 1` using Lagrange multipliers. Give `x*`, `y*`, the minimum value, and `λ`.
 *This is baseline VIII.3. Answer: x=y=1/2, min=1/2.*
 
-**T0C-A6.** Solve the mean-reverting ODE `dx/dt = κ(θ − x)` with `x(0) = x₀`. Show that `x(t) → θ` as `t → ∞` regardless of `x₀`, provided `κ > 0`.
+**R.calculus-A6.** Solve the mean-reverting ODE `dx/dt = κ(θ − x)` with `x(0) = x₀`. Show that `x(t) → θ` as `t → ∞` regardless of `x₀`, provided `κ > 0`.
 *This is the deterministic skeleton of Ornstein-Uhlenbeck. You will meet it again in S4 and in every mean-reversion strategy you ever backtest.*
 
 ---
 
 ## Tier B — the target
 
-**T0C-B1.** Solve the linear first-order ODE `y' + 2y = e^{-x}` with `y(0) = 0`, using an integrating factor. State the integrating factor explicitly and why `μ(x) = e^{∫p dx}` is the right choice — what does multiplying by it *do* to the left-hand side?
+**R_calculus-B1.** Solve the linear first-order ODE `y' + 2y = e^{-x}` with `y(0) = 0`, using an integrating factor. State the integrating factor explicitly and why `μ(x) = e^{∫p dx}` is the right choice — what does multiplying by it *do* to the left-hand side?
 
-**T0C-B2.** Solve `y' + (1/x)y = x` for `x > 0`, with `y(1) = 1/3`.
+**R_calculus-B2.** Solve `y' + (1/x)y = x` for `x > 0`, with `y(1) = 1/3`.
 
-**T0C-B3.** A perpetuity pays continuously at rate `c`, growing at rate `g`, discounted at `r > g`. Its present value `V` satisfies `rV − gV = c`. Derive `V = c/(r−g)`. Then explain in one sentence what happens as `g → r` and why that is financially sensible rather than a mathematical accident.
+**R_calculus-B3.** A perpetuity pays continuously at rate `c`, growing at rate `g`, discounted at `r > g`. Its present value `V` satisfies `rV − gV = c`. Derive `V = c/(r−g)`. Then explain in one sentence what happens as `g → r` and why that is financially sensible rather than a mathematical accident.
 
-**T0C-B4.** Given `x² + y² = 25`, find `dy/dx` at the point `(3, 4)` by implicit differentiation. Verify geometrically (the tangent to a circle is perpendicular to the radius — check the slopes multiply to −1).
+**R_calculus-B4.** Given `x² + y² = 25`, find `dy/dx` at the point `(3, 4)` by implicit differentiation. Verify geometrically (the tangent to a circle is perpendicular to the radius — check the slopes multiply to −1).
 
-**T0C-B5.** Maximize `f(x,y) = xy` subject to `x + y = 10`. Then state the general result this special case illustrates about the rectangle of fixed perimeter and maximum area.
+**R_calculus-B5.** Maximize `f(x,y) = xy` subject to `x + y = 10`. Then state the general result this special case illustrates about the rectangle of fixed perimeter and maximum area.
 
-**T0C-B6.** In A5 you found `λ`. Now change the constraint to `x + y = 1.1` and re-solve. Compare the change in the minimum value to `λ × 0.1`. This is why `λ` is called the **shadow price** of the constraint — write one sentence explaining what that means to a portfolio manager.
+**R_calculus-B6.** In A5 you found `λ`. Now change the constraint to `x + y = 1.1` and re-solve. Compare the change in the minimum value to `λ × 0.1`. This is why `λ` is called the **shadow price** of the constraint — write one sentence explaining what that means to a portfolio manager.
 
-**T0C-B7.** Solve `dV/dt = r(t)V` with `V(0) = V₀` for a *time-varying* rate `r(t)`. Show `V(t) = V₀ exp(∫₀ᵗ r(s)ds)`. Say why this justifies the discount factor `exp(−∫r)` you see everywhere in fixed income.
+**R_calculus-B7.** Solve `dV/dt = r(t)V` with `V(0) = V₀` for a *time-varying* rate `r(t)`. Show `V(t) = V₀ exp(∫₀ᵗ r(s)ds)`. Say why this justifies the discount factor `exp(−∫r)` you see everywhere in fixed income.
 
 ---
 
 ## Tier C — stretch (only if A+B ran short)
 
-**T0C-C1.** Solve the logistic ODE `dN/dt = rN(1 − N/K)` with `N(0) = N₀`. (Hint: separable, then partial fractions.) Sketch the S-curve.
+**R_calculus-C1.** Solve the logistic ODE `dN/dt = rN(1 − N/K)` with `N(0) = N₀`. (Hint: separable, then partial fractions.) Sketch the S-curve.
 
-**T0C-C2.** *Markowitz, two assets.* Minimize `½wᵀΣw` subject to `wᵀ1 = 1` for `Σ = [[0.04, 0.01], [0.01, 0.09]]`. Set up the Lagrangian, solve for `w*`, and confirm the weights sum to 1. This is the minimum-variance portfolio — the single most-asked Lagrange application in a QR interview.
+**R_calculus-C2.** *Markowitz, two assets.* Minimize `½wᵀΣw` subject to `wᵀ1 = 1` for `Σ = [[0.04, 0.01], [0.01, 0.09]]`. Set up the Lagrangian, solve for `w*`, and confirm the weights sum to 1. This is the minimum-variance portfolio — the single most-asked Lagrange application in a QR interview.
 
-**T0C-C3.** Green Book has a class of problems asking for `max`/`min` of a function on a constrained region. Find two in §2.3 and do them.
+**R_calculus-C3.** Green Book has a class of problems asking for `max`/`min` of a function on a constrained region. Find two in §2.3 and do them.
 
 ---
 
@@ -91,7 +91,7 @@ Cite these IDs in your Feynman note §7 ("Problems solved") and in the unlock te
 
 Per `04_deliverables_spec.md` and `02_feynman_protocol.md`:
 
-- [ ] `progress/feynman_notes/T0C_calculus_refresher.md` — all 6 template sections, zero remaining `⚠️ GAP`, napkin version ≤200 words said out loud once
+- [ ] `progress/feynman_notes/R_calculus.md` — all 6 template sections, zero remaining `⚠️ GAP`, napkin version ≤200 words said out loud once
 - [ ] All 6 Tier-A problems solved unhinted, worked on paper, answers logged
 - [ ] ≥4 of 7 Tier-B solved
 - [ ] Numerical anchor in the note: solve A1 by hand, then verify with `scipy.integrate.solve_ivp` or a 3-line Euler scheme, and confirm it lands on `e¹ ≈ 2.71828` at `x=1`

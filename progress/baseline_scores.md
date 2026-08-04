@@ -68,7 +68,7 @@
 ## Per-question breakdown (Sitting 2)
 
 ### Section VIII — Calculus & DEs (1.00)
-- VIII.1 dy/dx=y, y(0)=1 → **1** (⚠️ answered sqrt(2/(x-2)); correct = **eˣ**. Canonical ODE — red flag for T0.C)
+- VIII.1 dy/dx=y, y(0)=1 → **1** (⚠️ answered sqrt(2/(x-2)); correct = **eˣ**. Canonical ODE — red flag for R.calculus)
 - VIII.2 Heat equation ↔ BS → **1** (fuzzy recognition)
 - VIII.3 Lagrange x²+y² s.t. x+y=1 → **1** (fuzzy; correct = x=y=1/2, min=1/2)
 
@@ -108,7 +108,7 @@
 
 ## Red flags across both sittings
 
-1. **VIII.1** — Missing the *most canonical* ODE (y'=y → y=eˣ). T0.C calculus refresher must be executed, not skimmed.
+1. **VIII.1** — Missing the *most canonical* ODE (y'=y → y=eˣ). R.calculus calculus refresher must be executed, not skimmed.
 2. **X.4** — "Don't know what BFS is." This is not a knowledge gap; it's a *blocker* for HFT interviews. S10.3 must ship solid, not just checked off.
 3. **I.5, IX.1** — Tower property and MLE both scored 0. Both are *tools*, not topics. They compound: without tower you can't do Bayesian stats; without MLE you can't fit anything.
 4. **X.1 complexity awareness** — Wrote a correct answer but at wrong complexity. Interviewers grade on Big-O explicitly. Include complexity annotations in every solver from Sprint 17 onward.
@@ -119,7 +119,7 @@ Same as after Sitting 1: **reasoning ≥ formalism**. When a question maps to ra
 
 The two additional insights Sitting 2 gave:
 - **Section IX and X are both at ~1.0** and both are critical for buy-side QR + HFT. Neither gets accelerated. Both sprints (23–25 for stats, 17–22 for algo parallel track) run at full duration.
-- **Section VIII is worse than assumed.** T0.C (calculus refresher) needs to actually cover: ODEs (separation of variables + linear first-order), Lagrange multipliers, chain rule / implicit differentiation. Cannot be skimmed.
+- **Section VIII is worse than assumed.** R.calculus (calculus refresher) needs to actually cover: ODEs (separation of variables + linear first-order), Lagrange multipliers, chain rule / implicit differentiation. Cannot be skimmed.
 
 ---
 
@@ -129,11 +129,11 @@ Already applied from Sitting 1:
 1. ✅ S1.7 pulled forward to Sprint 17
 2. ✅ Sprint 16 gains "Named distributions" mini-stage
 3. ✅ Sprint 16 gains Bayes vocabulary block
-4. ✅ T0.D extended to 2×2/3×3 eigenvalue computation by hand
+4. ✅ R.linalg extended to 2×2/3×3 eigenvalue computation by hand
 5. ✅ Sprint 17 carries 3 stages (watch velocity)
 
 New from Sitting 2:
-6. **T0.C calculus refresher expanded and made mandatory-deep**: ODEs (dy/dx = y, separable + linear), Lagrange multipliers, chain rule. Not a skim. Add Feynman-note requirement.
+6. **R.calculus calculus refresher expanded and made mandatory-deep**: ODEs (dy/dx = y, separable + linear), Lagrange multipliers, chain rule. Not a skim. Add Feynman-note requirement.
 7. **Sprint 17 S10.1 must include hash-map pattern explicitly** (Two-sum, contains-duplicate, group-anagrams). Complexity annotations required on every solver.
 8. **Sprint 19 S10.3 (graphs/BFS/DFS) upgraded from "parallel" to "primary focus of Sprint 19"**. BFS being unknown is a critical blocker.
 9. **Every solver from Sprint 17 onward must include a docstring with time + space complexity.** This becomes part of D3 (code twin) deliverable spec.

@@ -41,9 +41,9 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
   named machinery (tower property, MLE, BFS all scored 0). This is a vocabulary problem, not
   an ability problem.
 - **Critical-path lows:** IX stats (1.00) and X algos (1.20) — both essential for target roles.
-- **Red flags:** VIII.1 (`dy/dx = y` answered as a sqrt formula) — **closed by T0.C** ·
+- **Red flags:** VIII.1 (`dy/dx = y` answered as a sqrt formula) — **closed by R.calculus** ·
   X.4 (BFS unknown, HFT-screen blocker) — open, S10.3 in S19 ·
-  VII.1/VII.2 (eigenvalues, PSD) — **closed by T0.D** · I.3 (E/Var of Exp) — open, S1.5.
+  VII.1/VII.2 (eigenvalues, PSD) — **closed by R.linalg** · I.3 (E/Var of Exp) — open, `F1.4b`.
 - 11 baseline-driven adjustments applied, documented at the bottom of `03_gated_progression.md`.
 
 ---
@@ -58,13 +58,13 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
 | S1.7 tower property pulled to S17 | Scored 0; blocks S3 + S9 | Adjustment #1 |
 | Every solver needs a complexity docstring | Baseline X.1: right answer, wrong Big-O | Adjustment #9 |
 | No new textbooks | Has Ross, Green Book, Hull, CLM. Over-collecting = procrastination | Chat 07-24 |
-| `topics/` is the scope inventory, NOT the curriculum | 911 problems written far above baseline. Per-stage sets live in `problem_sets/` | Chat 07-25 |
+| `topics/` is the scope inventory, NOT the curriculum | 911 problems written far above baseline. Per-stage sets live in `stage_maps/` | Chat 07-25 |
 | Problem sets written just-in-time | Retiering all 13 sections now = speculative work for December stages | Chat 07-25 |
-| **One source per stage, named chapter + page range** | 7 sources across 3 media cost T0.C more time choosing than studying. Video only as a single named fallback, never in the main path | Chat 07-29 |
-| **Plain-English stage names lead, IDs subscript** | `T0.C`/`T1.X` letters carry no meaning. `S<n>.<m>` IDs map to `topics/section_<Roman>` and ARE meaningful | Chat 07-29 |
-| `T1.X` split into Discrete `S1.3` + Continuous `S1.5` | 9 distributions ≈ 8h — Tier-1 sized wearing a Tier-0 label. Log-normal → S6, χ² → S9.2 | Chat 07-29 |
+| **One source per stage, named chapter + page range** | 7 sources across 3 media cost R.calculus more time choosing than studying. Video only as a single named fallback, never in the main path | Chat 07-29 |
+| **Plain-English stage names lead, IDs subscript** | Write the name first, ID as subscript. See §6 + `03_gated_progression.md` for the `R`/`F`/`D` scheme adopted 08-04 | Chat 07-29, revised 08-04 |
+| `T1.X` split into Discrete `F1.4a` + Continuous `F1.4b` | 9 distributions ≈ 8h — Tier-1 sized wearing a Tier-0 label. Log-normal → S6, χ² → S9.2 | Chat 07-29 |
 | **Size stages by type: refresher ×1.2, new material ×2.0** | Measured over S15's three stages. The one-source 40-min cap fixed *fragmentation*, not *depth* — it was calibrated on a refresher | S15 retro §2 |
-| **New material gets two input passes on separate days** | One pass doesn't install machinery never held. S1.3's second pass happened anyway — unplanned, unbudgeted, spread over 3 days | Adj #12 |
+| **New material gets two input passes on separate days** | One pass doesn't install machinery never held. `F1.4a`'s second pass happened anyway — unplanned, unbudgeted, spread over 3 days | Adj #12 |
 | **Every stage set names the "hard → drifting" move** | Log the `⚠️ GAP`, switch to Tier A on paper. Drift = input exhausted with no next action; the fix is structural, not motivational | Adj #13 |
 
 ---
@@ -75,24 +75,24 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
 `progress/sprints/S15.md`.
 
 **Closed:** baseline · 6 system files · radar chart · T0.A env · T0.B git ·
-**T0.C Calculus** (5.0h, 07-29) · **T0.D Linear Algebra** (3.5h, 07-30 — closes VII.1 + VII.2) ·
-**S1.3 Discrete Distributions** (6.0h, 08-02, **PARTIAL** — table lives in the handnote, solver
+**Calculus `R.calculus`** (5.0h, 07-29) · **Linear Algebra `R.linalg`** (3.5h, 07-30 — closes VII.1 + VII.2) ·
+**Discrete Distributions `F1.4a`** (6.0h, 08-02, **PARTIAL** — table lives in the handnote, solver
 deferred; the 08-08 +1wk review is the real pass/fail and carries the II.1 unlock test).
 
 **The S15 finding — use this to size, not the 81%:**
 **refresher stage ≈ 1.2× budget · new material ≈ 2.0× budget.** The 40-min one-source input cap
-was calibrated on a *refresher* (T0.D, landed on budget). Applied to *new* material (S1.3) it
+was calibrated on a *refresher* (R.linalg, landed on budget). Applied to *new* material (`F1.4a`) it
 overran 2×, because one pass does not install machinery never held. Two consequences, both now
 structural: new-material stages get **two input passes on separate days** (Adj #12), and the
 "hard → drifting" state gets a **named move** — log the `⚠️ GAP`, switch to Tier A on paper
 (Adj #13). Drift was a symptom of exhausted input with no next action, not of low effort.
 
 **Sprint 16 (08-03 → 08-16), ~21h, two new-material stages — not three:**
-- **Week 1:** S15 retro (Mon) · **`S1.5` Continuous Distributions** Pass 1 Wed / Pass 2 Thu /
+- **Week 1:** S15 retro (Mon) · **`F1.4b` Continuous Distributions** Pass 1 Wed / Pass 2 Thu /
   close Sat — carryover, still holds baseline I.3 open, **not cuttable** (it was the designated
-  cut in S15 and got cut) · `src/solvers/` created Sat with one shared verifier covering S1.3 +
-  S1.5 · S1.3 +1wk review Sat
-- **Week 2:** **`S1.1` Combinatorics** split into three day-stages (a counting rules /
+  cut in S15 and got cut) · `src/solvers/` created Sat with one shared verifier covering `F1.4a` +
+  `F1.4b` · `F1.4a` +1wk review Sat
+- **Week 2:** **`F1.1` Combinatorics** split into three day-stages (a counting rules /
   b stars-and-bars / c inclusion–exclusion + derangements). Sets written Sun 08-09, just-in-time.
 - **Dropped to S17:** `S1.2` Bayes (Adj #14) — three new stages at a 2× multiplier was fiction.
 
@@ -100,18 +100,27 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 
 ## 6. Working conventions
 
-- **Stage IDs:** `S<section>.<sub>` maps to `topics/section_<Roman>` — meaningful. Tier-0 uses
-  `T0.<letter>`, sequence-only (legacy, kept because closed notes + the DAG reference it).
-  **Write the plain name first, ID as subscript:** "Linear Algebra Refresher `T0.D`".
-  Do not invent new placeholder IDs like the old `T1.X`.
-- **Feynman notes:** `progress/feynman_notes/<stage_id>_<slug>.md`, template in
-  `02_feynman_protocol.md`.
-- **Problem sets:** `problem_sets/<stage_id>_<slug>.md` — tiered A/B/C, problems numbered
-  `<STAGE>-<TIER><N>`, answer key hidden in a collapsed `<details>` block at the bottom.
-  Written at the start of each stage, not upfront.
-- **Stage-set shape that works** (T0.D landed on budget with it): one source + 40-min hard stop ·
-  three blocks (08–09 read+teach-back / afternoon scrap Tier A / evening gap-hunt + Tier B) ·
-  5 Tier A, 5 Tier B, 2 Tier C · a named **collapse subset** ("if the day collapses: A1, A5, B1").
+- **Stage IDs — `<TYPE><section>.<sub><split>`** (adopted 08-04, full spec in `03_gated_progression.md`).
+  `R` refresher (×1.2) · `F` foundation (×2.0) · `D` deepen. **Type first because it is the cost
+  driver.** Section number indexes `topics/` 1:1 (1 = `section_I`, 7 = `section_VII`, …); the sub
+  number is the `##` heading *inside* that file — **check it before assigning, the old scheme
+  drifted because nobody did.** Split letters (`F1.4a`/`F1.4b`) = one subsection over two days.
+  Refreshers are `R.<name>` (they cut across sections). **Plain name first, ID as subscript.**
+- **Two files per stage, and only two:**
+  - `stage_maps/<id>_<slug>.md` — **what to do.** Knowledge checklist · source · schedule ·
+    problems A/B/C · code problems · deliverables · answer key. Written before the block.
+  - `progress/feynman_notes/<id>_<slug>.md` — **what you understood.** Teach-back, gaps, napkin,
+    summary table, where-it-breaks. The user writes this; never draft it.
+- **Stage-map shape that works** (R.linalg landed on budget with it): one source + 40-min hard stop ·
+  5 Tier A, 5 Tier B, 2 Tier C · a named **collapse subset** ("if the day collapses: A1, A5, B1") ·
+  the named **drift move** · new material gets **two passes on separate days**.
+- **Note §4 is "Where I'd actually meet this"**, not "Analogy" (changed 08-04 — a supplied
+  analogy is just another sentence to memorise; "where does this show up" is a real interview
+  question, and the user's own PCA/portfolio answers were better than any analogy).
+- **D4 unlock test runs at the +1 week review**, not at stage close. Between the two the stage is
+  `READY_FOR_TEST` — a real state. Sprint retro reviews *process*; D4 tests *knowledge*.
+- **No `tracker.md`** (deleted 08-04). Schedule + actuals + invariants live in
+  `progress/sprints/S<NN>.md`, one file per sprint.
 - **Solvers:** `src/solvers/<section>/<snake_case>.py` — (a) analytical fn if closed-form exists,
   (b) Monte Carlo verifier, (c) docstring with time + space complexity.
 - **Tests:** `tests/solvers/<section>/test_<name>.py`, pytest, analytical ≈ MC within tolerance.
@@ -143,13 +152,13 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 
 ## 8. What to open next
 
-1. `progress/tracker.md` — today's row, and the actuals log
+1. `progress/sprints/S<NN>.md` — active sprint: schedule, actuals, retro (there is no tracker.md)
 2. `SYLLABUS.md` — one-page overview of everything ahead
 3. `progress/sprints/S15.md` — active sprint plan
 4. `progress/baseline_scores.md` — starting point + red flags
 5. `03_gated_progression.md` — the 13-sprint calendar
 6. `TOPIC_MAP.md` — stage ↔ `topics/` mapping: what each stage closed, what it deferred, why
-7. `problem_sets/` — per-stage problems at study level
+7. `stage_maps/` — per-stage problems at study level
 
 ---
 

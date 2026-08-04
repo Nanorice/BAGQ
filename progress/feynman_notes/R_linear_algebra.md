@@ -1,5 +1,5 @@
 # Linear Algebra Refresher
-`stage: T0.D` · **Started:** 2026-07-30 · **Completed:** ____
+`stage: R.linalg` · **Started:** 2026-07-30 · **Completed:** ____
 **Time spent:** __h · **Source(s):** Green Book Ch.2 linear algebra, pp. ____
 
 ## Review log
@@ -135,7 +135,7 @@ PD/PSD has to be symmetrical.
 
 ## 7. Links
 
-- **Problems solved:** T0D-A1…A5, B__ (from `problem_sets/T0D_linear_algebra.md`)
+- **Problems solved:** R.linalg-A1…A5, B__ (from `stage_maps/R_linear_algebra.md`)
 - **Prereqs:** none (Tier 0)
 - **Unlocks:** S1.6 joint/MVN · S7 PCA + covariance (S20) · S9.3 regression · S25 correlated MC
 - **Baseline questions this closes:** VII.1 (eigenvalues of `[[2,1],[1,2]]`), VII.2 (PSD)

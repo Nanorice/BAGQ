@@ -23,7 +23,7 @@ Everything in this repo is scaffolding for that sentence.
 | If you are… | Read |
 |---|---|
 | A new AI agent picking this up cold | **[AGENT_CONTEXT.md](AGENT_CONTEXT.md)** — full state in ~5 min |
-| Me, on a given morning | **[progress/tracker.md](progress/tracker.md)** — the daily driver |
+| Me, on a given morning | **[progress/sprints/S16.md](progress/sprints/S16.md)** — active sprint: schedule + actuals |
 | Curious what the whole plan is | [SYLLABUS.md](SYLLABUS.md) — one page, 13 sprints |
 
 ---
@@ -39,11 +39,11 @@ Everything in this repo is scaffolding for that sentence.
 ├── 03_gated_progression.md   skill-tree DAG + 13-sprint traversal
 ├── 04_deliverables_spec.md   what "done" means
 ├── 05_commitment_contract.md time audit, cadence, circuit breakers
-├── problem_sets/             per-stage problems, written at study level
+├── stage_maps/             per-stage problems, written at study level
 ├── TOPIC_MAP.md              stage ↔ topics/ section mapping: what's in scope, what's deferred
 ├── topics/                   13-section topic inventory (911 problems, full scope)
 └── progress/
-    ├── tracker.md            daily driver + actuals log
+    ├── sprints/              one file per sprint — plan, actuals, retro
     ├── baseline_scores.md    graded diagnostic + red flags
     ├── sprints/              per-sprint plan + retro
     ├── feynman_notes/        the core output — one per stage
@@ -51,9 +51,9 @@ Everything in this repo is scaffolding for that sentence.
     └── mocks/                interview transcripts (from S26)
 ```
 
-**`problem_sets/` vs `topics/`** — `topics/` is an inherited inventory written for
+**`stage_maps/` vs `topics/`** — `topics/` is an inherited inventory written for
 someone who already has the material (Riccati equations, Carr-Madan FFT). It is kept
-for scope, not used as the curriculum. `problem_sets/` holds the actual study-level
+for scope, not used as the curriculum. `stage_maps/` holds the actual study-level
 problems, written per stage as it comes up.
 
 ---

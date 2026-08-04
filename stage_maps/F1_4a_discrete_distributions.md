@@ -1,5 +1,5 @@
 # Discrete Distributions — Problem Set
-`stage: S1.3` · **Sprint 15, Day 12 (Fri 2026-07-31)** · **Budget: 3h in three blocks**
+`stage: `F1.4a` · **Sprint 15, Day 12 (Fri 2026-07-31)** · **Budget: 3h in three blocks**
 
 **Why this stage exists:** baseline I.3 asked for `E[X]` and `Var(X)` of an exponential and got
 `e^λ` and `0` — the *named-distribution* machinery is missing, not the reasoning. This stage
@@ -36,14 +36,14 @@ the same chapter and they are not in this stage.
 **If Ross's Poisson-limit derivation is heavy going,** the single named fallback is
 **StatQuest, "The Poisson Distribution", 12 min**. That is the *only* video in this stage.
 
-**Input cap: 40 min.** Same discipline that made T0.D land on budget: read once, close the
+**Input cap: 40 min.** Same discipline that made R.linalg land on budget: read once, close the
 book, write from memory.
 
 ---
 
 ## The three-block shape
 
-Same shape as T0.D, which hit its 3h allocation. Blocks break cleanly at the hour.
+Same shape as R.linalg, which hit its 3h allocation. Blocks break cleanly at the hour.
 
 | Block | When | Do | Out |
 |---|---|---|---|
@@ -51,7 +51,7 @@ Same shape as T0.D, which hit its 3h allocation. Blocks break cleanly at the hou
 | **2** | afternoon scrap, 30–45 min | Tier A, on paper, closed-book | A1–A5 done |
 | **3** | evening, 60 min | Gap-hunt §1 · Tier B · §3–§6 · numerical anchor | Note closed |
 
-Note skeleton: `progress/feynman_notes/S1_3_discrete_distributions.md`
+Note skeleton: `progress/feynman_notes/F1_4a_discrete_distributions.md`
 
 **If the day collapses: A1, A3, B1 only.** A3 (geometric expectation) is the highest-frequency
 interview item in the stage; B1 (Poisson as binomial limit) is the one that explains *why*
@@ -61,26 +61,26 @@ Poisson exists at all.
 
 ## Tier A — the floor (all five, unhinted, on paper)
 
-**S1.3-A1.** Write the PMF of `Binomial(n, p)`. Derive `E[X] = np` two ways: (i) directly from
+**F1.4a-A1.** Write the PMF of `Binomial(n, p)`. Derive `E[X] = np` two ways: (i) directly from
 the sum `Σ k·C(n,k)p^k(1−p)^{n−k}`, and (ii) by writing `X = ΣXᵢ` as a sum of `n` Bernoullis
 and using linearity.
 *Method (ii) takes one line. Notice how much work (i) is. That contrast is the lesson —
-decomposition beats summation, and it is the same move as B1 in T0.D.*
+decomposition beats summation, and it is the same move as B1 in R.linalg.*
 
-**S1.3-A2.** Derive `Var(X)` for `Binomial(n, p)`. Use the sum-of-Bernoullis decomposition and
+**F1.4a-A2.** Derive `Var(X)` for `Binomial(n, p)`. Use the sum-of-Bernoullis decomposition and
 say explicitly **which step needs independence** — that is where the interviewer probes.
 
-**S1.3-A3.** `X ~ Geometric(p)`, the number of trials up to and including the first success.
+**F1.4a-A3.** `X ~ Geometric(p)`, the number of trials up to and including the first success.
 Write the PMF. Derive `E[X] = 1/p` two ways: (i) the sum `Σ k(1−p)^{k−1}p`, and (ii) the
 one-step conditioning argument `E[X] = 1 + (1−p)E[X]`.
 *Method (ii) is three lines and no series. Learn it as the reflex — it is the same
 first-step-analysis that solves gambler's ruin (baseline III.1, scored 1) and the HH-flip puzzle
 (II.1, scored 1).*
 
-**S1.3-A4.** `X ~ Poisson(λ)`. Write the PMF, verify it sums to 1 (you need the Taylor series
-for `e^λ` — you derived `e` from `dy/dx = y` in T0.C), and derive `E[X] = λ`.
+**F1.4a-A4.** `X ~ Poisson(λ)`. Write the PMF, verify it sums to 1 (you need the Taylor series
+for `e^λ` — you derived `e` from `dy/dx = y` in R.calculus), and derive `E[X] = λ`.
 
-**S1.3-A5.** Derive the MGF `M(t) = E[e^{tX}]` for Bernoulli, Binomial, and Poisson. Then get
+**F1.4a-A5.** Derive the MGF `M(t) = E[e^{tX}]` for Bernoulli, Binomial, and Poisson. Then get
 `E[X]` and `Var(X)` for the Poisson by differentiating its MGF, and check against A4.
 *The MGF of a Binomial should look like the Bernoulli's raised to the `n`. Say why — that
 observation is the whole reason MGFs are worth carrying.*
@@ -89,29 +89,29 @@ observation is the whole reason MGFs are worth carrying.*
 
 ## Tier B — the target (≥3 of 5)
 
-**S1.3-B1.** Show that `Binomial(n, λ/n) → Poisson(λ)` as `n → ∞`. Start from the binomial PMF,
+**F1.4a-B1.** Show that `Binomial(n, λ/n) → Poisson(λ)` as `n → ∞`. Start from the binomial PMF,
 substitute `p = λ/n`, and take the limit term by term.
 *You will need `(1 + x/n)^n → e^x` — which is exactly the `(1+dx)^{1/dx}` insight you wrote into
-T0.C §6(e). This is that fact doing real work. State in one sentence what the result means:
+R.calculus §6(e). This is that fact doing real work. State in one sentence what the result means:
 when is it legitimate to model a count as Poisson?*
 
-**S1.3-B2.** Prove the geometric distribution is **memoryless**: `P(X > m+n | X > n) = P(X > m)`.
+**F1.4a-B2.** Prove the geometric distribution is **memoryless**: `P(X > m+n | X > n) = P(X > m)`.
 Then say in one sentence what this means for a trader who has flipped 10 tails in a row.
-*The exponential is the continuous twin of this — you meet it tomorrow in S1.5, and it is
+*The exponential is the continuous twin of this — you meet it tomorrow in `F1.4b`, and it is
 baseline I.3. Getting the discrete version today makes tomorrow's free.*
 
-**S1.3-B3.** A call desk receives on average 3 calls per hour. What is `P(exactly 5 calls in the
+**F1.4a-B3.** A call desk receives on average 3 calls per hour. What is `P(exactly 5 calls in the
 next hour)`? `P(no calls in the next 20 minutes)`?
 *The second half is the one people fumble: the rate scales with the window. Say what happens to
 `λ` when the window shrinks, and note that "no calls" is the bridge to the exponential
 waiting time.*
 
-**S1.3-B4.** You flip a fair coin until you get heads. `E[X] = 2` from A3. Now: what is the
+**F1.4a-B4.** You flip a fair coin until you get heads. `E[X] = 2` from A3. Now: what is the
 expected number of flips until you see **two heads in a row**?
 *This is baseline II.1, which you scored 1 on — you said 4, the answer is 6. Set up states and
 condition on the first flip. If you can do this cold, that red flag is closed.*
 
-**S1.3-B5.** `X ~ Binomial(n, p)`. Show `E[X(X−1)] = n(n−1)p²` and use it to get `Var(X)`
+**F1.4a-B5.** `X ~ Binomial(n, p)`. Show `E[X(X−1)] = n(n−1)p²` and use it to get `Var(X)`
 without the Bernoulli decomposition.
 *This is the factorial-moment trick. It generalises to the Poisson in one line — do that too if
 there's time, and note which is less work.*
@@ -120,19 +120,19 @@ there's time, and note which is less work.*
 
 ## Tier C — only if A+B ran short
 
-**S1.3-C1.** Coupon collector: `n` distinct coupons, one per box, uniformly at random. Show
+**F1.4a-C1.** Coupon collector: `n` distinct coupons, one per box, uniformly at random. Show
 `E[boxes to collect all n] = n·H_n ≈ n ln n`. Decompose into geometric waiting times.
 *This is baseline II.3, scored 0, and it is on the scrap-time cheap-win list. It is a sum of
 geometrics — which you now own from A3.*
 
-**S1.3-C2.** For `Poisson(λ)`, show that `E[X] = Var(X) = λ`. Then say what "overdispersion"
+**F1.4a-C2.** For `Poisson(λ)`, show that `E[X] = Var(X) = λ`. Then say what "overdispersion"
 means in a count model and why it matters when you fit trade-arrival data.
 
 ---
 
 ## Deliverables
 
-- [ ] `progress/feynman_notes/S1_3_discrete_distributions.md` — all 6 sections real, zero
+- [ ] `progress/feynman_notes/F1_4a_discrete_distributions.md` — all 6 sections real, zero
       `⚠️ GAP`, napkin ≤200 words **said out loud once**
 - [ ] Tier A A1–A5 unhinted, on paper
 - [ ] ≥3 of 5 Tier B
@@ -211,7 +211,7 @@ Check: `M'(t) = λe^t·e^{λ(e^t−1)}`, so `M'(0) = λ = E[X]` ✓.
 
 Take `n → ∞` with `k`, `λ` fixed, term by term:
 - the bracket `→ 1` (it is `k` factors each `→ 1`)
-- `(1−λ/n)^n → e^{−λ}` ← **this is your T0.C §6(e) `(1+dx)^{1/dx}` fact**
+- `(1−λ/n)^n → e^{−λ}` ← **this is your R.calculus §6(e) `(1+dx)^{1/dx}` fact**
 - `(1−λ/n)^{−k} → 1`
 
 Product: `**e^{−λ}λ^k/k!**` = Poisson(λ). ∎

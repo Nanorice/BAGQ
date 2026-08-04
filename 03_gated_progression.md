@@ -26,9 +26,62 @@ Track state in `progress/stage_log.md` (one row per stage).
 
 ## Stage naming convention
 
-`S<section>.<subsection>-<slug>`   e.g., `S1.7-expectation-variance`
+**Adopted 2026-08-04**, replacing the old `T0.<letter>` / `S<n>.<m>` mix — which carried no depth
+signal and whose section numbers did not actually match `topics/`.
 
-Section numbers map 1:1 to `codify_list.md` (I → S1, II → S2, …, XIII → S13).
+```
+<TYPE><section>.<subsection><split>
+```
+
+**TYPE — the depth class. This is the first character because it is the cost driver.**
+
+| Type | Meaning | Budget multiplier (measured, S15) |
+|---|---|---|
+| `R` | **Refresher** — machinery you had once, being re-activated | ≈ **1.2×** |
+| `F` | **Foundation** — new install, never held before | ≈ **2.0×** |
+| `D` | **Deepen** — a section revisited later at greater depth | TBD (first one is S9.3) |
+
+**section.subsection — indexes `topics/`, 1:1 with the Roman numerals.**
+
+| # | `topics/` file | | # | `topics/` file |
+|---|---|---|---|---|
+| 1 | `section_I_probability_combinatorics` | | 8 | `section_VIII_calculus_des` |
+| 2 | `section_II_classical_puzzles` | | 9 | `section_IX_statistics_estimation` |
+| 3 | `section_III_markov_chains` | | 10 | `section_X_algorithms_ds` |
+| 4 | `section_IV_continuous_time_processes` | | 11 | `section_XI_information_theory` |
+| 5 | `section_V_stochastic_control` | | 12 | `section_XII_game_theory` |
+| 6 | `section_VI_derivative_pricing` | | 13 | `section_XIII_measure_theory` |
+| 7 | `section_VII_linear_algebra` | | | |
+
+The subsection number is the **`##` heading number inside that file** — so `F1.4a` means
+`topics/section_I` §4 (Random Variables), and `F1.1` means §1 (Combinatorics & Counting).
+**Check the file before assigning a number.** The old scheme drifted precisely because nobody did:
+`S1.3` was labelled "Discrete Distributions" while `topics/section_I` §3 is Conditional Probability.
+
+**split letter (optional)** — `a`/`b`/`c` when one subsection is too big for a day-stage and gets
+split. `F1.4a` discrete + `F1.4b` continuous are one `topics/` subsection over two days.
+A split letter means "same knowledge area, sequenced" — *not* a subsection of its own.
+
+**Refreshers** use `R.<name>` (`R.calculus`, `R.linalg`) — they cut across sections rather than
+sitting in one, so a section number would be a lie. `T0.A`/`T0.B` remain as-is: environment and
+git setup, not study stages.
+
+**Write the plain name first, ID as subscript:** "Continuous Distributions `F1.4b`".
+
+### Migration record (2026-08-04)
+
+| Old | New |
+|---|---|
+| `T0.C` | `R.calculus` |
+| `T0.D` | `R.linalg` |
+| `S1.3` Discrete Distributions | `F1.4a` *(was mislabelled — it is `topics/` §4, not §3)* |
+| `S1.5` Continuous Distributions | `F1.4b` *(same subsection, split by day)* |
+| `S1.1` Combinatorics | `F1.1` |
+| `T1.X` Named Distributions | retired — split into `F1.4a` + `F1.4b` |
+
+Still on the old scheme, renamed when scheduled: `S1.2`, `S1.6`, `S1.7`, `S1.8`, `S2.1`,
+`S3.x`, `S4.x`, `S6.x`, `S9.x`, `S10.x`. Under the new rule most become `F<n>.<m>`; `S9.3`
+regression is the first likely `D`.
 
 ---
 
@@ -41,14 +94,14 @@ graph LR
     %% ============ FOUNDATIONS (Tier 0) ============
     T0A[T0.A Python + NumPy fluency]
     T0B[T0.B Git + repo hygiene]
-    T0C[T0.C Calculus refresher<br/>S8.1 ODE basics]
-    T0D[T0.D Linear algebra refresher<br/>S7.1 eig/SVD/PD]
+    R_calculus[R.calculus Calculus refresher<br/>S8.1 ODE basics]
+    R_linear_algebra[R.linalg Linear algebra refresher<br/>S7.1 eig/SVD/PD]
 
     %% ============ PROBABILITY CORE (Tier 1) ============
-    S1_1[S1.1 Combinatorics]
+    F1_1[F1.1 Combinatorics]
     S1_2[S1.2 Cond prob + Bayes]
-    S1_4[S1.4 Discrete RVs]
-    S1_5[S1.5 Continuous RVs]
+    F1_4a[F1.4a Discrete Dists]
+    F1_4b[F1.4b Continuous Dists]
     S1_6[S1.6 Joint dists + MVN]
     S1_7[S1.7 Expectation, var, tower]
     S1_8[S1.8 MGF / char funcs]
@@ -98,29 +151,29 @@ graph LR
     classDef proj fill:#fff2cc,stroke:#d6b656,stroke-width:2px
 
     %% ---- Edges ----
-    T0A --> S1_1
-    T0B --> S1_1
-    T0C --> S1_5
-    T0D --> S1_6
+    T0A --> F1_1
+    T0B --> F1_1
+    R_calculus --> F1_4b
+    R_linear_algebra --> S1_6
 
-    S1_1 --> S1_2 --> S1_4 --> S1_5 --> S1_6 --> S1_7 --> S1_8
-    S1_1 --> S2_1
+    F1_1 --> S1_2 --> F1_4a --> F1_4b --> S1_6 --> S1_7 --> S1_8
+    F1_1 --> S2_1
     S1_7 --> S2_1
 
     S1_7 --> S9_1 --> S9_2 --> S9_3 --> S9_4
     S1_6 --> S9_3
 
-    S1_4 --> S3_1 --> S3_2 --> S3_3
+    F1_4a --> S3_1 --> S3_2 --> S3_3
     S1_7 --> S3_1
 
-    S1_5 --> S4_1 --> S4_2 --> S4_3 --> S4_5
+    F1_4b --> S4_1 --> S4_2 --> S4_3 --> S4_5
     S1_8 --> S4_1
 
     S4_3 --> S6_2
     S6_1 --> S6_2 --> S6_3
     S6_2 --> S6_5
     S8_2 --> S6_2
-    T0C --> S8_2
+    R_calculus --> S8_2
 
     S6_2 -.capstone.-> P1
     S6_2 --> P5
@@ -132,7 +185,7 @@ graph LR
     T0A --> S10_1 --> S10_2
     S10_1 --> S10_3
     S6_5 --> S10_4
-    S1_5 --> S10_4
+    F1_4b --> S10_4
 
     S3_2 --> S5
     S1_7 --> S11
@@ -143,9 +196,49 @@ graph LR
 
 ## Recommended traversal for Q1-2027 target (25 weeks)
 
+> ## ⚠️ THE 13-SPRINT TABLE BELOW IS STALE (as of 2026-08-04)
+>
+> The **DAG above is still correct** — dependency edges don't change. The **calendar has drifted**:
+> Sprint 16's row lists R.calculus/R.linalg/`F1.1` start, but the refreshers were done in S15's
+> tail. `F1.4b` sits in Sprint 19 here and is actually being studied 2026-08-05.
+>
+> **Deliberately not rewritten yet.** Re-baselining 13 sprints on one sprint of velocity data
+> would produce a second fiction. **Scheduled rewrite: S16 retro, 2026-08-16**, when two sprints
+> and a tested 2.0× multiplier exist. Until then, `progress/sprints/S<NN>.md` is the truth for
+> anything inside the current sprint; this table is directional only.
+
 **Role target (from `05_commitment_contract.md` §B):** Buy-side QR / systematic PM (primary) + HFT / market-making (secondary).
 
 **Sprint alignment:** the plan runs across **13 two-week sprints** (Sprint 15 → Sprint 27), matching the user's existing personal-agile cadence. Sprint 15 (started 2026-07-20, mid-sprint at time of planning) is treated as **Sprint 0 — setup only**. Sprint 27 ends 2027-01-17, two days after the Jan 15 interview target.
+
+### Common tier vs. specialisation — when do you actually pick a class?
+
+**You are pre-occupation, and that is by design.** Everything from here through roughly Sprint 22
+— probability, distributions, Markov chains, linear algebra, early stats, algorithms — is
+**common tier**. No question in it is answered differently by a buy-side QR and an HFT
+market-maker. It is the baseline of academic supply that every quant, front or mid office, buy
+or sell side, is assumed to have. Nobody gets to choose a specialisation *instead* of it.
+
+So the ⬆️/⬇️ table below is doing something subtler than it appears. **It is not selecting
+different content — it is deciding how many sprints each common subject gets.** S9 and S10 are
+weighted up because *both* target roles need them and the baseline scored ~1.0 there, not
+because they are QR-specific or HFT-specific.
+
+**The fork is Sprint 21 (the mid-checkpoint), and it is a weighting decision, not a new syllabus:**
+
+| | Common tier (now → ~S22) | Where it forks (S23 →) |
+|---|---|---|
+| **Buy-side QR** | identical | S9 depth: regression, GARCH, cointegration · Bayesian · P16 regime detection |
+| **HFT / MM** | identical | S10 depth: graphs, DP, LC-medium · microstructure · Poisson arrivals, queue dynamics |
+
+By Sprint 21 you will have probability, Markov, linear algebra and early stats in hand, plus two
+more sprints of velocity data — enough to tilt the back half deliberately rather than by default.
+**Until then, "am I studying the right thing for QR vs HFT?" is not a live question.** The honest
+answer is that both need everything currently scheduled, and depth in the common tier is what
+makes either fork reachable.
+
+*(Framing adopted from the user's own analogy, 2026-08-04: hone the fundamentals to level 18, then
+choose the occupation. The levels are real; the class choice is genuinely deferred.)*
 
 ### What this target changes vs. a generic desk-strat plan
 
@@ -169,10 +262,10 @@ Weeks reference the working weeks within each sprint (W1 = week 1 of sprint, W2 
 | Sprint | Dates | Focus | Sprint goal / demo |
 |---|---|---|---|
 | **15** (setup) | 2026-07-20 → 08-02 | **Baseline test** (this weekend) · T0.A Python env · T0.B Git repo hygiene · read all 6 learning-system files · fill `05_commitment_contract.md` A+B (done) | Repo scaffolded, baseline scores logged, Sprint 16 planned |
-| **16** | 08-03 → 08-16 | T0.C Calculus refresher · T0.D Linear algebra refresher · S1.1 Combinatorics (start) | 2 refresher notes + S1.1 Feynman note started |
+| **16** | 08-03 → 08-16 | Calculus refresher `R.calculus` · Linear algebra refresher `R.linalg` · S1.1 Combinatorics (start) | 2 refresher notes + S1.1 Feynman note started |
 | **17** | 08-17 → 08-30 | S1.1 Combinatorics (complete) · S1.2 Cond prob + Bayes · **S1.7 Expectation + tower (PULLED FORWARD)** · **S10.1 arrays/hash parallel** | S1.1 + S1.2 + S1.7 COMPLETE · 10 LC-easy done |
 | **18** | 08-31 → 09-13 | S1.4 Discrete RVs · S10.1 cont'd · S10.2 DP intro | S1.4 COMPLETE · 20 LC-easy total · first DP problems |
-| **19** | 09-14 → 09-27 | S1.5 Continuous RVs · S10.3 graphs (BFS/DFS) | S1.5 COMPLETE · graph solvers |
+| **19** | 09-14 → 09-27 | F1.4b Continuous RVs · S10.3 graphs (BFS/DFS) | `F1.4b` COMPLETE · graph solvers |
 | **20** | 09-28 → 10-11 | S1.6 Joint dists + MVN · S7 Linear algebra deepen (PCA) | S1.6 COMPLETE · PCA on toy covariance |
 | **21** | 10-12 → 10-25 | S1.8 MGF · S2.1 classical puzzles · **MID-CHECKPOINT retest (W2 Sat)** | S1.8 + S2.1 COMPLETE · radar chart update · adjust Sprints 22–27 |
 | **22** | 10-26 → 11-08 | S1.8 MGF · S10.2 DP deepen · S3.1 Finite Markov chains (start) | S1.8 COMPLETE · 5 LC-medium |
@@ -224,11 +317,11 @@ Based on `progress/baseline_scores.md` (combined mean 0.88, no section > 1.5, no
 1. **S1.7 pulled forward** from Sprint 21 → Sprint 17. Tower property blocks S3 and S9; delaying was a design error.
 2. **Sprint 16 gains a "Named distributions" Feynman note** (Bernoulli/Binomial/Geometric/Poisson/Uniform/Exp/Normal/Log-normal/χ²). Cheapest single-point improvement to Section I.
 3. **Sprint 16 gains a 30-min "Bayes vocabulary + medical-test" block**. I.2 blocked by vocabulary alone.
-4. **T0.D linear algebra refresher extended** to eigenvalue computation by hand for 2×2 / 3×3.
+4. **R.linalg linear algebra refresher extended** to eigenvalue computation by hand for 2×2 / 3×3.
 5. **Sprint 17 carries three stages** (S1.1 + S1.2 + S1.7) — at sprint sizing ceiling; watch Sprint 16 velocity first.
 
 **From Sitting 2 (new):**
-6. **T0.C calculus refresher expanded and made mandatory-deep** — must cover: ODEs (separable + linear first-order, esp. dy/dx=y ↔ y=eˣ), Lagrange multipliers, chain rule. Feynman note required. VIII.1 answered wrong = red flag.
+6. **R.calculus calculus refresher expanded and made mandatory-deep** — must cover: ODEs (separable + linear first-order, esp. dy/dx=y ↔ y=eˣ), Lagrange multipliers, chain rule. Feynman note required. VIII.1 answered wrong = red flag.
 7. **Sprint 17 S10.1 explicitly includes hash-map pattern** (Two-sum, contains-duplicate, group-anagrams). Complexity annotations mandatory.
 8. **Sprint 19 S10.3 (graphs/BFS/DFS) upgraded from "parallel" to primary focus** — BFS being unknown is a critical HFT-screen blocker.
 9. **Every solver from Sprint 17 onward requires docstring with time + space complexity** (added to D3 in `04_deliverables_spec.md`). X.1 lost points for wrong complexity despite correct answer.

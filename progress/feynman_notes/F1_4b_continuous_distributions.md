@@ -1,6 +1,9 @@
 # Continuous Distributions
-`stage: S1.5` · **Started:** ____ · **Completed:** ____
+`F1.4b` · **Started:** ____ · **Completed:** ____
 **Time spent:** __h · **Source(s):** Ross 6th ed. Ch. 5, pp. ____
+
+> This note is **yours** — what you understood. What to *do* (checklist, problems, code,
+> deliverables) lives in `stage_maps/F1_4b_continuous_distributions.md`.
 
 ## Review log
 - [ ] +1 week (2026-08-08): reproduce the three-row summary table cold → pass/fail
@@ -36,10 +39,12 @@
 
 
 
-## 4. Analogy (non-mathematical)
+## 4. Where I'd actually meet this
 
-<!-- One per distribution. Non-mathematical. Memorylessness has a very good one about
-     waiting for a bus that never gets more likely to arrive. -->
+<!-- One line each. Technical is fine — this replaced "Analogy" on 2026-08-04 because a
+     supplied analogy is just another sentence to memorise, while "where does this show up"
+     is a real interview question. Your R.linalg answers (PCA factors, portfolio covariance)
+     were the model. Concrete beats clever. -->
 
 
 
@@ -69,9 +74,9 @@
 
 ## 7. Links
 
-- **Problems solved:** S1.5-A1…A5, B__ (from `problem_sets/S1_5_continuous_distributions.md`)
-- **Prereqs:** S1.3 (geometric memorylessness — the discrete twin of B1; Poisson for B2) ·
-  T0.C (integration by parts, `e^x`)
+- **Problems solved:** F1.4b-A1…A5, B__ (from `stage_maps/F1_4b_continuous_distributions.md`)
+- **Prereqs:** `F1.4a` (geometric memorylessness — the discrete twin of B1; Poisson for B2) ·
+  R.calculus (integration by parts, `e^x`)
 - **Unlocks:** S1.6 joint/MVN · S4.1 Brownian motion · S6 Black-Scholes (log-normal) ·
   S9.2 hypothesis testing (χ²) · S25 correlated MC
 - **Baseline questions this closes:** **I.3 (E/Var of Exp(λ)) — the mandatory-deep item** ·
@@ -81,16 +86,4 @@
 
 ---
 
-## Completion checklist (all must pass)
-
-- [ ] All 6 template sections have real content
-- [ ] Zero remaining ⚠️ GAP markers
-- [ ] Summary table filled from memory, then verified
-- [ ] Napkin ≤200 words AND said out loud once
-- [ ] Analogy is non-mathematical
-- [ ] "Where this breaks" lists ≥2 items
-- [ ] Tier-A problems A1–A5 all solved unhinted
-- [ ] ≥3 of 5 Tier-B solved
-- [ ] `src/solvers/s1_probability/distributions_verify.py` runs — inverse-transform Exp sampler
-      confirms mean `1/λ`, var `1/λ²`
-- [ ] **Unlock test: I.3 re-answered cold, fully correct** (`1/λ`, `1/λ²`)
+*Completion checklist lives in the stage map (§Deliverables), not here.*

@@ -17,10 +17,10 @@
 | Prefix | Means | Example |
 |---|---|---|
 | `S<n>.<m>` | Section `n` (Roman numeral in `topics/`), subsection `m`. **Meaningful** — maps directly onto the source file. | `S1.7` = §I.7 Expectation & Moments |
-| `T0.<x>` | Tier-0 setup stage. The letter is **sequence only**, no meaning. Legacy — kept because the DAG and closed notes reference it. | `T0.C` = Calculus Refresher |
+| `T0.<x>` | Tier-0 setup stage. The letter is **sequence only**, no meaning. Legacy — kept because the DAG and closed notes reference it. | `R.calculus` = Calculus Refresher |
 
 **Convention going forward:** lead with the plain English name, keep the ID as a subscript.
-Write "Linear Algebra Refresher `T0.D`", not "T0.D". IDs are for the dependency graph in
+Write "Linear Algebra Refresher `R.linalg`", not "R.linalg". IDs are for the dependency graph in
 [03_gated_progression.md](03_gated_progression.md); names are for humans.
 
 Section number ↔ Roman numeral: `S1`→I, `S2`→II, `S3`→III, `S4`→IV, `S5`→V, `S6`→VI,
@@ -30,17 +30,17 @@ Section number ↔ Roman numeral: `S1`→I, `S2`→II, `S3`→III, `S4`→IV, `S
 
 ## Tier 0 — Foundations
 
-### Calculus Refresher `T0.C` ✅ CLOSED 2026-07-29 (5.0h)
+### Calculus Refresher `R.calculus` ✅ CLOSED 2026-07-29 (5.0h)
 **Source:** [§VIII Calculus, DEs & Analysis](topics/section_VIII_calculus_des.md)
 
 | | |
 |---|---|
-| **In scope** | §VIII.1 ODEs — *Exponential Growth/Decay*, *Logistic Growth*. Plus §VIII.1 *Mean-Reverting ODE (Deterministic OU)* and *The Perpetual Annuity ODE* via problem-set B3/A6. §VIII.3 *Lagrange Multipliers* (concept) + *Markowitz Optimization — Lagrange Multipliers* (via T0C-C2). |
+| **In scope** | §VIII.1 ODEs — *Exponential Growth/Decay*, *Logistic Growth*. Plus §VIII.1 *Mean-Reverting ODE (Deterministic OU)* and *The Perpetual Annuity ODE* via problem-set B3/A6. §VIII.3 *Lagrange Multipliers* (concept) + *Markowitz Optimization — Lagrange Multipliers* (via R_calculus-C2). |
 | **Deferred → post-S4/S6** | All of §VIII.2 (PDEs): *Heat Equation*, *Black-Scholes PDE*, *Feynman-Kac*, *Separation of Variables*, *Carr-Madan*, *Barrier/Basket PDEs*. Also §VIII.1 *Second-Order Linear ODE*, *Damped Oscillator*, *Systems of ODEs*, *Riccati*, *Phase Portraits*, *Green's Function*, *Stability Analysis*. §VIII.3 *Kelly Criterion*, *KKT*, *Euler-Lagrange*, *Brachistochrone*, *Duality*. |
 | **Why deferred** | User note 2026-07-29: useful framing but needs the finance first. Revisit once S4 (BM/Itô) and S6 (BS/Greeks) are in hand — Feynman-Kac in particular is unreadable without both. |
 | **Closes baseline** | VIII.1 (`dy/dx=y`), VIII.3 (Lagrange) |
 
-### Linear Algebra Refresher `T0.D` — Thu 2026-07-30
+### Linear Algebra Refresher `R.linalg` — Thu 2026-07-30
 **Source:** [§VII Linear Algebra & Matrix Theory](topics/section_VII_linear_algebra.md)
 
 | | |
@@ -59,7 +59,7 @@ Section number ↔ Roman numeral: `S1`→I, `S2`→II, `S3`→III, `S4`→IV, `S
 > Tier-0 label" (9 distributions ≈ 8h vs. the ≤90-min-block rule in contract §A.0). Split
 > into two stages, named, and mapped onto the section IDs they actually belong to.
 
-### Discrete Distributions `S1.3` — Fri 2026-07-31
+### Discrete Distributions `F1.4a` — Fri 2026-07-31
 **Source:** [§I.4 Discrete Random Variables & Distributions](topics/section_I_probability_combinatorics.md) · **Book:** Ross 6th ed., Ch. 4
 
 | | |
@@ -68,7 +68,7 @@ Section number ↔ Roman numeral: `S1`→I, `S2`→II, `S3`→III, `S4`→IV, `S
 | **Deferred** | Negative binomial, hypergeometric → S1.4 (S18). |
 | **Closes baseline** | Partial: I.4 (scored 1) |
 
-### Continuous Distributions `S1.5` — Sat 2026-08-01
+### Continuous Distributions `F1.4b` — Sat 2026-08-01
 **Source:** [§I.5 Continuous Random Variables & Distributions](topics/section_I_probability_combinatorics.md) · **Book:** Ross 6th ed., Ch. 5
 
 | | |

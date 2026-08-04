@@ -1,11 +1,11 @@
 # Linear Algebra Refresher — Problem Set
-`stage: T0.D` · **Sprint 15, Day 10 (Thu 2026-07-30)** · **Budget: 3h in three blocks**
+`stage: R.linalg` · **Sprint 15, Day 10 (Thu 2026-07-30)** · **Budget: 3h in three blocks**
 
 **Why this stage exists:** baseline VII.1 gave you `[[2,1],[1,2]]` and you produced the
 *definition* of an eigenvalue but not the numbers (correct: 1 and 3). VII.2 (PSD) scored 1.
 Those two gaps sit directly under PCA (S20), the covariance matrix in every risk model you
 will ever touch, Cholesky sampling for correlated Monte Carlo, and the Markowitz derivation
-you already met via Lagrange in T0.C. This is the "computation forgotten" stage — you have
+you already met via Lagrange in R.calculus. This is the "computation forgotten" stage — you have
 the concepts, you need the hands.
 
 **Scope — three things only:**
@@ -52,29 +52,29 @@ built to break cleanly at the hour — no block depends on finishing the previou
 | **2** | afternoon scrap, 30–45 min | Tier A, on paper, closed-book | A1–A5 done |
 | **3** | evening, 60 min | Gap-hunt §1 · Tier B · §3–§6 · numerical anchor | Note closed |
 
-Note skeleton: `progress/feynman_notes/T0D_linear_algebra.md`
+Note skeleton: `progress/feynman_notes/R_linear_algebra.md`
 
 ---
 
 ## Tier A — the floor (all five, unhinted, on paper)
 
-**T0D-A1.** Find the eigenvalues of `A = [[2,1],[1,2]]` by hand. Write out `det(A − λI) = 0`
+**R.linalg-A1.** Find the eigenvalues of `A = [[2,1],[1,2]]` by hand. Write out `det(A − λI) = 0`
 explicitly, expand to the characteristic polynomial, solve. Then find an eigenvector for each
 eigenvalue.
 *This is baseline VII.1. Answer: λ = 1, 3. If you cannot do this cold, the stage is not complete.*
 
-**T0D-A2.** For a general `2×2` matrix `[[a,b],[c,d]]`, show that the characteristic polynomial
+**R.linalg-A2.** For a general `2×2` matrix `[[a,b],[c,d]]`, show that the characteristic polynomial
 is `λ² − (a+d)λ + (ad−bc) = 0`. Name the two coefficients — you have met both before.
 *Then use it to shortcut A1 in one line.*
 
-**T0D-A3.** Find the eigenvalues of `B = [[4,1],[2,3]]`. Not symmetric, so check: are the
+**R.linalg-A3.** Find the eigenvalues of `B = [[4,1],[2,3]]`. Not symmetric, so check: are the
 eigenvectors still orthogonal? Compare with A1 and say what changed.
 
-**T0D-A4.** Find the eigenvalues of the `3×3` matrix `C = [[2,0,0],[0,3,4],[0,4,9]]` by hand.
+**R.linalg-A4.** Find the eigenvalues of the `3×3` matrix `C = [[2,0,0],[0,3,4],[0,4,9]]` by hand.
 *Hint: it is block-diagonal — exploit that rather than expanding a full cubic. Recognising
 structure before grinding is itself the skill being tested.*
 
-**T0D-A5.** State three equivalent conditions for a symmetric matrix to be positive
+**R.linalg-A5.** State three equivalent conditions for a symmetric matrix to be positive
 semi-definite. Then test `[[2,1],[1,2]]` and `[[1,2],[2,1]]` — one is PSD, one is not. Say which,
 and show it two different ways.
 
@@ -82,28 +82,28 @@ and show it two different ways.
 
 ## Tier B — the target (≥3 of 5)
 
-**T0D-B1.** Prove that any covariance matrix `Σ` is PSD.
+**R_linear_algebra-B1.** Prove that any covariance matrix `Σ` is PSD.
 *Start from `xᵀΣx` and turn it into the variance of something. One line of algebra, and it is
 the single most-asked linear-algebra question in a QR interview. If you get one thing from this
 stage, get this.*
 
-**T0D-B2.** Show that a real symmetric matrix has real eigenvalues. Then show eigenvectors
+**R_linear_algebra-B2.** Show that a real symmetric matrix has real eigenvalues. Then show eigenvectors
 belonging to distinct eigenvalues are orthogonal.
 *The second half is two lines from `Av₁ = λ₁v₁`, `Av₂ = λ₂v₂`. The first half is harder — if
 it stalls, note the stall and move on; the orthogonality result is the one that matters
 downstream.*
 
-**T0D-B3.** `Σ = [[0.04, 0.01], [0.01, 0.09]]` — the covariance matrix from T0C-C2. Find its
+**R_linear_algebra-B3.** `Σ = [[0.04, 0.01], [0.01, 0.09]]` — the covariance matrix from R_calculus-C2. Find its
 eigenvalues by hand. What fraction of total variance does the largest explain?
 *That fraction is the "explained variance ratio" of the first principal component. You have
 now done PCA on two assets without calling it that.*
 
-**T0D-B4.** A correlation matrix for three assets with every pairwise correlation `ρ`. Write it
+**R_linear_algebra-B4.** A correlation matrix for three assets with every pairwise correlation `ρ`. Write it
 down. For which `ρ` is it a valid (PSD) correlation matrix?
 *Answer is not `[−1,1]`. Worth knowing why: this is exactly the trap in hand-specified
 correlation matrices, and why risk systems reject them.*
 
-**T0D-B5.** If `Σ` is PSD, show `Σ = BᵀB` for some `B`. Then say what this buys you when you
+**R_linear_algebra-B5.** If `Σ` is PSD, show `Σ = BᵀB` for some `B`. Then say what this buys you when you
 want to simulate correlated random variables.
 *This is Cholesky's reason for existing. You will use it in S25 and in every multi-asset
 Monte Carlo.*
@@ -112,10 +112,10 @@ Monte Carlo.*
 
 ## Tier C — only if A+B ran short
 
-**T0D-C1.** Trace and determinant equal the sum and product of eigenvalues. Verify on A1 and A4,
+**R_linear_algebra-C1.** Trace and determinant equal the sum and product of eigenvalues. Verify on A1 and A4,
 then explain why this gives a free sanity check on any hand computation.
 
-**T0D-C2.** `[[1,1],[0,1]]` has a repeated eigenvalue. How many linearly independent
+**R_linear_algebra-C2.** `[[1,1],[0,1]]` has a repeated eigenvalue. How many linearly independent
 eigenvectors does it have? What breaks?
 *This is a defective matrix — the case where diagonalisation fails.*
 
@@ -123,7 +123,7 @@ eigenvectors does it have? What breaks?
 
 ## Deliverables
 
-- [ ] `progress/feynman_notes/T0D_linear_algebra.md` — all 6 sections real, zero `⚠️ GAP`,
+- [ ] `progress/feynman_notes/R_linear_algebra.md` — all 6 sections real, zero `⚠️ GAP`,
       napkin ≤200 words **said out loud once**
 - [ ] Tier A A1–A5 unhinted, on paper
 - [ ] ≥3 of 5 Tier B

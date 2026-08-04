@@ -1,9 +1,9 @@
 # Discrete Distributions
-`stage: S1.3` · **Started:** 2026-07-31 · **Completed:** 2026-08-02 (partial — see checklist)
+`stage: `F1.4a` · **Started:** 2026-07-31 · **Completed:** 2026-08-02 (partial — see checklist)
 **Time spent:** 6.0h (Fri 1.0 · Sat 3.0 · Sun 2.0) · **Source(s):** Ross 6th ed. Ch. 4
 
 > **Closed as PARTIAL.** Summary table lives in the handnote, not here. Solver deferred to S16
-> alongside `S1.5`. Everything else landed. The +1wk review on 08-08 is the real test.
+> alongside `F1.4b`. Everything else landed. The +1wk review on 08-08 is the real test.
 
 ## Review log
 - [ ] +1 week (2026-08-08): reproduce the four-row summary table cold → pass/fail
@@ -85,9 +85,9 @@ linearity of expectation, and derivatives
 
 ## 7. Links
 
-- **Problems solved:** S1.3-A1…A5, B__ (from `problem_sets/S1_3_discrete_distributions.md`)
-- **Prereqs:** T0.C (Taylor series for `e^λ`, the `(1+dx)^{1/dx}` limit)
-- **Unlocks:** S1.5 continuous (tomorrow — geometric→exponential) · S1.4 discrete RVs ·
+- **Problems solved:** F1.4a-A1…A5, B__ (from `stage_maps/F1_4a_discrete_distributions.md`)
+- **Prereqs:** R.calculus (Taylor series for `e^λ`, the `(1+dx)^{1/dx}` limit)
+- **Unlocks:** `F1.4b` continuous (tomorrow — geometric→exponential) · S1.4 discrete RVs ·
   S1.8 MGF · S2.1 puzzles · S3 Markov (first-step analysis is A3(ii))
 - **Baseline questions this closes:** II.1 (E[flips for HH]) · II.3 (coupon collector, Tier C) ·
   partial I.3 (the discrete half of the named-distribution gap)
@@ -106,5 +106,5 @@ linearity of expectation, and derivatives
 - [x] "Where this breaks" lists ≥2 items
 - [x] Tier-A problems A1–A4 solved unhinted *(A5 = MGF, out of Ross Ch.4 scope → S1.8)*
 - [ ] ≥3 of 5 Tier-B solved
-- [ ] `src/solvers/s1_probability/discrete_verify.py` — **deferred to S16 with S1.5**
+- [ ] `src/solvers/s1_probability/discrete_verify.py` — **deferred to S16 with `F1.4b`**
 - [ ] Unlock test: II.1 re-answered cold, fully correct — **do at the 08-08 +1wk review**
