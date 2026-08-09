@@ -32,38 +32,103 @@ today is one variable at a time.
 
 ## Knowledge checklist — tick when you can produce it cold
 
-The scope of the stage at the granularity you actually study. Tick during the close block (Sat),
-not while reading. **Anything unticked on Saturday is what the +1wk review tests.**
-This list is also the flashcard set the sprint retro uses.
+**Built from Ross Ch.5's actual section headings** (verified against the book 2026-08-09), not
+from what an interview tends to ask. Every core item below is in the chapter, with its section
+number. Tick during the close block (Sat), not while reading. **Anything unticked on Saturday is
+what the +1wk review tests.** This list is also the flashcard set the sprint retro uses.
 
-**Uniform**
+### Core — all of it is in Ross Ch.5
+
+**§5.1–5.2 Density and expectation**
+- [ ] Density: `P(a≤X≤b) = ∫f`, and why `P(X=a) = 0`
+- [ ] `E[X] = ∫xf(x)dx` · `Var(X) = E[X²] − E[X]²`
+- [ ] **Tail formula `E[X] = ∫₀^∞ P(X>x)dx`** — *Lemma 2.1*. Works for any non-negative RV,
+      and it beats by-parts under pressure. Discrete twin: `E[X] = Σ P(X≥k)`.
+
+**§5.3 Uniform**
 - [ ] PDF · CDF on `[a,b]`
 - [ ] `E[X] = (a+b)/2` · `Var(X) = (b−a)²/12`
-- [ ] **Inverse transform**: `F⁻¹(U) ~ F`, and the one-line proof
-- [ ] `F⁻¹` for the exponential specifically → `X = −ln(U)/λ`
 
-**Exponential**
-- [ ] PDF · CDF · tail `P(X > x) = e^{−λx}`
-- [ ] `E[X] = 1/λ` · `Var(X) = 1/λ²` ← **baseline I.3**
-- [ ] Tail formula `E[X] = ∫₀^∞ P(X>x)dx` (and that it beats by-parts under pressure)
-- [ ] `SD = mean` — what that says about how spread out it is
-- [ ] MGF `λ/(λ−t)`, exists only for `t < λ`, and why that matters for heavy tails
-- [ ] **Memorylessness** + that exponential is the *only* continuous one
-- [ ] Hazard rate constant ⟺ memoryless ⟺ exponential
-- [ ] Poisson counts ↔ exponential gaps (same process, two views)
-- [ ] `min(X,Y) ~ Exp(λ₁+λ₂)` · `P(X<Y) = λ₁/(λ₁+λ₂)`
-
-**Normal**
+**§5.4 Normal**
 - [ ] PDF, and where the `1/√(2π)` comes from
 - [ ] `E[Z]=0` by symmetry · `Var(Z)=1` by parts
-- [ ] Standardisation `Z = (X−μ)/σ`, and `X = μ+σZ` by change of variables
+- [ ] Standardisation `Z = (X−μ)/σ` — reduces every normal question to one table
 - [ ] 68 / 95 / 99.7
 - [ ] **1.645 one-tail vs 1.96 two-tail** (the VaR-bug pair)
-- [ ] Normal approximation to the binomial, + when Poisson is the right limit instead
+- [ ] **§5.4.1** Normal approximation to the binomial (de Moivre–Laplace) + continuity correction
+- [ ] …and when Poisson is the right limit instead (`p→0`, `np` fixed) vs Normal (`p` fixed)
 
-**Cross-cutting**
-- [ ] Geometric → exponential is the discrete → continuous pair (`F1.4a`)
-- [ ] Which limit gives Poisson (`p→0`, `np` fixed) vs which gives Normal (`p` fixed, `n→∞`)
+**§5.5 Exponential**
+- [ ] PDF · CDF · tail `P(X>x) = e^{−λx}`
+- [ ] `E[X] = 1/λ` · `Var(X) = 1/λ²` ← **baseline I.3, the reason this stage is mandatory-deep**
+- [ ] `SD = mean` — why "average wait 5 min" says less than people assume
+- [ ] **Memorylessness** `P(X>s+t | X>s) = P(X>t)`, + that exponential is the *only* continuous one
+- [ ] **§5.5.1** Hazard rate `h(x) = f(x)/(1−F(x))`; constant hazard ⟺ memoryless ⟺ exponential
+
+**§5.7 Function of a random variable**
+- [ ] Change-of-variables rule for `Y = g(X)`
+- [ ] **Inverse transform**: `F⁻¹(U) ~ F`, and the one-line proof
+- [ ] `F⁻¹` for the exponential → `X = −ln(U)/λ` *(this is what makes CODE1 possible)*
+
+**Cross-cutting (from `F1.4a`, no new source needed)**
+- [ ] Geometric → exponential is the discrete → continuous memoryless pair
+- [ ] Poisson counts ↔ exponential gaps — same process, two descriptions
+
+### Stretch — NOT in Ross Ch.5. Each one names how you get it.
+
+*Rule (adopted 2026-08-09): a stretch item is never left as a bare pointer. It is either written
+inline here, given a named chapter + page range in a book you own, or deferred with the stage
+**and the reason**. See `04_deliverables_spec.md` §D2.*
+
+- [ ] **Competing risks** — `min(X,Y) ~ Exp(λ₁+λ₂)` · `P(X<Y) = λ₁/(λ₁+λ₂)`
+      → **INLINE, see §Stretch notes below.** Five lines, needs only independence, and it is
+      first-to-fill / first-to-default / first-to-arrive. Too useful to defer.
+- [ ] **MGF of `Exp(λ)`** = `λ/(λ−t)`, exists only for `t < λ`
+      → **DEFERRED to S1.8**, reason: *using* MGFs needs convolution machinery you don't have.
+      The two-line definition is in §Stretch notes so the term isn't foreign when it lands.
+      *(Ross puts MGFs in Ch.7, not Ch.5 — this is the same mismatch that made `F1.4a`-A5
+      unanswerable. Now named rather than silently assumed.)*
+- [ ] **Gaussian integral** `∫e^{−x²/2}dx = √(2π)` via polar coordinates
+      → **Tier C2**, optional. Ross states the constant; the derivation is the stretch.
+
+---
+
+## Stretch notes — the material for the items above
+
+Short by design. These exist so a stretch item is learnable *in this stage* rather than being a
+to-do that resolves three months out.
+
+### Competing risks (inline — do this in the Saturday close block)
+
+Two independent exponential clocks, `X ~ Exp(λ₁)` and `Y ~ Exp(λ₂)`. Which rings first, and when?
+
+**When:** the minimum is exponential with the rates *added*.
+```
+P(min(X,Y) > t) = P(X>t)·P(Y>t)        ← independence, and only here
+                = e^{−λ₁t}·e^{−λ₂t}
+                = e^{−(λ₁+λ₂)t}         ← survival function of Exp(λ₁+λ₂)
+```
+Generalises directly: `n` independent clocks → first to ring is `Exp(Σλᵢ)`. **Rates add.**
+
+**Which:** condition on when `X` fires and ask that `Y` hasn't yet.
+```
+P(X<Y) = ∫₀^∞ P(Y>x)·λ₁e^{−λ₁x}dx = ∫₀^∞ λ₁e^{−(λ₁+λ₂)x}dx = λ₁/(λ₁+λ₂)
+```
+The faster clock wins in proportion to its rate — and notice the answer doesn't depend on `t` at
+all. *Why it matters:* first-to-fill across venues, first-to-default in a basket, next-arrival
+among order types. Both results are short enough to memorise and are asked directly.
+
+### MGF — the definition only (so the term isn't cold in S1.8)
+
+`M(t) = E[e^{tX}]`. It is a **transform**: one function that encodes every moment, because
+`M'(0) = E[X]`, `M''(0) = E[X²]`, and so on. The reason it earns its keep is that the MGF of a
+sum of independents is the *product* of their MGFs — it turns convolution (hard) into
+multiplication (easy). For `Exp(λ)` it is `λ/(λ−t)` and it **only exists for `t < λ`**; beyond
+that the integral diverges. That existence range is the fingerprint of exponential tails, and its
+absence is why MGF arguments fail on heavy-tailed distributions.
+
+**Do not derive anything from this today.** It is here so the word is familiar. S1.8 is where it
+does work.
 
 ---
 
@@ -71,11 +136,25 @@ This list is also the flashcard set the sprint retro uses.
 
 | Source | Covers | Time |
 |---|---|---|
-| **Ross, *A First Course in Probability* 6th ed. — Ch. 5** | All three, plus the normal approximation | **40 min, hard stop** |
+| **Ross, *A First Course in Probability* 6th ed. — Ch. 5** | All three, plus the normal approximation | **40 min per pass, hard stop** |
 
-Navigate by heading. Ross does uniform, then normal, then exponential. **Skip the Gamma, Beta,
-Cauchy, and Weibull subsections** — same chapter, not this stage. Do read the
-normal-approximation-to-binomial passage; it connects straight back to yesterday.
+**Section map** (verified 2026-08-09 — navigate by these numbers, not by page):
+
+| § | What | Pass |
+|---|---|---|
+| 5.1 · 5.2 | Density · expectation/variance · **Lemma 2.1 = the tail formula** | 1 |
+| 5.3 | Uniform | 1 |
+| 5.4 · 5.4.1 | Normal · normal approximation to the binomial | **2** |
+| 5.5 · 5.5.1 | Exponential · hazard rate | 1 |
+| 5.6 | Gamma, Weibull, Cauchy, Beta | **skip entirely** — not this stage |
+| 5.7 | Distribution of a function of a RV (→ inverse transform) | 1 |
+
+**Note the chapter order: uniform → NORMAL → exponential.** The normal sits between the two things
+Pass 1 wants, so on Wednesday you are skipping §5.4 and coming back to it Thursday. That is
+deliberate — don't get pulled into it because it's next on the page.
+
+**Not in this chapter at all:** MGFs (Ross Ch.7) and competing risks (needs Ch.6 joint
+distributions). Both are covered in §Stretch notes above — **do not go looking for them in Ch.5.**
 
 **If the normal's `E[X²]` integral is the sticking point,** the single named fallback is
 **3Blue1Brown, "Why π is there and why it's squared (Gaussian integral)", 12 min**. That is the
@@ -126,11 +205,16 @@ tonight's verifier.*
 `E[X] = ∫₀^∞ P(X > x)dx` — and say which you would rather do under interview pressure.
 *This is baseline I.3, scored 1. It is the reason this stage is mandatory-deep.*
 
-**F1.4b-A3.** Derive the MGF of `Exp(λ)`. State the `t` range where it exists and say what goes
-wrong outside it. Recover `E[X]` and `Var(X)` from it and check against A2.
-*The existence condition `t < λ` is not a technicality — it is the fingerprint of a distribution
-with exponential tails, and it is why the MGF approach fails for heavy-tailed things you will
-meet in risk work.*
+**F1.4b-A3.** *(§5.7)* `X ~ Exp(λ)`. Derive the distribution of `Y = √X` by the
+change-of-variables rule: write `F_Y(y) = P(Y≤y) = P(X≤y²)`, then differentiate.
+Then state the general rule for `Y = g(X)` with `g` monotone, and say **why the `|dx/dy|` factor
+has to be there** — what would go wrong without it.
+*§5.7 is the engine behind both the inverse transform (A1) and the normal's `X = μ+σZ` (A4).
+Doing it once explicitly means those two stop being separate tricks.*
+
+*Replaced the original A3 (derive the MGF of `Exp(λ)`) on 2026-08-09: MGFs are Ross **Ch.7**, not
+Ch.5 — the same out-of-chapter mismatch that made `F1.4a`-A5 unanswerable. The MGF definition is
+in §Stretch notes; deriving it is S1.8's job.*
 
 **F1.4b-A4.** `Z ~ N(0,1)`. Write the PDF. Show `E[Z] = 0` by symmetry, and derive
 `Var(Z) = E[Z²] = 1` by parts. Then: `X = μ + σZ` — derive the PDF of `X` by the
@@ -167,10 +251,12 @@ relate to B1?
 *Constant hazard ↔ memoryless ↔ exponential — three names for one fact. Hazard rates are the
 native language of credit default modelling and of survival analysis.*
 
-**F1.4b-B4.** `X ~ Exp(λ₁)` and `Y ~ Exp(λ₂)` independent. Show `min(X,Y) ~ Exp(λ₁+λ₂)`, and
-compute `P(X < Y)`.
-*The competing-risks result. It is how you model "which of these two events happens first" —
-first to fill, first to default, first to arrive. Both answers are short and worth memorising.*
+**F1.4b-B4.** ⚡ *stretch — not in Ch.5; material is in §Stretch notes above.*
+`X ~ Exp(λ₁)` and `Y ~ Exp(λ₂)` independent. Show `min(X,Y) ~ Exp(λ₁+λ₂)`, and compute `P(X<Y)`.
+**Attempt it cold first** — you have every tool needed (the tail `e^{−λt}` and independence).
+Read the stretch note only after you've tried, or when you're stuck.
+*Competing risks: which of two events happens first — first to fill, first to default, first to
+arrive. Both answers are one line and both get asked directly.*
 
 **F1.4b-B5.** Use the normal approximation to the binomial: 10,000 fair coin flips, estimate
 `P(more than 5,100 heads)`. State the mean and SD of the binomial first, then standardise.
@@ -274,16 +360,23 @@ trick as the discrete `E[X] = Σ P(X ≥ k)`.
 distribution, which is why "average wait 5 minutes" tells you much less than people assume.*
 **(Baseline I.3: `1/λ` and `1/λ²`. You wrote `e^λ` and `0`.)**
 
-**A3.** `M(t) = E[e^{tX}] = ∫₀^∞ e^{tx}λe^{−λx}dx = λ∫₀^∞ e^{−(λ−t)x}dx = **λ/(λ−t)**, for `t < λ`.
+**A3.** *(§5.7 — change of variables.)* Go through the **CDF**, never the density directly.
 
-Outside that range the integral **diverges** — the integrand `e^{(t−λ)x}` grows without bound.
-The MGF simply does not exist for `t ≥ λ`. This is the fingerprint of exponential tails: the MGF
-exists in a neighbourhood of 0 but not everywhere. **Heavy-tailed distributions (log-normal,
-Cauchy, power-law) have no MGF on any interval around 0** — which is exactly why MGF-based
-arguments quietly fail in risk work, and why you reach for characteristic functions instead.
+`F_Y(y) = P(Y ≤ y) = P(√X ≤ y) = P(X ≤ y²) = F_X(y²) = 1 − e^{−λy²}` for `y ≥ 0`.
+Differentiate: `f_Y(y) = **2λy·e^{−λy²}**` for `y ≥ 0`. *(That is a Rayleigh distribution.)*
 
-`M'(t) = λ/(λ−t)²` → `M'(0) = **1/λ**` ✓
-`M''(t) = 2λ/(λ−t)³` → `M''(0) = 2/λ² = E[X²]` → `Var = 2/λ² − 1/λ² = **1/λ²**` ✓
+*General rule*, `g` monotone with inverse `g⁻¹`:
+`f_Y(y) = f_X(g⁻¹(y))·|d/dy g⁻¹(y)|`
+
+**Why the `|dx/dy|` factor must be there:** a density is probability *per unit length*, not
+probability. When `g` stretches an interval, the same probability mass is spread over a longer
+interval, so the density must fall — the Jacobian is exactly that bookkeeping. Drop it and
+`f_Y` won't integrate to 1. The absolute value is because a decreasing `g` flips the limits of
+integration; density can't be negative.
+
+**Where you have already used this without naming it:** the inverse transform (A1) is this rule
+with `g = F⁻¹`, and `X = μ + σZ` (A4) is this rule with `g` affine — which is why the normal PDF
+picks up its `1/σ`.
 
 **A4.** `φ(z) = (1/√(2π))e^{−z²/2}`.
 `E[Z] = 0`: the integrand `zφ(z)` is odd and the integral converges absolutely, so it vanishes.

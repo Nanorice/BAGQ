@@ -37,7 +37,8 @@
 1. derivation of E(x^k) for binomial, plus how we assigned a new random variable, why it is Y+1 not Y
 2. derivation of E(x^2) for Poisson
 3. derivation of Geometric E(x) using Gambler's Ruin approach
-4. MGF, deferred
+4. MGF, deferred — **not a gap.** Confirmed 08-09: MGFs are Ross Ch.7, outside this stage's
+   source. Formally moved to S1.8; the definition is in `F1.4b`'s §Stretch notes.
 
 
 ## 3. Napkin version (≤200 words)
@@ -104,7 +105,8 @@ linearity of expectation, and derivatives
 - [x] Napkin ≤200 words AND said out loud once
 - [x] Analogy is non-mathematical
 - [x] "Where this breaks" lists ≥2 items
-- [x] Tier-A problems A1–A4 solved unhinted *(A5 = MGF, out of Ross Ch.4 scope → S1.8)*
+- [x] Tier-A problems A1–A4 solved unhinted — **A5 formally withdrawn 08-09** (MGF is Ross Ch.7,
+      not Ch.4; the map was wrong, not the study). Tier A for this stage is A1–A4.
 - [ ] ≥3 of 5 Tier-B solved
 - [ ] `src/solvers/s1_probability/discrete_verify.py` — **deferred to S16 with `F1.4b`**
 - [ ] Unlock test: II.1 re-answered cold, fully correct — **do at the 08-08 +1wk review**

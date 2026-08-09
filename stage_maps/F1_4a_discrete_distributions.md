@@ -1,5 +1,15 @@
-# Discrete Distributions — Problem Set
-`stage: `F1.4a` · **Sprint 15, Day 12 (Fri 2026-07-31)** · **Budget: 3h in three blocks**
+# Discrete Distributions — Stage Map
+`F1.4a` · foundation (new install, 2.0×) · `topics/section_I` §4
+**Sprint 15, Days 12–14 (Fri 07-31 → Sun 08-02)** · **Budget was 3h · actual 6.0h**
+
+> **CLOSED PARTIAL 2026-08-02.** Summary table lives in the handnote; code problems deferred to
+> the shared `F1.4b` verifier. **D4 unlock test: 2026-08-15.**
+>
+> **Scope correction, 2026-08-09:** MGF was listed as core here and it is **not in Ross Ch.4** —
+> Ross puts MGFs in Ch.7. You correctly wrote *"deferred, this is not in the book chapter 4"* in
+> the note, and you were right; A5 was mis-specified, not skipped. It is now marked stretch below.
+> The general fix is in `04_deliverables_spec.md` §D2: **checklists get built from the source's
+> real section headings, and every stretch item names how you actually get it.**
 
 **Why this stage exists:** baseline I.3 asked for `E[X]` and `Var(X)` of an exponential and got
 `e^λ` and `0` — the *named-distribution* machinery is missing, not the reasoning. This stage
@@ -13,12 +23,17 @@ success?" is not a derivation you want to be doing live.
 3. **Geometric** — trials until first success
 4. **Poisson** — the limit of binomial, and the arrival-count distribution
 
-For each: **PMF · E[X] · Var(X) · MGF · one classic problem.** Plus the one structural fact
-that ties them together: **Poisson as the limit of Binomial.**
+For each: **PMF · E[X] · Var(X) · one classic problem.** Plus the one structural fact that ties
+them together: **Poisson as the limit of Binomial.**
 
 Out of scope: negative binomial, hypergeometric, multinomial, discrete uniform beyond a
-mention. Conditional/joint versions are S1.6. Sums-of-RVs via MGF is S1.8 — you derive MGFs
-here, you *use* them there.
+mention. Conditional/joint versions are S1.6.
+
+**Stretch — not in Ross Ch.4:**
+- **MGF** → **DEFERRED to S1.8.** Reason: Ross covers MGFs in **Ch.7**, and *using* them for sums
+  needs convolution machinery this stage doesn't have. The definition is in `F1.4b`'s
+  §Stretch notes so the term isn't cold when S1.8 arrives.
+  *(This was originally listed as core and as problem A5 — the error you caught on 07-31.)*
 
 ---
 
@@ -59,7 +74,7 @@ Poisson exists at all.
 
 ---
 
-## Tier A — the floor (all five, unhinted, on paper)
+## Tier A — the floor (A1–A4, unhinted, on paper · A5 withdrawn, see below)
 
 **F1.4a-A1.** Write the PMF of `Binomial(n, p)`. Derive `E[X] = np` two ways: (i) directly from
 the sum `Σ k·C(n,k)p^k(1−p)^{n−k}`, and (ii) by writing `X = ΣXᵢ` as a sum of `n` Bernoullis
@@ -80,10 +95,11 @@ first-step-analysis that solves gambler's ruin (baseline III.1, scored 1) and th
 **F1.4a-A4.** `X ~ Poisson(λ)`. Write the PMF, verify it sums to 1 (you need the Taylor series
 for `e^λ` — you derived `e` from `dy/dx = y` in R.calculus), and derive `E[X] = λ`.
 
-**F1.4a-A5.** Derive the MGF `M(t) = E[e^{tX}]` for Bernoulli, Binomial, and Poisson. Then get
-`E[X]` and `Var(X)` for the Poisson by differentiating its MGF, and check against A4.
-*The MGF of a Binomial should look like the Bernoulli's raised to the `n`. Say why — that
-observation is the whole reason MGFs are worth carrying.*
+**F1.4a-A5.** ~~Derive the MGF for Bernoulli, Binomial, and Poisson.~~
+**WITHDRAWN 2026-08-09 — out of chapter.** Ross covers MGFs in Ch.7, not Ch.4. You flagged this
+correctly on 07-31; the answer key below is kept for reference but **A5 does not count against
+Tier A completion**, and the MGF column comes out of the summary table. Moved to S1.8.
+*Tier A for this stage is A1–A4.*
 
 ---
 
@@ -137,7 +153,7 @@ means in a count model and why it matters when you fit trade-arrival data.
 - [ ] Tier A A1–A5 unhinted, on paper
 - [ ] ≥3 of 5 Tier B
 - [ ] **Summary table in the note** — four rows (Bernoulli/Binomial/Geometric/Poisson) ×
-      four columns (PMF, E[X], Var, MGF). This table *is* the deliverable; it is what you
+      three columns (PMF, E[X], Var — MGF withdrawn 08-09). This table *is* the deliverable; it is what you
       recall cold in a year.
 - [ ] **Unlock test:** re-answer baseline I.3 cold *(E and Var of an exponential — you will not
       have covered the exponential yet; answer the discrete analogue, geometric, and note the

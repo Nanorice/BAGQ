@@ -23,6 +23,28 @@
 - Solutions go on paper. Log which needed hints in the stage map's deliverables block.
   Hint use is fine; hiding it is not.
 
+**Build the knowledge checklist from the source's actual section headings — then annotate.**
+Not from what interviews tend to ask. Two passes: (1) read the real headings and derive the core
+list from them, with section numbers attached; (2) mark anything interview-critical that is
+*outside* the chapter as **stretch**.
+
+*Why this is a rule: `F1.4a`-A5 asked for MGF derivations that Ross Ch.4 does not cover, and the
+same assumption then produced two out-of-chapter items in `F1.4b`. A stage that claims "one
+source" and then asks for things outside it silently recreates the multi-source problem that
+cost `R.calculus` five hours.*
+
+**Every stretch item resolves one of three ways, decided when it is written — never left as a
+bare pointer:**
+
+| Resolution | Use when | What the map contains |
+|---|---|---|
+| **Inline** | ≤1 page, uses only tools the stage already has | The material itself, in a `## Stretch notes` section |
+| **Named source** | It is a real chapter in a book already owned | `Ross §7.7, pp. 354–360` — budgeted as a mini-block |
+| **Deferred** | It genuinely needs machinery not yet held | Target stage **and the reason** — "needs joint dists → F1.6" |
+
+A stretch item that says only "→ S1.8" is a to-do, not a learning path. **No new textbooks** —
+"named source" means Ross, Green Book, Hull, or CLM.
+
 ### D3 — Code twin (computational)
 - **Code problems are stated in the stage map**, in a `## Code problems` section, numbered
   `<STAGE>-CODE<N>`. They are specified up front like any other problem — not improvised at
