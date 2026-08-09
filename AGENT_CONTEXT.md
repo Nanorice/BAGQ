@@ -12,6 +12,10 @@ lands somewhere useful.
 **If you are a human or a non-Claude agent:** open `.claude/CLAUDE.md` directly. It is plain
 markdown with no tooling assumptions.
 
+**Then read [`MANUAL.md`](MANUAL.md)** — the operating procedure: how a day, a stage and a sprint
+actually run, and the rules that were paid for with real overruns. `CLAUDE.md` is *context*;
+`MANUAL.md` is *procedure*.
+
 ---
 
 *Moved 2026-07-30. Previously this file held the full context inline; keeping two copies in

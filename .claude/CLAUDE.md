@@ -1,10 +1,10 @@
 # BAGQ — Agent Context
 
 > Auto-loaded each session. If you are picking this repo up cold, this file is enough.
-> A human on a fresh machine (or a non-Claude agent) should be handed `../AGENT_CONTEXT.md`,
-> which points here.
+> A human on a fresh machine (or a non-Claude agent) should be handed `AGENT_CONTEXT.md`
+> (repo root), which points here. For the operating procedure, `MANUAL.md`.
 
-**Last updated:** 2026-07-30 (Sprint 15, Day 11)
+**Last updated:** 2026-08-09 (Sprint 16, Week 1 end)
 
 ---
 
@@ -69,32 +69,37 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
 
 ---
 
-## 5. Current status — Sprint 16, Day 1 (2026-08-03)
+## 5. Current status — Sprint 16, Week 1 end (2026-08-09)
 
-**S15 closed at 14.5h / 18h = 81%.** Retro held 08-03 (one day late), full detail in
-`progress/sprints/S15.md`.
+> Live numbers are in `progress/sprints/S16.md` (Dataview). This section is the narrative.
 
-**Closed:** baseline · 6 system files · radar chart · T0.A env · T0.B git ·
-**Calculus `R.calculus`** (5.0h, 07-29) · **Linear Algebra `R.linalg`** (3.5h, 07-30 — closes VII.1 + VII.2) ·
-**Discrete Distributions `F1.4`** (6.0h, 08-02, **PARTIAL** — table lives in the handnote, solver
-deferred; the 08-08 +1wk review is the real pass/fail and carries the II.1 unlock test).
+**Four stages exist. All four are `ready-for-test`. ZERO have been tested.**
 
-**The S15 finding — use this to size, not the 81%:**
-**refresher stage ≈ 1.2× budget · new material ≈ 2.0× budget.** The 40-min one-source input cap
-was calibrated on a *refresher* (R.linalg, landed on budget). Applied to *new* material (`F1.4`) it
-overran 2×, because one pass does not install machinery never held. Two consequences, both now
-structural: new-material stages get **two input passes on separate days** (Adj #12), and the
-"hard → drifting" state gets a **named move** — log the `⚠️ GAP`, switch to Tier A on paper
-(Adj #13). Drift was a symptom of exhausted input with no next action, not of low effort.
+| Stage | Closed | Hours | State |
+|---|---|---:|---|
+| Calculus `R.calculus` | 07-29 | 5.0 | `ready-for-test` |
+| Linear Algebra `R.linalg` | 07-30 | 3.5 | `ready-for-test` — closes VII.1 + VII.2 |
+| Discrete Distributions `F1.4` | 08-02 | 6.0 | `ready-for-test`, **PARTIAL** — table in handnote |
+| Continuous Distributions `F1.5` | — | — | in flight, Sprint 16 |
 
-**Sprint 16 (08-03 → 08-16), ~21h, two new-material stages — not three:**
-- **Week 1:** S15 retro (Mon) · **`F1.5` Continuous Distributions** Pass 1 Wed / Pass 2 Thu /
-  close Sat — carryover, still holds baseline I.3 open, **not cuttable** (it was the designated
-  cut in S15 and got cut) · `src/solvers/` created Sat with one shared verifier covering `F1.4` +
-  `F1.5` · `F1.4` +1wk review Sat
-- **Week 2:** **`F1.1` Combinatorics** split into three day-stages (a counting rules /
-  b stars-and-bars / c inclusion–exclusion + derangements). Sets written Sun 08-09, just-in-time.
-- **Dropped to S17:** `S1.2` Bayes (Adj #14) — three new stages at a 2× multiplier was fiction.
+**This is the open risk in the whole system.** The write side works (the `R.linalg` note struck a
+stalled derivation and rebuilt it correctly). The **retrieval** side has never run.
+**Sat 08-15 carries all four D4 tests** — first real evidence on whether the notes produce
+retention or just produce notes. `vault/HOME.md` surfaces this permanently.
+
+**S15 closed at 14.5h / 18h = 81%.** Sizing constants, measured — use these, not the 81%:
+**refresher ≈ 1.2× budget · new material ≈ 2.0×.** The 40-min one-source cap was calibrated on a
+*refresher*; applied to *new* material (`F1.4`, 3h budgeted → 6h) it overran 2×, because one pass
+does not install machinery never held. Hence Adj #12 (two passes, separate days) and Adj #13
+(named drift move). Drift was exhausted input with no next action, not low effort — contact was
+10/11 days.
+
+**Sprint 16 (08-03 → 08-16), ~21h.** Week 1: `F1.5` Pass 1 Wed / Pass 2 Thu / close Sat, plus
+`src/solvers/` with one shared verifier covering `F1.4` + `F1.5`. Week 2: `F1.1` Combinatorics as
+three day-stages, maps written 08-09 just-in-time. `S1.2` Bayes dropped to S17 (Adj #14).
+
+**Schedule reality:** Week 1 ran ~6h against 11h planned, and `F1.5` had not started as of 08-09.
+Read the actuals table before assuming any row happened.
 
 ---
 
@@ -103,14 +108,30 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 - **Stage IDs — `<TYPE><section>.<sub><split>`** (adopted 08-04, full spec in `03_gated_progression.md`).
   `R` refresher (×1.2) · `F` foundation (×2.0) · `D` deepen. **Type first because it is the cost
   driver.** Section number indexes `topics/` 1:1 (1 = `section_I`, 7 = `section_VII`, …); the sub
-  number is the `##` heading *inside* that file — **check it before assigning, the old scheme
-  drifted because nobody did.** Split letters (`F1.4`/`F1.5`) = one subsection over two days.
-  Refreshers are `R.<name>` (they cut across sections). **Plain name first, ID as subscript.**
+  number is the `##` heading *inside* that file. **Open the file and read the heading before
+  assigning — this has been got wrong twice** (`S1.3`→`F1.4`, then `F1.4a`/`F1.4b`→`F1.4`/`F1.5`,
+  because §4 is Discrete RVs and §5 is Continuous — different subsections).
+  Split letters (`a`/`b`/`c`) **only** when one genuine subsection spans multiple days
+  (`F1.1a/b/c`). Refreshers are `R.<name>`. **Plain name first, ID as subscript.**
 - **Two files per stage, and only two:**
-  - `stage_maps/<id>_<slug>.md` — **what to do.** Knowledge checklist · source · schedule ·
-    problems A/B/C · code problems · deliverables · answer key. Written before the block.
+  - `stage_maps/<id>_<slug>.md` — **what to do.** Frontmatter · knowledge checklist · source ·
+    schedule · problems A/B/C · code problems · deliverables · answer key. Written before the block.
   - `progress/feynman_notes/<id>_<slug>.md` — **what you understood.** Teach-back, gaps, napkin,
     summary table, where-it-breaks. The user writes this; never draft it.
+- **Obsidian vault (added 08-09).** Repo root is a vault; `topics/`, `src/`, `tests/`,
+  `pine_scripts/`, `.claude/` are excluded via `.obsidianignore`. Chain:
+  `stage → topic → concept → application → role`, all in `vault/`. **91 stubs exist already —
+  do not create more without asking.** `vault/HOME.md` is the Dataview dashboard.
+  `TOPIC_MAP.md` and `tracker.md` are both **deleted**; their content lives in topic-note
+  frontmatter and the sprint files respectively.
+- **Knowledge checklists are built from the source's real `##` headings**, with section numbers
+  attached — never from what interviews tend to ask. Anything interview-critical but outside the
+  chapter is **stretch**, and every stretch item resolves one of three ways: written inline,
+  a named chapter in a book already owned, or deferred **with the reason**. Full rule in
+  `04_deliverables_spec.md` §D2.
+- **Dataview inline fields are parsed anywhere in a file** — blockquotes and prose included.
+  Never write a live `[field:: value]` in guidance text; put examples in fenced code blocks.
+  Never put `|` in a table cell (aliased wikilinks, `|x|`) — it splits the row.
 - **Stage-map shape that works** (R.linalg landed on budget with it): one source + 40-min hard stop ·
   5 Tier A, 5 Tier B, 2 Tier C · a named **collapse subset** ("if the day collapses: A1, A5, B1") ·
   the named **drift move** · new material gets **two passes on separate days**.
@@ -123,6 +144,8 @@ structural: new-material stages get **two input passes on separate days** (Adj #
   `progress/sprints/S<NN>.md`, one file per sprint.
 - **Solvers:** `src/solvers/<section>/<snake_case>.py` — (a) analytical fn if closed-form exists,
   (b) Monte Carlo verifier, (c) docstring with time + space complexity.
+  **`src/` does not exist yet** — it gets created by `F1.5`'s close block, one shared verifier
+  covering `F1.4` + `F1.5`. Do not scaffold it early.
 - **Tests:** `tests/solvers/<section>/test_<name>.py`, pytest, analytical ≈ MC within tolerance.
 - **Dates:** ISO 8601. **Time-shape:** learning = prime (≥60 min); quantamental = scrap (15 min).
 
@@ -138,8 +161,27 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 - **When the user says a check is unnecessary, take it.** On 07-30 they declined a numerical
   anchor as redundant and were right — the work was already in the note. That is a judgment
   call about their own recall, not a corner cut. Don't re-litigate it.
-- **Review means: find the actual error, then the unfilled checklist items.** Sign slips and
-  notation collisions in a *summary* section matter most — the napkin is what gets recalled cold.
+### Reviewing a Feynman note — the protocol
+
+This is the most common task. Read the stage map's **knowledge checklist** first, then the note.
+Report in this order:
+
+1. **Actual errors, hardest first.** Wrong claims, sign slips, notation collisions. Say what is
+   wrong and what it should be, in one or two sentences. **Errors in §3 (napkin) and §5 (summary
+   table) outrank everything** — those are what gets recalled cold in an interview.
+   *Look specifically for a right answer with wrong justification* — e.g. `E[X]=np` attributed to
+   independence when it is linearity. That reads as correct and is the kind of thing an
+   interviewer probes.
+2. **Checklist items not covered**, against the stage map, not against your own sense of the topic.
+3. **What is genuinely good**, briefly and only if true. The user's `R.linalg` note struck out a
+   stalled derivation and rebuilt it; that deserved saying and nothing else did.
+
+**Do not:** rewrite their prose, add material they did not ask for, or pad with encouragement.
+**Do:** take their call when they say a check is redundant — on 07-30 they declined a numerical
+anchor and were right.
+
+**Grade honestly, including "this is not finished."** `F1.4` closed as PARTIAL with 6 of 10 boxes
+failing, and saying so plainly was more useful than a pass.
 - **Do bias toward action.** Draft the scaffolding (problem sets, note skeletons, tooling); let
   the user supply the thinking.
 - **Do prepare materials fully before a study block.** Stated need: "everything ready, so I have
@@ -152,18 +194,19 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 
 ## 8. What to open next
 
-0. `MANUAL.md` — **the operating procedure**: how a day/stage/sprint runs, and the rules that were
-   paid for. Read this first if picking the repo up cold.
-1. `progress/sprints/S<NN>.md` — active sprint: schedule, actuals, retro (there is no tracker.md)
-2. `SYLLABUS.md` — one-page overview of everything ahead
-3. `progress/sprints/S15.md` — active sprint plan
-4. `progress/baseline_scores.md` — starting point + red flags
-5. `03_gated_progression.md` — the 13-sprint calendar
-6. `vault/topics/` — stage ↔ `topics/` mapping: what each stage closed, what it deferred, why
-7. `CAPABILITY_MAP.md` — top-down: stages → competencies → the 6 capabilities a quant is hired
-   for. **Reference only, never a planning input** — the DAG owns sequencing. Update status
-   counts at each retro; the structure should stay near-static.
-7. `stage_maps/` — per-stage problems at study level
+1. **`MANUAL.md`** — the operating procedure: day / stage / sprint, and §6 "the rules that were
+   paid for" with what each one cost. **Read this first if picking the repo up cold.**
+2. `progress/sprints/S16.md` — active sprint: schedule, actuals log, retro
+3. `stage_maps/<id>_<slug>.md` — the active stage: checklist, source, problems, deliverables
+4. `progress/feynman_notes/<id>_<slug>.md` — what the user has written
+5. `progress/baseline_scores.md` — starting point + the red flags stages are built to close
+6. `04_deliverables_spec.md` — D1–D4, the stretch-item rule, definition of done
+7. `03_gated_progression.md` — **owns study order.** DAG is current; the 13-sprint traversal
+   table is marked stale, rewrite scheduled for the S16 retro (08-16)
+8. `vault/HOME.md` — Dataview dashboard; `vault/topics/` holds coverage + deferrals
+9. `CAPABILITY_MAP.md` — top-down, why a stage matters. **Reference only, never a planning
+   input** — the DAG owns sequencing
+10. `SYLLABUS.md` — one-page overview *(overlaps the sprint files; treat as stale if they disagree)*
 
 ---
 
