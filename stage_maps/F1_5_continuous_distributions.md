@@ -333,6 +333,18 @@ and say in a comment what `n` you chose and why. A flaky assert is worse than no
 **D3 — Code** (this file, §Code problems)
 - [ ] `F1.5-CODE1`, `F1.5-CODE2`, `F1.4-CODE1`, `F1.4-CODE2` — all in one file, all asserting
 
+**D3.5 — Concept notes** (2 minutes each, at close)
+Write **two sentences in your own words** into each concept note this stage touched:
+- [ ] `vault/concepts/memorylessness.md` — extends what `F1.4` wrote for the geometric
+- [ ] `vault/concepts/standardisation.md`
+- [ ] `vault/concepts/change-of-variables.md`
+- [ ] `vault/concepts/poisson-exponential-duality.md`
+- [ ] Set `status: ready-for-test` and `actual_h:` in this file's frontmatter
+
+*This is the only vault file you touch during a stage, and it is what makes the vault a live
+system rather than a diagram. Concept notes **accumulate across stages** — geometric started
+memorylessness, exponential extends it — which a per-stage Feynman note structurally cannot do.*
+
 **D4 — Unlock test → at the +1 week review (2026-08-15), not this Saturday**
 - [ ] 5 fresh questions, 45 min, closed-book (Feynman note allowed). Pass ≥80%.
 - [ ] Grade the **day after**, per `04_deliverables_spec.md`.

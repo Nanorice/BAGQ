@@ -61,6 +61,21 @@ A stretch item that says only "→ S1.8" is a to-do, not a learning path. **No n
 **Minimum coverage:** every stage ships at least one runnable check. Interview-favourites
 (expected-flips-to-HH, gambler's ruin, coupon collector) are mandatory.
 
+### D3.5 — Concept notes (2 min each, at stage close)
+
+For every concept in the stage's `concepts:` frontmatter, write **two sentences in your own
+words** into `vault/concepts/<name>.md` under `## In my own words`.
+
+- This is the **only** vault file touched during a stage. Everything else there is structure.
+- Concept notes **accumulate across stages** — `F1.4` starts `memorylessness` from the geometric,
+  `F1.5` extends it with the exponential and the "only two memoryless distributions" fact. A
+  per-stage Feynman note cannot do this, because it is per-stage.
+- Also set `status: ready-for-test` and `actual_h:` in the stage map frontmatter. That is what
+  makes the stage appear in HOME's untested list.
+
+*Without this step the vault is write-only — links flow in, nothing flows back — and a
+reporting layer nobody reads is a reporting layer that rots.*
+
 ### D4 — Unlock test (proof of retention) — **at the +1 week review, not stage close**
 **When:** at the stage's **+1 week review**, not on the day it closes. Retrieval practice works
 on a delay; a same-day test measures short-term memory, which is not what has to survive until

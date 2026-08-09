@@ -152,6 +152,8 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 
 ## 8. What to open next
 
+0. `MANUAL.md` — **the operating procedure**: how a day/stage/sprint runs, and the rules that were
+   paid for. Read this first if picking the repo up cold.
 1. `progress/sprints/S<NN>.md` — active sprint: schedule, actuals, retro (there is no tracker.md)
 2. `SYLLABUS.md` — one-page overview of everything ahead
 3. `progress/sprints/S15.md` — active sprint plan

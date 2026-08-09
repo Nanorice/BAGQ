@@ -10,7 +10,14 @@ stubs you fill in as you go, never during a study block.
 
 ---
 
-## Right now
+## ☀️ Open this first, every morning
+
+**Active sprint:** [[../progress/sprints/S16|S16]] · Week 1 of 2 · ends 2026-08-16
+
+Today's row is in the sprint file. This page tells you everything around it — what's in flight,
+what's overdue, and whether anything closed is quietly untested.
+
+## Stages in flight
 
 ```dataview
 TABLE WITHOUT ID id AS Stage, name, status, sprint, budget_h AS Budget, actual_h AS Actual
@@ -33,7 +40,7 @@ FROM "stage_maps" WHERE status = "ready-for-test" SORT d4_due ASC
 TABLE WITHOUT ID
   file.link AS Sprint,
   sum(rows.hours) AS "Hours logged",
-  length(filter(rows.contact, (c) => c = true)) AS "Contact days"
+  length(filter(rows.hours, (h) => h > 0)) AS "Contact days"
 FROM "progress/sprints" FLATTEN hours GROUP BY file.link
 ```
 

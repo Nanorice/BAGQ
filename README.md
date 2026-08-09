@@ -23,6 +23,7 @@ Everything in this repo is scaffolding for that sentence.
 | If you are… | Read |
 |---|---|
 | A new AI agent picking this up cold | **[AGENT_CONTEXT.md](AGENT_CONTEXT.md)** — full state in ~5 min |
+| **How do I actually run this?** | **[MANUAL.md](MANUAL.md)** — the operating procedure. Start here after a gap. |
 | Me, on a given morning | **[progress/sprints/S16.md](progress/sprints/S16.md)** — active sprint: schedule + actuals |
 | Curious what the whole plan is | [SYLLABUS.md](SYLLABUS.md) — one page, 13 sprints |
 | Wondering *why* a stage matters | [CAPABILITY_MAP.md](CAPABILITY_MAP.md) — top-down: stages → the 6 things a quant does |
