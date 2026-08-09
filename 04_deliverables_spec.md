@@ -12,7 +12,7 @@
 
 ### D2 — Problem set (application)
 - **The stage map is the authority.** Problems live in `stage_maps/<stage_id>_<slug>.md`,
-  tiered A/B/C and numbered `<STAGE>-<TIER><N>` (e.g. `F1.4b-A2`).
+  tiered A/B/C and numbered `<STAGE>-<TIER><N>` (e.g. `F1.5-A2`).
 - **Bar: Tier A is the floor (all of them, unhinted, on paper). Tier B is the target (≥3 of 5).**
   Tier C only if A+B ran short. This replaces the old fixed "N by tier" counts, which assumed
   section-sized stages — we study at day-stage granularity now.
@@ -28,8 +28,8 @@ Not from what interviews tend to ask. Two passes: (1) read the real headings and
 list from them, with section numbers attached; (2) mark anything interview-critical that is
 *outside* the chapter as **stretch**.
 
-*Why this is a rule: `F1.4a`-A5 asked for MGF derivations that Ross Ch.4 does not cover, and the
-same assumption then produced two out-of-chapter items in `F1.4b`. A stage that claims "one
+*Why this is a rule: `F1.4`-A5 asked for MGF derivations that Ross Ch.4 does not cover, and the
+same assumption then produced two out-of-chapter items in `F1.5`. A stage that claims "one
 source" and then asks for things outside it silently recreates the multi-source problem that
 cost `R.calculus` five hours.*
 

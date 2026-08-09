@@ -1,3 +1,20 @@
+---
+type: stage
+id: R.calculus
+name: Calculus Refresher
+kind: refresher
+multiplier: 1.2
+topic: "[[VIII-1-ordinary-differential-equations]]"
+concepts: ["[[itos-lemma]]"]
+roles: ["[[options-pricing]]"]
+sprint: S15
+status: ready-for-test
+budget_h: 4
+actual_h: 5.0
+d4_due: 2026-08-15
+baseline_closes: [VIII.1, VIII.3]
+---
+
 # R.calculus — Calculus & ODE Refresher · Problem Set
 
 **Stage:** R.calculus · **Sprint:** 15 (Days 6–7, 2026-07-25 → 07-26) · **Budget:** ~105 min input+teach-back, ~60 min problems
@@ -10,7 +27,7 @@
 3. Chain rule / implicit differentiation
 4. Lagrange multipliers
 
-Everything else in `topics/section_VIII_calculus_des.md` (PDEs, Riccati, Carr-Madan, Euler-Lagrange, KKT) is **out of scope** — that file is the full inventory, not this stage. See [TOPIC_MAP.md](../TOPIC_MAP.md) for what this stage closed vs deferred.
+Everything else in `topics/section_VIII_calculus_des.md` (PDEs, Riccati, Carr-Madan, Euler-Lagrange, KKT) is **out of scope** — that file is the full inventory, not this stage. See [vault/topics/](../vault/topics/) for what this stage closed vs deferred.
 
 ---
 

@@ -1,3 +1,20 @@
+---
+type: stage
+id: R.linalg
+name: Linear Algebra Refresher
+kind: refresher
+multiplier: 1.2
+topic: "[[VII-1-core-linear-algebra]]"
+concepts: ["[[psd-covariance]]"]
+roles: ["[[portfolio-construction]]", "[[signal-research]]"]
+sprint: S15
+status: ready-for-test
+budget_h: 3
+actual_h: 3.5
+d4_due: 2026-08-15
+baseline_closes: [VII.1, VII.2]
+---
+
 # Linear Algebra Refresher — Problem Set
 `stage: R.linalg` · **Sprint 15, Day 10 (Thu 2026-07-30)** · **Budget: 3h in three blocks**
 

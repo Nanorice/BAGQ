@@ -58,20 +58,24 @@ signal and whose section numbers did not actually match `topics/`.
 | 6 | `section_VI_derivative_pricing` | | 13 | `section_XIII_measure_theory` |
 | 7 | `section_VII_linear_algebra` | | | |
 
-The subsection number is the **`##` heading number inside that file** — so `F1.4a` means
-`topics/section_I` §4 (Random Variables), and `F1.1` means §1 (Combinatorics & Counting).
-**Check the file before assigning a number.** The old scheme drifted precisely because nobody did:
-`S1.3` was labelled "Discrete Distributions" while `topics/section_I` §3 is Conditional Probability.
+The subsection number is the **`##` heading number inside that file** — so `F1.4` means
+`topics/section_I` §4 (*Discrete* RVs & Distributions) and `F1.5` means §5 (*Continuous* RVs &
+Distributions). **Open the file and read the heading before assigning a number.** This has been
+got wrong twice:
 
-**split letter (optional)** — `a`/`b`/`c` when one subsection is too big for a day-stage and gets
-split. `F1.4a` discrete + `F1.4b` continuous are one `topics/` subsection over two days.
-A split letter means "same knowledge area, sequenced" — *not* a subsection of its own.
+- `S1.3` was labelled "Discrete Distributions" while §3 is Conditional Probability *(fixed 08-04)*
+- `F1.4a`/`F1.4b` assumed both distribution stages lived in §4. They don't — discrete is §4,
+  continuous is §5. They were never a split of one subsection *(fixed 08-09)*
+
+**split letter (optional)** — `a`/`b`/`c` **only** when one genuine `topics/` subsection is too
+big for a day-stage. `F1.1a/b/c` (combinatorics over three days) is the real case. If two stages
+map to two different subsections, they get two different numbers — not a split letter.
 
 **Refreshers** use `R.<name>` (`R.calculus`, `R.linalg`) — they cut across sections rather than
 sitting in one, so a section number would be a lie. `T0.A`/`T0.B` remain as-is: environment and
 git setup, not study stages.
 
-**Write the plain name first, ID as subscript:** "Continuous Distributions `F1.4b`".
+**Write the plain name first, ID as subscript:** "Continuous Distributions `F1.5`".
 
 ### Migration record (2026-08-04)
 
@@ -79,10 +83,10 @@ git setup, not study stages.
 |---|---|
 | `T0.C` | `R.calculus` |
 | `T0.D` | `R.linalg` |
-| `S1.3` Discrete Distributions | `F1.4a` *(was mislabelled — it is `topics/` §4, not §3)* |
-| `S1.5` Continuous Distributions | `F1.4b` *(same subsection, split by day)* |
+| `S1.3` Discrete Distributions | `F1.4a` → **`F1.4`** *(§4 Discrete RVs; was mislabelled §3)* |
+| `S1.5` Continuous Distributions | `F1.4b` → **`F1.5`** *(§5 Continuous RVs — a **different** subsection, corrected 08-09)* |
 | `S1.1` Combinatorics | `F1.1` |
-| `T1.X` Named Distributions | retired — split into `F1.4a` + `F1.4b` |
+| `T1.X` Named Distributions | retired — split into `F1.4` + `F1.5` |
 
 Still on the old scheme, renamed when scheduled: `S1.2`, `S1.6`, `S1.7`, `S1.8`, `S2.1`,
 `S3.x`, `S4.x`, `S6.x`, `S9.x`, `S10.x`. Under the new rule most become `F<n>.<m>`; `S9.3`
@@ -105,8 +109,8 @@ graph LR
     %% ============ PROBABILITY CORE (Tier 1) ============
     F1_1[F1.1 Combinatorics]
     S1_2[S1.2 Cond prob + Bayes]
-    F1_4a[F1.4a Discrete Dists]
-    F1_4b[F1.4b Continuous Dists]
+    F1_4[F1.4 Discrete Dists]
+    F1_5[F1.5 Continuous Dists]
     S1_6[S1.6 Joint dists + MVN]
     S1_7[S1.7 Expectation, var, tower]
     S1_8[S1.8 MGF / char funcs]
@@ -158,20 +162,20 @@ graph LR
     %% ---- Edges ----
     T0A --> F1_1
     T0B --> F1_1
-    R_calculus --> F1_4b
+    R_calculus --> F1_5
     R_linear_algebra --> S1_6
 
-    F1_1 --> S1_2 --> F1_4a --> F1_4b --> S1_6 --> S1_7 --> S1_8
+    F1_1 --> S1_2 --> F1_4 --> F1_5 --> S1_6 --> S1_7 --> S1_8
     F1_1 --> S2_1
     S1_7 --> S2_1
 
     S1_7 --> S9_1 --> S9_2 --> S9_3 --> S9_4
     S1_6 --> S9_3
 
-    F1_4a --> S3_1 --> S3_2 --> S3_3
+    F1_4 --> S3_1 --> S3_2 --> S3_3
     S1_7 --> S3_1
 
-    F1_4b --> S4_1 --> S4_2 --> S4_3 --> S4_5
+    F1_5 --> S4_1 --> S4_2 --> S4_3 --> S4_5
     S1_8 --> S4_1
 
     S4_3 --> S6_2
@@ -190,7 +194,7 @@ graph LR
     T0A --> S10_1 --> S10_2
     S10_1 --> S10_3
     S6_5 --> S10_4
-    F1_4b --> S10_4
+    F1_5 --> S10_4
 
     S3_2 --> S5
     S1_7 --> S11
@@ -205,7 +209,7 @@ graph LR
 >
 > The **DAG above is still correct** — dependency edges don't change. The **calendar has drifted**:
 > Sprint 16's row lists R.calculus/R.linalg/`F1.1` start, but the refreshers were done in S15's
-> tail. `F1.4b` sits in Sprint 19 here and is actually being studied 2026-08-05.
+> tail. `F1.5` sits in Sprint 19 here and is actually being studied 2026-08-05.
 >
 > **Deliberately not rewritten yet.** Re-baselining 13 sprints on one sprint of velocity data
 > would produce a second fiction. **Scheduled rewrite: S16 retro, 2026-08-16**, when two sprints
@@ -270,7 +274,7 @@ Weeks reference the working weeks within each sprint (W1 = week 1 of sprint, W2 
 | **16** | 08-03 → 08-16 | Calculus refresher `R.calculus` · Linear algebra refresher `R.linalg` · S1.1 Combinatorics (start) | 2 refresher notes + S1.1 Feynman note started |
 | **17** | 08-17 → 08-30 | S1.1 Combinatorics (complete) · S1.2 Cond prob + Bayes · **S1.7 Expectation + tower (PULLED FORWARD)** · **S10.1 arrays/hash parallel** | S1.1 + S1.2 + S1.7 COMPLETE · 10 LC-easy done |
 | **18** | 08-31 → 09-13 | S1.4 Discrete RVs · S10.1 cont'd · S10.2 DP intro | S1.4 COMPLETE · 20 LC-easy total · first DP problems |
-| **19** | 09-14 → 09-27 | F1.4b Continuous RVs · S10.3 graphs (BFS/DFS) | `F1.4b` COMPLETE · graph solvers |
+| **19** | 09-14 → 09-27 | F1.5 Continuous RVs · S10.3 graphs (BFS/DFS) | `F1.5` COMPLETE · graph solvers |
 | **20** | 09-28 → 10-11 | S1.6 Joint dists + MVN · S7 Linear algebra deepen (PCA) | S1.6 COMPLETE · PCA on toy covariance |
 | **21** | 10-12 → 10-25 | S1.8 MGF · S2.1 classical puzzles · **MID-CHECKPOINT retest (W2 Sat)** | S1.8 + S2.1 COMPLETE · radar chart update · adjust Sprints 22–27 |
 | **22** | 10-26 → 11-08 | S1.8 MGF · S10.2 DP deepen · S3.1 Finite Markov chains (start) | S1.8 COMPLETE · 5 LC-medium |

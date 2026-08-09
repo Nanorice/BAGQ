@@ -41,7 +41,7 @@ Everything in this repo is scaffolding for that sentence.
 ├── 04_deliverables_spec.md   what "done" means
 ├── 05_commitment_contract.md time audit, cadence, circuit breakers
 ├── stage_maps/             per-stage problems, written at study level
-├── TOPIC_MAP.md              stage ↔ topics/ section mapping: what's in scope, what's deferred
+├── vault/topics/              stage ↔ topics/ section mapping: what's in scope, what's deferred
 ├── CAPABILITY_MAP.md         top-down: which capabilities each stage builds (reference, not a plan)
 ├── topics/                   13-section topic inventory (911 problems, full scope)
 └── progress/

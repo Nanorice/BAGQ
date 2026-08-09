@@ -1,3 +1,9 @@
+---
+type: feynman-note
+stage: "[[R_linear_algebra]]"
+id: R.linalg
+---
+
 # Linear Algebra Refresher
 `stage: R.linalg` · **Started:** 2026-07-30 · **Completed:** ____
 **Time spent:** __h · **Source(s):** Green Book Ch.2 linear algebra, pp. ____
@@ -140,7 +146,7 @@ PD/PSD has to be symmetrical.
 - **Unlocks:** S1.6 joint/MVN · S7 PCA + covariance (S20) · S9.3 regression · S25 correlated MC
 - **Baseline questions this closes:** VII.1 (eigenvalues of `[[2,1],[1,2]]`), VII.2 (PSD)
 - **Deliberately deferred:** SVD, QR, LU, Cholesky implementation, condition numbers,
-  power iteration, PCA proper → S7/S20. See [TOPIC_MAP.md](../../TOPIC_MAP.md) for the full split.
+  power iteration, PCA proper → S7/S20. See the topic note in `vault/topics/` for the full split.
 
 ---
 

@@ -20,7 +20,7 @@
 
 > **stage** you study → *(concept)* that carries the idea → **application** you could build → **role** that pays for it
 
-- **Stages** are split to sub-topic level, matching the stage maps — `F1.4b` appears as
+- **Stages** are split to sub-topic level, matching the stage maps — `F1.5` appears as
   *uniform*, *exponential* and *normal* separately, because they feed different capabilities by
   different routes.
 - **Concepts** *(rounded, dashed)* appear **only where they explain a jump** a stage title
@@ -41,12 +41,12 @@ graph LR
     %% ================= STAGES =================
     RC[R.calculus ✅]:::stage
     RL[R.linalg ✅]:::stage
-    BIN[F1.4a binomial ~]:::stage
-    GEO[F1.4a geometric ~]:::stage
-    POI[F1.4a Poisson ~]:::stage
-    UNI[F1.4b uniform + inverse transform]:::stage
-    EXP[F1.4b exponential]:::stage
-    NOR[F1.4b normal]:::stage
+    BIN[F1.4 binomial ~]:::stage
+    GEO[F1.4 geometric ~]:::stage
+    POI[F1.4 Poisson ~]:::stage
+    UNI[F1.5 uniform + inverse transform]:::stage
+    EXP[F1.5 exponential]:::stage
+    NOR[F1.5 normal]:::stage
     COMB[F1.1 combinatorics]:::stage
     BAY[S1.2 Bayes]:::stage
     JNT[S1.6 joint dists]:::stage
@@ -189,7 +189,7 @@ graph LR
 ### Reading it — the chain that started this
 
 ```
-F1.4b exponential ──► (memorylessness) ──► time-to-fill / queue position ──► MARKET MAKING
+F1.5 exponential ──► (memorylessness) ──► time-to-fill / queue position ──► MARKET MAKING
 ```
 
 Memorylessness says a quote that has waited 10 seconds is no more "due" a fill than a fresh one.
@@ -197,9 +197,9 @@ That property *is* the model for time-to-next-trade, and `min(X,Y) ~ Exp(λ₁+�
 first-to-fill across two venues. The same Wednesday also runs:
 
 ```
-F1.4b normal    ──► (standardisation) ──► VaR / tail risk    ──► RISK MANAGEMENT
-F1.4b uniform   ─────────────────────────► Monte Carlo pricer ──► OPTIONS PRICING
-F1.4b normal    ──► (change of variables → log-normal) ──► Black-Scholes ──► OPTIONS PRICING
+F1.5 normal    ──► (standardisation) ──► VaR / tail risk    ──► RISK MANAGEMENT
+F1.5 uniform   ─────────────────────────► Monte Carlo pricer ──► OPTIONS PRICING
+F1.5 normal    ──► (change of variables → log-normal) ──► Black-Scholes ──► OPTIONS PRICING
 ```
 
 **Four roles from one stage.** That is the thing worth carrying into the study block: you are not
@@ -225,7 +225,7 @@ afternoon buys you the tail-risk and pricing machinery.
 | **Interview form** | "Price a European call." · "What's delta on a 1-week ATM vs a 1-year ATM?" · "Why is gamma highest near expiry?" |
 | **Work form** | Pricing library, Greeks engine, vol surface, hedge P&L attribution |
 | **Capstone** | **P1 Options Pricer** (Sprint 26) |
-| **Stages** | R.calculus ✅ · F1.4b · S1.6 · S1.8 · S4.1 · S4.2 · S4.3 · S6.1 · S6.2 · S6.5 |
+| **Stages** | R.calculus ✅ · F1.5 · S1.6 · S1.8 · S4.1 · S4.2 · S4.3 · S6.1 · S6.2 · S6.5 |
 | **Key concepts** | change of variables → log-normal · replication → risk-neutral · Ito's lemma |
 | **Applications** | Black-Scholes pricer · Greeks / delta hedging · vol surface · Monte Carlo pricer |
 | **Status** | **1 / 10** |
@@ -271,7 +271,7 @@ most QR-relevant capability on the list. MLE scored 0.
 | **What it is** | Quote two-sided prices, manage inventory, and get filled at good prices. |
 | **Interview form** | "Expected number of trades before your quote is hit?" · "What's your edge if you're picked off X% of the time?" · fast mental arithmetic, LC-medium under time pressure |
 | **Work form** | Queue position modelling, adverse-selection cost, order routing, latency budgets |
-| **Stages** | F1.4a ~ · F1.4b · S2 · S3.1 · S4.4 · S10.1 · S10.2 · S10.3 · S10.4 |
+| **Stages** | F1.4 ~ · F1.5 · S2 · S3.1 · S4.4 · S10.1 · S10.2 · S10.3 · S10.4 |
 | **Key concepts** | memorylessness · Poisson ↔ Exponential (counts vs gaps) · first-step conditioning |
 | **Applications** | Time-to-fill / queue position · arrival modelling · coding screen · Kelly sizing |
 | **Status** | **0.5 / 9** |
@@ -288,7 +288,7 @@ first-to-fill across venues.
 | **What it is** | Quantify what you can lose, and know where the estimate fails. |
 | **Interview form** | "Compute 99% 1-day VaR." · "Why is VaR not coherent?" · "What breaks when returns aren't normal?" |
 | **Work form** | VaR / ES, stress testing, factor risk decomposition, tail modelling |
-| **Stages** | F1.4b · S1.6 · S7 · S9.2 · S9.3 · S4.2 |
+| **Stages** | F1.5 · S1.6 · S7 · S9.2 · S9.3 · S4.2 |
 | **Key concepts** | standardisation / z-scores · fat tails · vol clustering |
 | **Applications** | VaR / tail risk · stress testing · factor risk · delta hedging |
 | **Status** | **0 / 6** |

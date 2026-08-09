@@ -1,3 +1,9 @@
+---
+type: feynman-note
+stage: "[[R_calculus]]"
+id: R.calculus
+---
+
 # R.calculus — Calculus & ODE Refresher
 
 **Stage:** R.calculus · **Started:** 2026-07-25 · **Completed:** 2026-07-29
@@ -91,7 +97,7 @@ The check that passes is agreement to a tolerance set by dx, not equality.
 - **Problems solved:** R.calculus-A1…A6 (Tier A complete). Tier B not logged individually.
   Also `topics/section_VIII` §1: *Exponential Growth/Decay* and *Logistic Growth*.
 - **Prereqs:** none (Tier 0)
-- **Unlocks:** R.linalg linear algebra · `F1.4b` continuous RVs · S4.x SDEs · S9.3 regression
+- **Unlocks:** R.linalg linear algebra · `F1.5` continuous RVs · S4.x SDEs · S9.3 regression
 - **Baseline questions this closes:** VIII.1 (`dy/dx=y`), VIII.3 (Lagrange)
 - **Deferred to post-S4/S6 (2026-07-29):** `topics/section_VIII` §2 PDEs (heat equation,
   BS PDE, Feynman-Kac), 2nd-order ODEs, and §3 Kelly criterion. Useful framing, but they

@@ -1,9 +1,15 @@
+---
+type: feynman-note
+stage: "[[F1_4_discrete_distributions]]"
+id: F1.4
+---
+
 # Discrete Distributions
-`stage: `F1.4a` · **Started:** 2026-07-31 · **Completed:** 2026-08-02 (partial — see checklist)
+`stage: `F1.4` · **Started:** 2026-07-31 · **Completed:** 2026-08-02 (partial — see checklist)
 **Time spent:** 6.0h (Fri 1.0 · Sat 3.0 · Sun 2.0) · **Source(s):** Ross 6th ed. Ch. 4
 
 > **Closed as PARTIAL.** Summary table lives in the handnote, not here. Solver deferred to S16
-> alongside `F1.4b`. Everything else landed. The +1wk review on 08-08 is the real test.
+> alongside `F1.5`. Everything else landed. The +1wk review on 08-08 is the real test.
 
 ## Review log
 - [ ] +1 week (2026-08-08): reproduce the four-row summary table cold → pass/fail
@@ -38,7 +44,7 @@
 2. derivation of E(x^2) for Poisson
 3. derivation of Geometric E(x) using Gambler's Ruin approach
 4. MGF, deferred — **not a gap.** Confirmed 08-09: MGFs are Ross Ch.7, outside this stage's
-   source. Formally moved to S1.8; the definition is in `F1.4b`'s §Stretch notes.
+   source. Formally moved to S1.8; the definition is in `F1.5`'s §Stretch notes.
 
 
 ## 3. Napkin version (≤200 words)
@@ -86,9 +92,9 @@ linearity of expectation, and derivatives
 
 ## 7. Links
 
-- **Problems solved:** F1.4a-A1…A5, B__ (from `stage_maps/F1_4a_discrete_distributions.md`)
+- **Problems solved:** F1.4-A1…A5, B__ (from `stage_maps/F1_4_discrete_distributions.md`)
 - **Prereqs:** R.calculus (Taylor series for `e^λ`, the `(1+dx)^{1/dx}` limit)
-- **Unlocks:** `F1.4b` continuous (tomorrow — geometric→exponential) · S1.4 discrete RVs ·
+- **Unlocks:** `F1.5` continuous (tomorrow — geometric→exponential) · S1.4 discrete RVs ·
   S1.8 MGF · S2.1 puzzles · S3 Markov (first-step analysis is A3(ii))
 - **Baseline questions this closes:** II.1 (E[flips for HH]) · II.3 (coupon collector, Tier C) ·
   partial I.3 (the discrete half of the named-distribution gap)
@@ -108,5 +114,5 @@ linearity of expectation, and derivatives
 - [x] Tier-A problems A1–A4 solved unhinted — **A5 formally withdrawn 08-09** (MGF is Ross Ch.7,
       not Ch.4; the map was wrong, not the study). Tier A for this stage is A1–A4.
 - [ ] ≥3 of 5 Tier-B solved
-- [ ] `src/solvers/s1_probability/discrete_verify.py` — **deferred to S16 with `F1.4b`**
+- [ ] `src/solvers/s1_probability/discrete_verify.py` — **deferred to S16 with `F1.5`**
 - [ ] Unlock test: II.1 re-answered cold, fully correct — **do at the 08-08 +1wk review**

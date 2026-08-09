@@ -1,9 +1,15 @@
+---
+type: feynman-note
+stage: "[[F1_5_continuous_distributions]]"
+id: F1.5
+---
+
 # Continuous Distributions
-`F1.4b` · **Started:** ____ · **Completed:** ____
+`F1.5` · **Started:** ____ · **Completed:** ____
 **Time spent:** __h · **Source(s):** Ross 6th ed. Ch. 5, pp. ____
 
 > This note is **yours** — what you understood. What to *do* (checklist, problems, code,
-> deliverables) lives in `stage_maps/F1_4b_continuous_distributions.md`.
+> deliverables) lives in `stage_maps/F1_5_continuous_distributions.md`.
 
 ## Review log
 - [ ] +1 week (2026-08-08): reproduce the three-row summary table cold → pass/fail
@@ -74,8 +80,8 @@
 
 ## 7. Links
 
-- **Problems solved:** F1.4b-A1…A5, B__ (from `stage_maps/F1_4b_continuous_distributions.md`)
-- **Prereqs:** `F1.4a` (geometric memorylessness — the discrete twin of B1; Poisson for B2) ·
+- **Problems solved:** F1.5-A1…A5, B__ (from `stage_maps/F1_5_continuous_distributions.md`)
+- **Prereqs:** `F1.4` (geometric memorylessness — the discrete twin of B1; Poisson for B2) ·
   R.calculus (integration by parts, `e^x`)
 - **Unlocks:** S1.6 joint/MVN · S4.1 Brownian motion · S6 Black-Scholes (log-normal) ·
   S9.2 hypothesis testing (χ²) · S25 correlated MC
