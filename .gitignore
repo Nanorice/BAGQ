@@ -22,3 +22,8 @@ desktop.ini
 
 # Pinescript
 pine_scripts/
+# Obsidian: keep config, exclude plugin binaries and per-machine workspace
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/data.json
+.obsidian/workspace.json
