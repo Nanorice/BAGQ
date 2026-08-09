@@ -82,12 +82,15 @@ One line in the sprint actuals table:
 | Wed 08-05 | `F1.5` Pass 1 | [hours:: 2.5] | Ross §5.1–5.3. Gap on the Jacobian. Tail formula clicked. |
 ```
 
-- **`[hours:: N]` — square brackets.** Dataview sums it and derives contact days from `hours > 0`.
+- **Square-bracket inline field in the Hrs column** (see the code block above). Dataview sums
+  it and derives contact days from hours > 0.
 - **Notes column is prose, and stays prose.** "Scattered sittings; difficulty → distraction" is
   what produced the entire S15 finding. Dataview can sum hours; it cannot notice a cause.
 - **A 0-hour day with a reason beats a blank.**
 
-### ⚠️ Two things that silently corrupt the actuals table
+### ⚠️ Four things that silently corrupt the actuals table
+
+Each of these has already happened once. None of them error — they just produce wrong numbers.
 
 1. **Never put a `|` inside a table cell** — including an aliased wikilink `[[note|F1.5]]` or a
    maths expression like `|dx/dy|`. Markdown reads it as a column separator: the row gains a
@@ -95,9 +98,12 @@ One line in the sprint actuals table:
    `` `F1.5` `` in tables**, and link properly in prose outside the table.
 2. **"Format table" in an editor reflows rows** and can re-split on those pipes. If a note shows
    up on the wrong date, that is what happened — `git diff` will show it.
-
-**Numbers must be bare.** `[hours:: 2.5]` sums; `[hours:: 2.5h]` is a string, and `sum()` will
-silently concatenate into nonsense like `N0100000000000000` instead of erroring.
+3. **Numbers must be bare.** A value like `2.5` sums; `2.5h` is a string, and `sum()` silently
+   concatenates into nonsense like `N0100000000000000` instead of erroring.
+4. **Never write a live inline field in prose or guidance text.** Dataview parses inline fields
+   *anywhere in the file*, including inside blockquotes and instructions — not just in tables.
+   An example written in explanatory text gets counted as real data. Put examples inside fenced
+   code blocks (Dataview skips those), which is why the sample row above is fenced.
 
 ---
 
