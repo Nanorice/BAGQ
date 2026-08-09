@@ -38,10 +38,12 @@ FROM "stage_maps" WHERE status = "ready-for-test" SORT d4_due ASC
 
 ```dataview
 TABLE WITHOUT ID
-  file.link AS Sprint,
-  sum(rows.hours) AS "Hours logged",
-  length(filter(rows.hours, (h) => h > 0)) AS "Contact days"
-FROM "progress/sprints" FLATTEN hours GROUP BY file.link
+  rows.file.link[0] AS Sprint,
+  sum(rows.h) AS "Hours logged",
+  length(filter(rows.h, (x) => x > 0)) AS "Contact days"
+FROM "progress/sprints"
+FLATTEN number(hours) AS h
+GROUP BY file.link
 ```
 
 ---

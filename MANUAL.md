@@ -79,13 +79,25 @@ Do those three. That is a successful day, not a failed one.
 One line in the sprint actuals table:
 
 ```
-| Wed 08-05 | [[F1_5_continuous_distributions|F1.5]] Pass 1 | (hours:: 2.5) | Ross §5.1–5.3. Gap on why the Jacobian is |dx/dy|. Tail formula clicked. |
+| Wed 08-05 | `F1.5` Pass 1 | [hours:: 2.5] | Ross §5.1–5.3. Gap on the Jacobian. Tail formula clicked. |
 ```
 
-- `(hours:: N)` — Dataview sums it and derives contact days from `hours > 0`
+- **`[hours:: N]` — square brackets.** Dataview sums it and derives contact days from `hours > 0`.
 - **Notes column is prose, and stays prose.** "Scattered sittings; difficulty → distraction" is
   what produced the entire S15 finding. Dataview can sum hours; it cannot notice a cause.
 - **A 0-hour day with a reason beats a blank.**
+
+### ⚠️ Two things that silently corrupt the actuals table
+
+1. **Never put a `|` inside a table cell** — including an aliased wikilink `[[note|F1.5]]` or a
+   maths expression like `|dx/dy|`. Markdown reads it as a column separator: the row gains a
+   column, every cell after it shifts right, and notes land on the wrong day. **Use
+   `` `F1.5` `` in tables**, and link properly in prose outside the table.
+2. **"Format table" in an editor reflows rows** and can re-split on those pipes. If a note shows
+   up on the wrong date, that is what happened — `git diff` will show it.
+
+**Numbers must be bare.** `[hours:: 2.5]` sums; `[hours:: 2.5h]` is a string, and `sum()` will
+silently concatenate into nonsense like `N0100000000000000` instead of erroring.
 
 ---
 
