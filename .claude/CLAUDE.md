@@ -158,6 +158,9 @@ structural: new-material stages get **two input passes on separate days** (Adj #
 4. `progress/baseline_scores.md` — starting point + red flags
 5. `03_gated_progression.md` — the 13-sprint calendar
 6. `TOPIC_MAP.md` — stage ↔ `topics/` mapping: what each stage closed, what it deferred, why
+7. `CAPABILITY_MAP.md` — top-down: stages → competencies → the 6 capabilities a quant is hired
+   for. **Reference only, never a planning input** — the DAG owns sequencing. Update status
+   counts at each retro; the structure should stay near-static.
 7. `stage_maps/` — per-stage problems at study level
 
 ---

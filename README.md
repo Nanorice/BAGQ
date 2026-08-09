@@ -25,6 +25,7 @@ Everything in this repo is scaffolding for that sentence.
 | A new AI agent picking this up cold | **[AGENT_CONTEXT.md](AGENT_CONTEXT.md)** — full state in ~5 min |
 | Me, on a given morning | **[progress/sprints/S16.md](progress/sprints/S16.md)** — active sprint: schedule + actuals |
 | Curious what the whole plan is | [SYLLABUS.md](SYLLABUS.md) — one page, 13 sprints |
+| Wondering *why* a stage matters | [CAPABILITY_MAP.md](CAPABILITY_MAP.md) — top-down: stages → the 6 things a quant does |
 
 ---
 
@@ -41,6 +42,7 @@ Everything in this repo is scaffolding for that sentence.
 ├── 05_commitment_contract.md time audit, cadence, circuit breakers
 ├── stage_maps/             per-stage problems, written at study level
 ├── TOPIC_MAP.md              stage ↔ topics/ section mapping: what's in scope, what's deferred
+├── CAPABILITY_MAP.md         top-down: which capabilities each stage builds (reference, not a plan)
 ├── topics/                   13-section topic inventory (911 problems, full scope)
 └── progress/
     ├── sprints/              one file per sprint — plan, actuals, retro

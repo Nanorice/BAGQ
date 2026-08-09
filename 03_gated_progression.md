@@ -3,6 +3,11 @@
 > **Game-design name for this:** *mastery-based progression on a prerequisite DAG*.
 > Same idea as Duolingo's "sections", Khan Academy's mastery tree, or a Diablo skill tree.
 > You cannot start a stage until its prerequisites are `COMPLETE`.
+>
+> **This file is bottom-up** — *what can I start next?* For the top-down view — *why does this
+> stage matter?* — see [CAPABILITY_MAP.md](CAPABILITY_MAP.md), which traces stages up to the six
+> capabilities a quant is hired for. Same stages, opposite direction. **This file owns
+> sequencing; that one is reference only.**
 
 ---
 
