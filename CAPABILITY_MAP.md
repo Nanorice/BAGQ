@@ -14,225 +14,203 @@
 
 ---
 
-## The three layers
+## The map
 
-**Capabilities** are what a quant is hired to *do*. **Concepts** are the named ideas that do the
-actual work — this is the payload layer, and the reason this file exists. **Stages** are what you
-sit down and study.
+**Four columns, left to right.** Every strand reads as a sentence:
 
-The middle layer is deliberately *concepts*, not generic competencies. "Stochastic modelling" as
-a box explains nothing; **memorylessness → interarrival times → time-to-fill** explains why
-Wednesday's exponential distribution is a market-making tool.
+> **stage** you study → *(concept)* that carries the idea → **application** you could build → **role** that pays for it
 
-Read upward for *"why am I learning this?"*, downward for *"what do I need for X?"*
-Arrows follow contribution: stage → concept → concept → capability.
+- **Stages** are split to sub-topic level, matching the stage maps — `F1.4b` appears as
+  *uniform*, *exponential* and *normal* separately, because they feed different capabilities by
+  different routes.
+- **Concepts** *(rounded, dashed)* appear **only where they explain a jump** a stage title
+  doesn't. `S10.1 → coding screen` needs no concept in between. They are not a layer everything
+  must pass through.
+- **Applications** are the concrete things a quant builds — and the things you can point at in
+  an interview.
+
+Wide by design; pan and zoom. No containers, so strands stay traceable.
 
 ```mermaid
-graph BT
-    %% ============ STAGES ============
-    subgraph STAGES["STAGES — what you study"]
-        direction LR
-        RC[R.calculus ✅]
-        RL[R.linalg ✅]
-        F14a[F1.4a Discrete dists ~]
-        F14b[F1.4b Continuous dists]
-        F11[F1.1 Combinatorics]
-        S12[S1.2 Bayes]
-        S16s[S1.6 Joint + MVN]
-        S17s[S1.7 Expectation + tower]
-        S18[S1.8 MGF]
-        S2[S2 Puzzles]
-        S31[S3.1 Markov chains]
-        S32[S3.2 Absorbing + first passage]
-        S41[S4.1 Brownian motion]
-        S42[S4.2 Martingales + OST]
-        S43[S4.3 Ito + SDEs]
-        S44[S4.4 Poisson processes]
-        S61[S6.1 Binomial trees]
-        S62[S6.2 Black-Scholes]
-        S65[S6.5 Monte Carlo pricing]
-        S7[S7 PCA + covariance]
-        S91[S9.1 MLE]
-        S92[S9.2 Hypothesis testing]
-        S93[S9.3 Regression + GARCH]
-        S94[S9.4 Bayesian]
-        S101[S10.1 Arrays/hash]
-        S102[S10.2 DP]
-        S103[S10.3 Graphs/BFS]
-        S104[S10.4 Numerical methods]
-        S11i[S11 Kelly + entropy]
-    end
+graph LR
+    classDef stage fill:#f5f5f5,stroke:#666,stroke-width:1px
+    classDef concept fill:#fffbe6,stroke:#b8860b,stroke-width:1.5px,stroke-dasharray:4 3
+    classDef app fill:#dae8fc,stroke:#6c8ebf,stroke-width:1.5px
+    classDef role fill:#e1d5e7,stroke:#9673a6,stroke-width:3px
 
-    %% ============ CONCEPTS ============
-    subgraph CONCEPTS["CONCEPTS — the ideas that do the work"]
-        direction LR
-        X1(memorylessness)
-        X2(interarrival times)
-        X3(time-to-fill · queue position)
-        X4(adverse selection)
-        X5(first-step conditioning)
-        X6(expected waiting time)
-        X7(state machines)
-        X8(linearity of expectation)
-        X9(tower property)
-        X10(change of variables)
-        X11(log-normal prices)
-        X12(risk-neutral measure)
-        X13(replication · no-arbitrage)
-        X14(delta · hedge ratio)
-        X15(Ito's lemma)
-        X16(random walk limit)
-        X17(standardisation · z-scores)
-        X18(CLT)
-        X19(tail probability · VaR)
-        X20(fat tails · vol clustering)
-        X21(estimator + bias/variance)
-        X22(significance · multiple testing)
-        X23(overfitting · out-of-sample)
-        X24(covariance structure)
-        X25(eigen-decomposition · factors)
-        X26(PSD · why Markowitz breaks)
-        X27(bet sizing · Kelly)
-        X28(complexity · Big-O)
-        X29(vectorisation · MC convergence)
-        X30(graph traversal)
-    end
+    %% ================= STAGES =================
+    RC[R.calculus ✅]:::stage
+    RL[R.linalg ✅]:::stage
+    BIN[F1.4a binomial ~]:::stage
+    GEO[F1.4a geometric ~]:::stage
+    POI[F1.4a Poisson ~]:::stage
+    UNI[F1.4b uniform + inverse transform]:::stage
+    EXP[F1.4b exponential]:::stage
+    NOR[F1.4b normal]:::stage
+    COMB[F1.1 combinatorics]:::stage
+    BAY[S1.2 Bayes]:::stage
+    JNT[S1.6 joint dists]:::stage
+    MVN[S1.6 MVN]:::stage
+    TOW[S1.7 expectation + tower]:::stage
+    MGF[S1.8 MGF]:::stage
+    PUZ[S2 puzzles]:::stage
+    MC1[S3.1 Markov chains]:::stage
+    MC2[S3.2 absorbing + first passage]:::stage
+    BM[S4.1 Brownian motion]:::stage
+    MAR[S4.2 martingales + OST]:::stage
+    ITO[S4.3 Ito + SDEs]:::stage
+    PP[S4.4 Poisson processes]:::stage
+    BT[S6.1 binomial trees]:::stage
+    BS[S6.2 Black-Scholes + Greeks]:::stage
+    MCP[S6.5 Monte Carlo pricing]:::stage
+    PCA[S7 PCA + covariance]:::stage
+    MLE[S9.1 MLE]:::stage
+    HYP[S9.2 hypothesis testing]:::stage
+    REG[S9.3 regression]:::stage
+    GAR[S9.3 GARCH]:::stage
+    BYS[S9.4 Bayesian]:::stage
+    ARR[S10.1 arrays + hash]:::stage
+    DP[S10.2 DP]:::stage
+    GRF[S10.3 graphs + BFS]:::stage
+    NUM[S10.4 numerical methods]:::stage
+    KEL[S11 Kelly + entropy]:::stage
 
-    %% ============ CAPABILITIES ============
-    subgraph CAP["CAPABILITIES — what a quant is hired to do"]
-        direction LR
-        K1([Options pricing<br/>and hedging])
-        K2([Portfolio construction])
-        K3([Signal research])
-        K4([Market making<br/>and execution])
-        K5([Risk management])
-        K6([Backtesting<br/>and infrastructure])
-    end
+    %% ================= CONCEPTS =================
+    cMEM(memorylessness):::concept
+    cPEX(Poisson ↔ Exponential<br/>counts vs gaps):::concept
+    cFSC(first-step conditioning):::concept
+    cTOW(tower property):::concept
+    cLIN(linearity of expectation):::concept
+    cCOV(change of variables<br/>→ log-normal):::concept
+    cRN(replication → risk-neutral):::concept
+    cITO(Ito's lemma):::concept
+    cSTD(standardisation<br/>z-scores):::concept
+    cFAT(fat tails · vol clustering):::concept
+    cBV(bias–variance):::concept
+    cPSD(PSD · why Markowitz breaks):::concept
 
-    classDef cap fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
-    class K1,K2,K3,K4,K5,K6 cap
+    %% ================= APPLICATIONS =================
+    aFILL[Time-to-fill<br/>queue position]:::app
+    aARRV[Arrival modelling]:::app
+    aSCRN[Coding screen<br/>LC medium/hard]:::app
+    aBS[Black-Scholes pricer]:::app
+    aGRK[Greeks · delta hedging]:::app
+    aVOL[Vol surface]:::app
+    aMC[Monte Carlo pricer]:::app
+    aVAR[VaR · tail risk]:::app
+    aSTR[Stress testing]:::app
+    aFAC[Factor model · PCA]:::app
+    aOPT[Mean-variance optimiser]:::app
+    aSIZ[Kelly bet sizing]:::app
+    aSIG[Signal + significance testing]:::app
+    aBKT[Backtest engine]:::app
 
-    %% ---- ARRIVALS / MARKET MAKING chain ----
-    F14b --> X1
-    F14a --> X1
-    X1 --> X2
-    S44 --> X2
-    X2 --> X3
-    X3 --> K4
-    F14a --> X4
-    S12 --> X4
-    X4 --> K4
-    X4 --> K5
+    %% ================= ROLES =================
+    RK1([OPTIONS PRICING]):::role
+    RK2([PORTFOLIO CONSTRUCTION]):::role
+    RK3([SIGNAL RESEARCH]):::role
+    RK4([MARKET MAKING]):::role
+    RK5([RISK MANAGEMENT]):::role
+    RK6([BACKTESTING · INFRA]):::role
 
-    %% ---- CONDITIONING / PUZZLES chain ----
-    F14a --> X5
-    S2 --> X5
-    X5 --> X6
-    X6 --> X3
-    S31 --> X7
-    S32 --> X7
-    X7 --> X6
-    X7 --> K4
-    S17s --> X8
-    F11 --> X8
-    X8 --> X6
-    X8 --> X21
-    S17s --> X9
-    S12 --> X9
-    X9 --> X21
-    X9 --> X12
+    %% ---------- ARRIVALS → MARKET MAKING ----------
+    EXP --> cMEM --> aFILL --> RK4
+    GEO --> cMEM
+    POI --> cPEX --> aARRV --> RK4
+    EXP --> cPEX
+    PP --> aARRV
+    aARRV --> aFILL
+    PUZ --> cFSC --> aFILL
+    GEO --> cFSC
+    MC1 --> cFSC
+    MC2 --> aFILL
+    ARR --> aSCRN --> RK4
+    DP --> aSCRN
+    GRF --> aSCRN
+    aSCRN --> RK6
 
-    %% ---- PRICING chain ----
-    F14b --> X10
-    X10 --> X11
-    S41 --> X16
-    S16s --> X11
-    X11 --> X13
-    S61 --> X13
-    X13 --> X12
-    S42 --> X12
-    X12 --> K1
-    RC --> X15
-    S43 --> X15
-    X15 --> X11
-    S62 --> X14
-    X14 --> K1
-    X14 --> K5
-    S18 --> X18
-    S65 --> X29
-    X29 --> K1
+    %% ---------- PRICING ----------
+    UNI --> cCOV
+    NOR --> cCOV --> aBS --> RK1
+    JNT --> cCOV
+    BM --> cITO
+    ITO --> cITO --> aBS
+    RC --> cITO
+    BT --> cRN --> aBS
+    MAR --> cRN
+    TOW --> cRN
+    BS --> aGRK --> RK1
+    aBS --> aGRK
+    BS --> aVOL --> RK1
+    MCP --> aMC --> RK1
+    UNI --> aMC
+    NUM --> aMC
+    MGF --> cCOV
+    aGRK --> RK5
 
-    %% ---- DISTRIBUTION / RISK chain ----
-    F14b --> X17
-    X17 --> X19
-    X16 --> X18
-    X18 --> X17
-    X19 --> K5
-    S93 --> X20
-    X20 --> X19
-    X20 --> K5
-    F14b --> X19
+    %% ---------- RISK ----------
+    NOR --> cSTD --> aVAR --> RK5
+    EXP --> aVAR
+    GAR --> cFAT --> aVAR
+    cFAT --> aSTR --> RK5
+    MVN --> aVAR
+    BM --> aSTR
 
-    %% ---- INFERENCE / SIGNAL chain ----
-    S91 --> X21
-    X21 --> X23
-    S92 --> X22
-    X22 --> X23
-    S94 --> X21
-    X23 --> K3
-    X23 --> K6
-    S93 --> X23
-    X21 --> K3
+    %% ---------- PORTFOLIO ----------
+    RL --> cPSD --> aOPT --> RK2
+    MVN --> cPSD
+    PCA --> aFAC --> RK2
+    cPSD --> aFAC
+    aFAC --> aVAR
+    aFAC --> RK3
+    KEL --> aSIZ --> RK2
+    aSIZ --> RK4
 
-    %% ---- LINEAR ALGEBRA / PORTFOLIO chain ----
-    RL --> X24
-    S16s --> X24
-    X24 --> X25
-    S7 --> X25
-    X25 --> X26
-    RL --> X26
-    X26 --> K2
-    X25 --> K3
-    X24 --> X19
-    S11i --> X27
-    X27 --> K2
-    X27 --> K4
-
-    %% ---- COMPUTATION chain ----
-    S101 --> X28
-    S102 --> X28
-    S103 --> X30
-    X30 --> X28
-    X28 --> K4
-    X28 --> K6
-    S104 --> X29
-    X29 --> K6
-    S102 --> X30
+    %% ---------- SIGNAL / INFERENCE ----------
+    MLE --> cBV --> aSIG --> RK3
+    BYS --> cBV
+    TOW --> cTOW --> cBV
+    BAY --> cTOW
+    HYP --> aSIG
+    REG --> aSIG
+    COMB --> cLIN --> aSIG
+    TOW --> cLIN
+    BIN --> cLIN
+    BIN --> cSTD
+    BIN --> cRN
+    cLIN --> aFILL
+    REG --> aBKT --> RK6
+    HYP --> aBKT
+    aSIG --> aBKT
+    NUM --> aBKT
+    GAR --> aSIG
 ```
 
-### The chain that started this
-
-Read the market-making path upward and it is the concrete answer to *"why am I studying the
-exponential distribution?"*:
+### Reading it — the chain that started this
 
 ```
-F1.4b  →  memorylessness  →  interarrival times  →  time-to-fill / queue position  →  MARKET MAKING
+F1.4b exponential ──► (memorylessness) ──► time-to-fill / queue position ──► MARKET MAKING
 ```
 
 Memorylessness says a quote that has waited 10 seconds is no more "due" a fill than a fresh one.
-That single property is the model for time-to-next-trade, and `min(X,Y) ~ Exp(λ₁+λ₂)` is
-first-to-fill across two venues. The same stage also runs:
+That property *is* the model for time-to-next-trade, and `min(X,Y) ~ Exp(λ₁+λ₂)` is
+first-to-fill across two venues. The same Wednesday also runs:
 
 ```
-F1.4b  →  change of variables  →  log-normal prices  →  replication  →  risk-neutral  →  OPTIONS PRICING
-F1.4b  →  standardisation      →  tail probability / VaR                              →  RISK
+F1.4b normal    ──► (standardisation) ──► VaR / tail risk    ──► RISK MANAGEMENT
+F1.4b uniform   ─────────────────────────► Monte Carlo pricer ──► OPTIONS PRICING
+F1.4b normal    ──► (change of variables → log-normal) ──► Black-Scholes ──► OPTIONS PRICING
 ```
 
-Three capabilities, one Wednesday. **Concepts with two or more outgoing edges are the
-load-bearing ones** — `tower property`, `linearity of expectation`, `covariance structure`,
-`complexity` — and they are the last things to cut when a sprint is under pressure.
+**Four roles from one stage.** That is the thing worth carrying into the study block: you are not
+learning "the exponential distribution", you are learning the fill-time model, and the same
+afternoon buys you the tail-risk and pricing machinery.
 
----
+**Nodes feeding 3+ arrows are load-bearing** — `tower property`, `linearity of expectation`,
+`change of variables`, `PSD`. They are the last things to cut when a sprint is under pressure.
+`tower property` is baseline I.5, scored **0**, and it reaches pricing, signal research and risk
+— which is independent confirmation that pulling it forward to S17 (Adjustment #1) was right.
+
 ---
 
 ## The capabilities, one table each
@@ -248,7 +226,8 @@ load-bearing ones** — `tower property`, `linearity of expectation`, `covarianc
 | **Work form** | Pricing library, Greeks engine, vol surface, hedge P&L attribution |
 | **Capstone** | **P1 Options Pricer** (Sprint 26) |
 | **Stages** | R.calculus ✅ · F1.4b · S1.6 · S1.8 · S4.1 · S4.2 · S4.3 · S6.1 · S6.2 · S6.5 |
-| **Key concepts** | change of variables → log-normal prices · replication → no-arbitrage → risk-neutral measure · Ito's lemma · delta / hedge ratio · MC convergence |
+| **Key concepts** | change of variables → log-normal · replication → risk-neutral · Ito's lemma |
+| **Applications** | Black-Scholes pricer · Greeks / delta hedging · vol surface · Monte Carlo pricer |
 | **Status** | **1 / 10** |
 
 *Baseline signal:* VI.3 (Greeks intuition) scored **3** — your best derivative answer, and it was
@@ -262,7 +241,8 @@ pure reasoning. VI.1 (binomial call) scored 0. The intuition is there; the machi
 | **Interview form** | "What does a covariance matrix have to satisfy?" · "Why does Markowitz blow up in practice?" · "How would you size a bet with edge?" |
 | **Work form** | Mean-variance / risk-parity optimisers, factor models, shrinkage, position limits |
 | **Stages** | R.linalg ✅ · S1.6 · S7 · S9.3 · S11 (Kelly) |
-| **Key concepts** | covariance structure → eigen-decomposition → factors · PSD (why Markowitz breaks) · bet sizing / Kelly |
+| **Key concepts** | PSD · why Markowitz breaks |
+| **Applications** | Mean-variance optimiser · factor model / PCA · Kelly bet sizing |
 | **Status** | **1 / 5** |
 
 *Already banked:* your `R.linalg` note derived why Σ is PSD **and** why it's PSD-not-PD — the
@@ -277,7 +257,8 @@ sitting in a linear algebra note.
 | **Interview form** | "How do you know this signal isn't overfit?" · "What are the OLS assumptions?" · "What's the difference between in-sample and out-of-sample R²?" |
 | **Work form** | Feature construction, regression, multiple-testing control, decay analysis |
 | **Stages** | F1.1 · S1.2 · S1.7 · S9.1 · S9.2 · S9.3 · S9.4 · S7 |
-| **Key concepts** | estimator + bias/variance · significance / multiple testing · overfitting vs out-of-sample · tower property · linearity of expectation · factor structure |
+| **Key concepts** | bias–variance · tower property · linearity of expectation |
+| **Applications** | Signal + significance testing · factor model · backtest engine |
 | **Status** | **0 / 8** |
 
 *Baseline signal:* Section IX scored **1.00** — joint lowest with algos, and this is the single
@@ -291,7 +272,8 @@ most QR-relevant capability on the list. MLE scored 0.
 | **Interview form** | "Expected number of trades before your quote is hit?" · "What's your edge if you're picked off X% of the time?" · fast mental arithmetic, LC-medium under time pressure |
 | **Work form** | Queue position modelling, adverse-selection cost, order routing, latency budgets |
 | **Stages** | F1.4a ~ · F1.4b · S2 · S3.1 · S4.4 · S10.1 · S10.2 · S10.3 · S10.4 |
-| **Key concepts** | memorylessness → interarrival times → time-to-fill / queue position · adverse selection · first-step conditioning → expected waiting time · state machines · complexity / Big-O |
+| **Key concepts** | memorylessness · Poisson ↔ Exponential (counts vs gaps) · first-step conditioning |
+| **Applications** | Time-to-fill / queue position · arrival modelling · coding screen · Kelly sizing |
 | **Status** | **0.5 / 9** |
 
 *Baseline red flag:* X.4 — "don't know what BFS is." Named an HFT-screen blocker; S10.3 is the
@@ -307,7 +289,8 @@ first-to-fill across venues.
 | **Interview form** | "Compute 99% 1-day VaR." · "Why is VaR not coherent?" · "What breaks when returns aren't normal?" |
 | **Work form** | VaR / ES, stress testing, factor risk decomposition, tail modelling |
 | **Stages** | F1.4b · S1.6 · S7 · S9.2 · S9.3 · S4.2 |
-| **Key concepts** | standardisation / z-scores → tail probability / VaR · fat tails + vol clustering · adverse selection · delta · covariance structure |
+| **Key concepts** | standardisation / z-scores · fat tails · vol clustering |
+| **Applications** | VaR / tail risk · stress testing · factor risk · delta hedging |
 | **Status** | **0 / 6** |
 
 *Note the direct line from Wednesday's stage:* 1.645 vs 1.96 vs 2.326 is a VaR calculation, and
@@ -322,7 +305,8 @@ naive arrival models understate tail risk.
 | **Interview form** | Less directly asked — shows up as "how would you test that?" and in code screens |
 | **Work form** | Event-driven backtesters, look-ahead / survivorship control, transaction costs, reproducibility |
 | **Stages** | S9.2 · S9.3 · S10.1 · S10.2 · S10.4 · S6.5 |
-| **Key concepts** | overfitting vs out-of-sample · complexity / Big-O · vectorisation / MC convergence · graph traversal |
+| **Key concepts** | bias–variance (overfitting vs out-of-sample) |
+| **Applications** | Backtest engine · coding screen · Monte Carlo convergence |
 | **Status** | **0 / 6** |
 | **Overlap credit** | Contract §A.1a — quantamental work touching §IX or §X **dual-counts** here. This is the one capability your 6h/week side project directly advances. |
 
