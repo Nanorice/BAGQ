@@ -41,12 +41,12 @@ graph LR
     %% ================= STAGES =================
     RC[R.calculus ✅]:::stage
     RL[R.linalg ✅]:::stage
-    BIN[F1.4 binomial ~]:::stage
-    GEO[F1.4 geometric ~]:::stage
-    POI[F1.4 Poisson ~]:::stage
-    UNI[F1.5 uniform + inverse transform]:::stage
-    EXP[F1.5 exponential]:::stage
-    NOR[F1.5 normal]:::stage
+    BIN[F1.4a binomial ~]:::stage
+    GEO[F1.4a geometric ~]:::stage
+    POI[F1.4a Poisson ~]:::stage
+    UNI[F1.4b uniform + inverse transform]:::stage
+    EXP[F1.4b exponential]:::stage
+    NOR[F1.4b normal]:::stage
     COMB[F1.1 combinatorics]:::stage
     BAY[S1.2 Bayes]:::stage
     JNT[S1.6 joint dists]:::stage

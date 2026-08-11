@@ -4,7 +4,7 @@
 > A human on a fresh machine (or a non-Claude agent) should be handed `AGENT_CONTEXT.md`
 > (repo root), which points here. For the operating procedure, `MANUAL.md`.
 
-**Last updated:** 2026-08-09 (Sprint 16, Week 1 end)
+**Last updated:** 2026-08-09 (Sprint 16, Week 1 end — `F1.5` closed, Week 2 maps written)
 
 ---
 
@@ -80,12 +80,19 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
 | Calculus `R.calculus` | 07-29 | 5.0 | `ready-for-test` |
 | Linear Algebra `R.linalg` | 07-30 | 3.5 | `ready-for-test` — closes VII.1 + VII.2 |
 | Discrete Distributions `F1.4` | 08-02 | 6.0 | `ready-for-test`, **PARTIAL** — table in handnote |
-| Continuous Distributions `F1.5` | — | — | in flight, Sprint 16 |
+| Continuous Distributions `F1.5` | 08-09 | 5.0 | `ready-for-test` — closes baseline I.3 |
 
 **This is the open risk in the whole system.** The write side works (the `R.linalg` note struck a
 stalled derivation and rebuilt it correctly). The **retrieval** side has never run.
 **Sat 08-15 carries all four D4 tests** — first real evidence on whether the notes produce
 retention or just produce notes. `vault/HOME.md` surfaces this permanently.
+
+**`F1.5` closed 08-09 after three review rounds**, and the shape of the rounds is the finding:
+round 1 had `E[Exp]`/`Var` inverted in the summary table *and* `P(|Z|>2)` and the two-tail z
+wrong; round 2 fixed every number; round 3 found the remaining gaps were all **derivations
+never done** (tail formula, hazard rate, the change-of-variables Jacobian, `Var(Z)` by parts) —
+i.e. Tier A problems skipped, not source material misread. **Recall errors come from unworked
+problems, not from unread pages.** Worth watching whether the D4s confirm it.
 
 **S15 closed at 14.5h / 18h = 81%.** Sizing constants, measured — use these, not the 81%:
 **refresher ≈ 1.2× budget · new material ≈ 2.0×.** The 40-min one-source cap was calibrated on a
@@ -94,12 +101,25 @@ does not install machinery never held. Hence Adj #12 (two passes, separate days)
 (named drift move). Drift was exhausted input with no next action, not low effort — contact was
 10/11 days.
 
-**Sprint 16 (08-03 → 08-16), ~21h.** Week 1: `F1.5` Pass 1 Wed / Pass 2 Thu / close Sat, plus
-`src/solvers/` with one shared verifier covering `F1.4` + `F1.5`. Week 2: `F1.1` Combinatorics as
-three day-stages, maps written 08-09 just-in-time. `S1.2` Bayes dropped to S17 (Adj #14).
+**Sprint 16 (08-03 → 08-16), ~21h.** Week 1: `F1.5` — closed 08-09, compressed into Sat+Sun
+rather than the planned Wed/Thu/Sat. Week 2: `F1.1` Combinatorics as three day-stages, **maps
+written 08-09**. `S1.2` Bayes dropped to S17 (Adj #14).
 
-**Schedule reality:** Week 1 ran ~6h against 11h planned, and `F1.5` had not started as of 08-09.
-Read the actuals table before assuming any row happened.
+**Week 2 was re-scoped 08-09 when the maps were written.** Two decisions worth not re-opening:
+- **`F1.1a` is a refresher (1.2×, 1.5h), not a foundation.** Baseline I.1 (MISSISSIPPI) scored
+  **4** — the best Section I result. `F1.1b` (stars and bars) and `F1.1c` (inclusion–exclusion)
+  keep the 2.0× weight. Total `F1.1` = 6.5h, down from 9h.
+- **`F1.1c` deliberately crosses to Ross Ch.2 §2.5**, because inclusion–exclusion is not in Ch.1
+  and derangements are not a headed section anywhere — they are written inline in the map. The
+  crossing is *named in the map*, which is the `F1.4`-A5 / `F1.5`-A3 fix applied in advance.
+- The 2.5h freed goes to **the D4 backlog**, and `F1.1`'s own D4 is **08-22**, not 08-15.
+
+**Sat 08-15 is the pivotal day and it is overloaded** — four D4 tests, ~3h of testing before
+grading. The S16 file carries the recommendation (trim the two refresher tests to 25 min) and a
+decision is due Fri 08-14. **If Saturday runs long, the `F1.1` note close slips, not the D4s.**
+
+**Schedule reality:** Week 1 ran ~6h against 11h planned. Read the actuals table before assuming
+any row happened.
 
 ---
 

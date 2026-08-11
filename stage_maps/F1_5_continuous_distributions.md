@@ -8,9 +8,9 @@ topic: "[[I-5-continuous-random-variables-and-distributions]]"
 concepts: ["[[memorylessness]]", "[[standardisation]]", "[[change-of-variables]]", "[[poisson-exponential-duality]]"]
 roles: ["[[market-making]]", "[[risk-management]]", "[[options-pricing]]"]
 sprint: S16
-status: unlocked
+status: ready-for-test
 budget_h: 6
-actual_h: 
+actual_h: 5.0
 d4_due: 2026-08-15
 baseline_closes: [I.3]
 ---
@@ -57,39 +57,39 @@ what the +1wk review tests.** This list is also the flashcard set the sprint ret
 ### Core — all of it is in Ross Ch.5
 
 **§5.1–5.2 Density and expectation**
-- [ ] Density: `P(a≤X≤b) = ∫f`, and why `P(X=a) = 0`
-- [ ] `E[X] = ∫xf(x)dx` · `Var(X) = E[X²] − E[X]²`
+- [x] Density: `P(a≤X≤b) = ∫f`, and why `P(X=a) = 0`
+- [x] `E[X] = ∫xf(x)dx` · `Var(X) = E[X²] − E[X]²`
 - [ ] **Tail formula `E[X] = ∫₀^∞ P(X>x)dx`** — *Lemma 2.1*. Works for any non-negative RV,
       and it beats by-parts under pressure. Discrete twin: `E[X] = Σ P(X≥k)`.
 
 **§5.3 Uniform**
-- [ ] PDF · CDF on `[a,b]`
-- [ ] `E[X] = (a+b)/2` · `Var(X) = (b−a)²/12`
+- [x] PDF · CDF on `[a,b]`
+- [x] `E[X] = (a+b)/2` · `Var(X) = (b−a)²/12`
 
 **§5.4 Normal**
 - [ ] PDF, and where the `1/√(2π)` comes from
-- [ ] `E[Z]=0` by symmetry · `Var(Z)=1` by parts
-- [ ] Standardisation `Z = (X−μ)/σ` — reduces every normal question to one table
+- [x] `E[Z]=0` by symmetry · `Var(Z)=1` by parts
+- [x] Standardisation `Z = (X−μ)/σ` — reduces every normal question to one table
 - [ ] 68 / 95 / 99.7
-- [ ] **1.645 one-tail vs 1.96 two-tail** (the VaR-bug pair)
-- [ ] **§5.4.1** Normal approximation to the binomial (de Moivre–Laplace) + continuity correction
-- [ ] …and when Poisson is the right limit instead (`p→0`, `np` fixed) vs Normal (`p` fixed)
+- [x] **1.645 one-tail vs 1.96 two-tail** (the VaR-bug pair)
+- [x] **§5.4.1** Normal approximation to the binomial (de Moivre–Laplace) + continuity correction
+- [x] …and when Poisson is the right limit instead (`p→0`, `np` fixed) vs Normal (`p` fixed)
 
 **§5.5 Exponential**
-- [ ] PDF · CDF · tail `P(X>x) = e^{−λx}`
-- [ ] `E[X] = 1/λ` · `Var(X) = 1/λ²` ← **baseline I.3, the reason this stage is mandatory-deep**
+- [x] PDF · CDF · tail `P(X>x) = e^{−λx}`
+- [x] `E[X] = 1/λ` · `Var(X) = 1/λ²` ← **baseline I.3, the reason this stage is mandatory-deep**
 - [ ] `SD = mean` — why "average wait 5 min" says less than people assume
-- [ ] **Memorylessness** `P(X>s+t | X>s) = P(X>t)`, + that exponential is the *only* continuous one
-- [ ] **§5.5.1** Hazard rate `h(x) = f(x)/(1−F(x))`; constant hazard ⟺ memoryless ⟺ exponential
+- [x] **Memorylessness** `P(X>s+t | X>s) = P(X>t)`, + that exponential is the *only* continuous one
+- [x] **§5.5.1** Hazard rate `h(x) = f(x)/(1−F(x))`; constant hazard ⟺ memoryless ⟺ exponential
 
 **§5.7 Function of a random variable**
-- [ ] Change-of-variables rule for `Y = g(X)`
+- [x] Change-of-variables rule for `Y = g(X)`
 - [ ] **Inverse transform**: `F⁻¹(U) ~ F`, and the one-line proof
 - [ ] `F⁻¹` for the exponential → `X = −ln(U)/λ` *(this is what makes CODE1 possible)*
 
 **Cross-cutting (from `F1.4`, no new source needed)**
-- [ ] Geometric → exponential is the discrete → continuous memoryless pair
-- [ ] Poisson counts ↔ exponential gaps — same process, two descriptions
+- [x] Geometric → exponential is the discrete → continuous memoryless pair
+- [x] Poisson counts ↔ exponential gaps — same process, two descriptions
 
 ### Stretch — NOT in Ross Ch.5. Each one names how you get it.
 
