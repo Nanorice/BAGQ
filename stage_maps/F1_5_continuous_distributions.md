@@ -2,59 +2,50 @@
 type: stage
 id: F1.5
 name: Continuous Distributions
-kind: foundation
-multiplier: 2.0
 topic: "[[I-5-continuous-random-variables-and-distributions]]"
 concepts: ["[[memorylessness]]", "[[standardisation]]", "[[change-of-variables]]", "[[poisson-exponential-duality]]"]
 roles: ["[[market-making]]", "[[risk-management]]", "[[options-pricing]]"]
 sprint: S16
 status: ready-for-test
-budget_h: 6
+est_h: 6
 actual_h: 5.0
-d4_due: 2026-08-15
-baseline_closes: [I.3]
 ---
 
-# Continuous Distributions — Stage Map
-`F1.5` · foundation (new install, 2.0×) · `topics/section_I` §4–5
-**Sprint 16, Days 3–4 + 6 (Wed 08-05, Thu 08-06, Sat 08-08)** · **Budget: 6h, two passes**
+# Continuous Distributions
 
-> **This file is the roadmap and the checklist.** It holds everything to *do*; the Feynman note
-> at `progress/feynman_notes/F1_5_continuous_distributions.md` holds everything you *understood*.
-> Two files, nothing else to open.
+**Source:** Ross, *A First Course in Probability* 6th ed. — Ch. 5, §5.1–§5.7.
 
-> **Re-planned 2026-08-03.** Originally a 3h single-day stage; carried over from S15 unstarted.
-> `F1.4` ran 6h against a 3h budget on the same one-source design — the finding was that
-> **new probability material needs two passes, not one**. This stage is now sized at 2× and the
-> second pass is scheduled, not improvised. See the S15 retro.
+**Estimated: 6h.** *(Sized at 2× from the start, after discrete distributions ran 6h against a 3h
+budget on the same one-source design. The finding was that new probability material needs two
+passes, not one — so the second pass is scheduled here rather than improvised.)*
 
-**Why this stage exists:** baseline I.3 asked for `E[X]` and `Var(X)` of `Exp(λ)` and got `e^λ`
-and `0`. Correct: `1/λ` and `1/λ²`. This is the **mandatory-deep** item of the pair — the
-exponential is the waiting time between Poisson arrivals (you built that bridge in F1.4-B3), the
-building block of the Poisson process, and the first hitting-time distribution you meet in S4.
-The normal is downstream of everything: CLT, Black-Scholes, MVN, every regression residual.
+---
 
-**Scope — three distributions:**
+## What this covers
+
+Three distributions, and the machinery that connects them to everything downstream.
+
 1. **Uniform** — the atom, and the inverse-transform engine for simulation
 2. **Exponential** — memorylessness, hazard rate, the Poisson link
-3. **Normal** — standardisation, the 68/95/99.7 anchors, why it is everywhere
+3. **Normal** — standardisation, the 68/95/99.7 anchors, and why it is everywhere
 
-For each: **PDF · CDF · E[X] · Var(X) · MGF · one classic problem.**
+For each: PDF, CDF, `E[X]`, `Var(X)`, one classic problem.
 
-Out of scope: log-normal (S6, with Black-Scholes), χ² (S9.2, with hypothesis testing), Gamma
-and Beta beyond a mention, and the *proof* of the CLT (S1.8). Joint/bivariate normal is S1.6 —
-today is one variable at a time.
+The exponential is the waiting time between Poisson arrivals — the bridge built in discrete
+distributions — the building block of the Poisson process, and the first hitting-time
+distribution you will meet in stochastic processes. The normal is downstream of everything: the
+central limit theorem, Black-Scholes, every regression residual.
+
+**Not here:** the log-normal (arrives with Black-Scholes), chi-squared (with hypothesis testing),
+Gamma and Beta beyond a mention, and the *proof* of the central limit theorem. Bivariate normal
+comes with joint distributions — this is one variable at a time.
 
 ---
 
 ## Knowledge checklist — tick when you can produce it cold
 
-**Built from Ross Ch.5's actual section headings** (verified against the book 2026-08-09), not
-from what an interview tends to ask. Every core item below is in the chapter, with its section
-number. Tick during the close block (Sat), not while reading. **Anything unticked on Saturday is
-what the +1wk review tests.** This list is also the flashcard set the sprint retro uses.
-
-### Core — all of it is in Ross Ch.5
+Built from Ross Ch.5's real section headings, verified against the book. Tick during the close
+block, not while reading. **Anything still unticked at close is what the unlock test targets.**
 
 **§5.1–5.2 Density and expectation**
 - [x] Density: `P(a≤X≤b) = ∫f`, and why `P(X=a) = 0`
@@ -85,35 +76,32 @@ what the +1wk review tests.** This list is also the flashcard set the sprint ret
 **§5.7 Function of a random variable**
 - [x] Change-of-variables rule for `Y = g(X)`
 - [ ] **Inverse transform**: `F⁻¹(U) ~ F`, and the one-line proof
-- [ ] `F⁻¹` for the exponential → `X = −ln(U)/λ` *(this is what makes CODE1 possible)*
+- [ ] `F⁻¹` for the exponential → `X = −ln(U)/λ` *(this is what makes the sampling solver possible)*
 
-**Cross-cutting (from `F1.4`, no new source needed)**
+**Cross-cutting**
 - [x] Geometric → exponential is the discrete → continuous memoryless pair
 - [x] Poisson counts ↔ exponential gaps — same process, two descriptions
 
-### Stretch — NOT in Ross Ch.5. Each one names how you get it.
+### Stretch — not in Ross Ch.5
 
-*Rule (adopted 2026-08-09): a stretch item is never left as a bare pointer. It is either written
-inline here, given a named chapter + page range in a book you own, or deferred with the stage
-**and the reason**. See `04_deliverables_spec.md` §D2.*
+*A stretch item is never left as a bare pointer. It is written inline below, given a named chapter
+in a book you own, or deferred with the reason.*
 
-- [ ] **Competing risks** — `min(X,Y) ~ Exp(λ₁+λ₂)` · `P(X<Y) = λ₁/(λ₁+λ₂)`
-      → **INLINE, see §Stretch notes below.** Five lines, needs only independence, and it is
-      first-to-fill / first-to-default / first-to-arrive. Too useful to defer.
-- [ ] **MGF of `Exp(λ)`** = `λ/(λ−t)`, exists only for `t < λ`
-      → **DEFERRED to S1.8**, reason: *using* MGFs needs convolution machinery you don't have.
-      The two-line definition is in §Stretch notes so the term isn't foreign when it lands.
-      *(Ross puts MGFs in Ch.7, not Ch.5 — this is the same mismatch that made `F1.4`-A5
-      unanswerable. Now named rather than silently assumed.)*
-- [ ] **Gaussian integral** `∫e^{−x²/2}dx = √(2π)` via polar coordinates
-      → **Tier C2**, optional. Ross states the constant; the derivation is the stretch.
+- [ ] **Competing risks** — `min(X,Y) ~ Exp(λ₁+λ₂)` and `P(X<Y) = λ₁/(λ₁+λ₂)`
+      → **written inline below.** Five lines, needs only independence, and it is first-to-fill,
+      first-to-default, first-to-arrive. Too useful to defer.
+- [ ] **MGF of `Exp(λ)`** = `λ/(λ−t)`, existing only for `t < λ`
+      → **deferred**, because *using* MGFs needs convolution machinery this stage does not build.
+      The definition is below so the term is not foreign when it lands.
+- [ ] **Gaussian integral** `∫e^{−x²/2}dx = √(2π)` by polar coordinates
+      → **Tier C, optional.** Ross states the constant; the derivation is the stretch.
 
 ---
 
-## Stretch notes — the material for the items above
+## Stretch notes
 
-Short by design. These exist so a stretch item is learnable *in this stage* rather than being a
-to-do that resolves three months out.
+Short by design — these exist so a stretch item is learnable *in this stage* rather than becoming
+a to-do that resolves three months out.
 
 ### Competing risks (inline — do this in the Saturday close block)
 
@@ -135,7 +123,7 @@ The faster clock wins in proportion to its rate — and notice the answer doesn'
 all. *Why it matters:* first-to-fill across venues, first-to-default in a basket, next-arrival
 among order types. Both results are short enough to memorise and are asked directly.
 
-### MGF — the definition only (so the term isn't cold in S1.8)
+### MGF — the definition only (so the term isn't cold in the generating-functions stage)
 
 `M(t) = E[e^{tX}]`. It is a **transform**: one function that encodes every moment, because
 `M'(0) = E[X]`, `M''(0) = E[X²]`, and so on. The reason it earns its keep is that the MGF of a
@@ -144,85 +132,27 @@ multiplication (easy). For `Exp(λ)` it is `λ/(λ−t)` and it **only exists fo
 that the integral diverges. That existence range is the fingerprint of exponential tails, and its
 absence is why MGF arguments fail on heavy-tailed distributions.
 
-**Do not derive anything from this today.** It is here so the word is familiar. S1.8 is where it
+**Do not derive anything from this today.** It is here so the word is familiar. the generating-functions stage is where it
 does work.
 
 ---
 
-## Source — one book, one sitting
+## Problems
 
-| Source | Covers | Time |
-|---|---|---|
-| **Ross, *A First Course in Probability* 6th ed. — Ch. 5** | All three, plus the normal approximation | **40 min per pass, hard stop** |
+### Tier A — the floor. All five, unhinted, on paper.
 
-**Section map** (verified 2026-08-09 — navigate by these numbers, not by page):
-
-| § | What | Pass |
-|---|---|---|
-| 5.1 · 5.2 | Density · expectation/variance · **Lemma 2.1 = the tail formula** | 1 |
-| 5.3 | Uniform | 1 |
-| 5.4 · 5.4.1 | Normal · normal approximation to the binomial | **2** |
-| 5.5 · 5.5.1 | Exponential · hazard rate | 1 |
-| 5.6 | Gamma, Weibull, Cauchy, Beta | **skip entirely** — not this stage |
-| 5.7 | Distribution of a function of a RV (→ inverse transform) | 1 |
-
-**Note the chapter order: uniform → NORMAL → exponential.** The normal sits between the two things
-Pass 1 wants, so on Wednesday you are skipping §5.4 and coming back to it Thursday. That is
-deliberate — don't get pulled into it because it's next on the page.
-
-**Not in this chapter at all:** MGFs (Ross Ch.7) and competing risks (needs Ch.6 joint
-distributions). Both are covered in §Stretch notes above — **do not go looking for them in Ch.5.**
-
-**If the normal's `E[X²]` integral is the sticking point,** the single named fallback is
-**3Blue1Brown, "Why π is there and why it's squared (Gaussian integral)", 12 min**. That is the
-*only* video in this stage.
-
-**Input cap: 40 min.**
-
----
-
-## The two-pass shape
-
-Three distributions across two study days, split by *difficulty*, not by page count. Uniform and
-exponential are Pass 1 because they are where baseline I.3 lives; the normal is harder and gets
-its own pass with a fresh head.
-
-| Pass | When | Scope | Do | Out |
-|---|---|---|---|---|
-| **1** | **Wed 08-05, 2.5h** | **Uniform + Exponential** | Read Ch.5 uniform + exponential subsections (40 min cap) → close book → §1 teach-back for those two → A1, A2 on paper | §1(a)(b) drafted · A1–A2 done |
-| **2** | **Thu 08-06, 2.5h** | **Normal** + re-read | **Start by re-reading only what Pass 1 didn't stick** (≤20 min, look at your `⚠️ GAP` list first) → normal subsection (40 min cap) → §1(c) → A3, A4, A5 | §1 complete · A3–A5 done |
-| **3** | **Sat 08-08, 3h** | close | Gap-hunt §1 · Tier B (≥3) · §3–§6 · summary table · MC verifier · unlock test I.3 | Note closed |
-
-Note skeleton: `progress/feynman_notes/F1_5_continuous_distributions.md`
-
-**When it gets hard and you start drifting** — that is the `F1.4` failure mode, and it has a move
-now: **stop reading, write the sentence you can't finish into §2 as a `⚠️ GAP`, and switch to
-Tier A on paper.** Paper problems survive low focus; re-reading the same paragraph does not.
-Drifting means input is exhausted for this sitting, not that you need more discipline.
-
-**If a pass collapses: A2, A3, B1 only.** A2/A3 are baseline I.3 itself. B1 (memorylessness) is
-the interview one-liner and the direct continuation of F1.4-B2.
-
-**This stage is not cuttable.** It was the designated cut in S15 and it got cut — which is why
-baseline I.3 is still open eight days later. It is one of two red-flag items in the whole
-probability block.
-
----
-
-## Tier A — the floor (all five, unhinted, on paper)
-
-**F1.5-A1.** `X ~ Uniform(a,b)`. Write the PDF and CDF. Derive `E[X] = (a+b)/2` and
+**A1.** `X ~ Uniform(a,b)`. Write the PDF and CDF. Derive `E[X] = (a+b)/2` and
 `Var(X) = (b−a)²/12`. Then: **inverse transform** — show that if `U ~ Uniform(0,1)` and `F` is a
 continuous strictly-increasing CDF, then `F⁻¹(U)` has CDF `F`.
 *That last part is how every Monte Carlo sampler you will ever write gets started, including
 tonight's verifier.*
 
-**F1.5-A2.** `X ~ Exp(λ)`, PDF `f(x) = λe^{−λx}` for `x ≥ 0`. Derive the CDF, then
+**A2.** `X ~ Exp(λ)`, PDF `f(x) = λe^{−λx}` for `x ≥ 0`. Derive the CDF, then
 `E[X] = 1/λ` and `Var(X) = 1/λ²`. Do `E[X]` by parts, then again via the tail formula
 `E[X] = ∫₀^∞ P(X > x)dx` — and say which you would rather do under interview pressure.
 *This is baseline I.3, scored 1. It is the reason this stage is mandatory-deep.*
 
-**F1.5-A3.** *(§5.7)* `X ~ Exp(λ)`. Derive the distribution of `Y = √X` by the
+**A3.** *(§5.7)* `X ~ Exp(λ)`. Derive the distribution of `Y = √X` by the
 change-of-variables rule: write `F_Y(y) = P(Y≤y) = P(X≤y²)`, then differentiate.
 Then state the general rule for `Y = g(X)` with `g` monotone, and say **why the `|dx/dy|` factor
 has to be there** — what would go wrong without it.
@@ -231,15 +161,15 @@ Doing it once explicitly means those two stop being separate tricks.*
 
 *Replaced the original A3 (derive the MGF of `Exp(λ)`) on 2026-08-09: MGFs are Ross **Ch.7**, not
 Ch.5 — the same out-of-chapter mismatch that made `F1.4`-A5 unanswerable. The MGF definition is
-in §Stretch notes; deriving it is S1.8's job.*
+in the stretch notes; deriving anything from it belongs to the generating-functions stage.*
 
-**F1.5-A4.** `Z ~ N(0,1)`. Write the PDF. Show `E[Z] = 0` by symmetry, and derive
+**A4.** `Z ~ N(0,1)`. Write the PDF. Show `E[Z] = 0` by symmetry, and derive
 `Var(Z) = E[Z²] = 1` by parts. Then: `X = μ + σZ` — derive the PDF of `X` by the
 change-of-variables rule and confirm `E[X] = μ`, `Var(X) = σ²`.
 *Standardisation `Z = (X−μ)/σ` is the move that reduces every normal question to a table lookup.
 Do it in this direction once and it stops being magic.*
 
-**F1.5-A5.** State the 68/95/99.7 rule. Then compute `P(|Z| > 2)` and `P(Z > 1.645)` from
+**A5.** State the 68/95/99.7 rule. Then compute `P(|Z| > 2)` and `P(Z > 1.645)` from
 memory, and say what the second number is used for.
 *Numerical anchors you should be able to produce cold. `1.645` is the 95% one-tail critical
 value; `1.96` is the 95% two-tail. Mixing them up is a classic interview stumble and a classic
@@ -247,112 +177,111 @@ production bug in a VaR calculation.*
 
 ---
 
-## Tier B — the target (≥3 of 5)
+### Tier B — the target. At least three.
 
-**F1.5-B1.** Prove the exponential is **memoryless**: `P(X > s+t | X > s) = P(X > t)`. Then
+**B1.** Prove the exponential is **memoryless**: `P(X > s+t | X > s) = P(X > t)`. Then
 prove the converse *(sketch is fine)*: the exponential is the **only** continuous distribution
 with this property.
-*Compare line by line with F1.4-B2, which you did yesterday for the geometric. Same theorem,
+*Compare line by line with the geometric memorylessness proof. Same theorem,
 continuous setting. Then say what memorylessness implies for a component that has already
 survived 5 years — and why that is a bad model for most physical parts and a decent one for
 "time until the next trade".*
 
-**F1.5-B2.** Complete the Poisson–exponential bridge from F1.4-B3: if arrivals follow a Poisson
+**B2.** Complete the Poisson–exponential bridge: if arrivals follow a Poisson
 process with rate `λ`, show the waiting time to the first arrival is `Exp(λ)`.
 *One line: `P(T > t) = P(no arrivals in [0,t]) = e^{−λt}`. Then say what the gap between the
 `k`-th and `(k+1)`-th arrival is distributed as, and why the answer needs memorylessness.*
 
-**F1.5-B3.** The **hazard rate** `h(x) = f(x)/(1−F(x))` is the instantaneous failure rate given
+**B3.** The **hazard rate** `h(x) = f(x)/(1−F(x))` is the instantaneous failure rate given
 survival to `x`. Compute it for `Exp(λ)`. What is special about the answer, and how does it
 relate to B1?
 *Constant hazard ↔ memoryless ↔ exponential — three names for one fact. Hazard rates are the
 native language of credit default modelling and of survival analysis.*
 
-**F1.5-B4.** ⚡ *stretch — not in Ch.5; material is in §Stretch notes above.*
+**B4.** ⚡ *stretch — not in Ch.5; material is in §Stretch notes above.*
 `X ~ Exp(λ₁)` and `Y ~ Exp(λ₂)` independent. Show `min(X,Y) ~ Exp(λ₁+λ₂)`, and compute `P(X<Y)`.
 **Attempt it cold first** — you have every tool needed (the tail `e^{−λt}` and independence).
 Read the stretch note only after you've tried, or when you're stuck.
 *Competing risks: which of two events happens first — first to fill, first to default, first to
 arrive. Both answers are one line and both get asked directly.*
 
-**F1.5-B5.** Use the normal approximation to the binomial: 10,000 fair coin flips, estimate
+**B5.** Use the normal approximation to the binomial: 10,000 fair coin flips, estimate
 `P(more than 5,100 heads)`. State the mean and SD of the binomial first, then standardise.
 *Connects straight to yesterday's A1/A2. Also note the continuity correction and say whether it
 matters at this scale.*
 
 ---
 
-## Tier C — only if A+B ran short
+### Tier C — only if A and B ran short.
 
-**F1.5-C1.** `X ~ Exp(λ)`. Derive the distribution of `Y = ⌈X⌉` (round up to the next integer).
+**C1.** `X ~ Exp(λ)`. Derive the distribution of `Y = ⌈X⌉` (round up to the next integer).
 *It is geometric. Yesterday's distribution falls out of today's — the two memoryless
 distributions are the same object at two resolutions.*
 
-**F1.5-C2.** Derive the Gaussian integral `∫_{−∞}^{∞} e^{−x²/2}dx = √(2π)` via the polar-
+**C2.** Derive the Gaussian integral `∫_{−∞}^{∞} e^{−x²/2}dx = √(2π)` via the polar-
 coordinate trick. *This is where the `1/√(2π)` in the normal PDF comes from.*
+
+---
 
 ---
 
 ## Code problems
 
-One file, `src/solvers/s1_probability/distributions_verify.py` (~30 lines). **This creates
-`src/solvers/`** — first real need. It carries `F1.4`'s deferred verifier too, so both stages
-close on one artifact. Docstring with time + space complexity (baseline adj #9). One
-`assert`-based `__main__`; no test framework yet.
+Both live in `src/solvers/s1_probability/distributions_verify.py`, shared with discrete
+distributions. **This file creates `src/solvers/`.** Standard library only, no test framework.
 
-**F1.5-CODE1** — Sample `Exp(λ)` by **inverse transform**: `X = −ln(U)/λ`, using `random.random()`.
-*Not* `np.random.exponential` — the point is that A1 is what makes the sampler exist. Assert
-sample mean ≈ `1/λ` and sample var ≈ `1/λ²` within tolerance.
+### 1 · Sampling an exponential by inverse transform
 
-**F1.5-CODE2** — Draw from `N(0,1)` and assert the 68/95/99.7 fractions hold within tolerance.
-*The cheapest possible check that A5's anchors are real numbers and not memorised noise.*
+Draw from `Exp(λ)` using only `random.random()` — no `numpy.random.exponential`.
 
-**F1.4-CODE1** *(carried from `F1.4`)* — Simulate `Geometric(p)`, assert `E[X] ≈ 1/p`.
+> **Input:** rate `λ > 0`, number of samples
+> **Output:** draws from `Exp(λ)`
+> **Method:** if `U ~ Uniform(0,1)` then `X = −ln(U)/λ ~ Exp(λ)`. Invert the CDF yourself.
+> **Verify:** sample mean ≈ `1/λ` and sample variance ≈ `1/λ²`, within tolerance.
 
-**F1.4-CODE2** *(carried)* — Simulate flips until two heads in a row, assert `E ≈ 6`.
-*This is baseline II.1, which you answered 4. The simulation is the referee.*
+*The inverse-CDF derivation is what makes the sampler exist. Calling a library sampler proves
+nothing about whether you can derive one.*
 
-*Tolerance note: pick `n` so the MC standard error is comfortably under your assert threshold,
-and say in a comment what `n` you chose and why. A flaky assert is worse than no assert.*
+### 2 · The normal's 68/95/99.7 anchors
+
+> **Input:** number of samples
+> **Output:** the empirical fraction of `N(0,1)` draws within `±1σ`, `±2σ`, `±3σ`
+> **Verify:** those fractions are `≈ 0.68`, `0.95`, `0.997`.
+
+*The cheapest possible check that the anchors you recite are real numbers and not memorised
+noise.*
+
+**Tolerance:** pick the sample count so the standard error is comfortably under the assert
+threshold, and say in a comment what you chose and why. A flaky assert is worse than none.
 
 ---
 
 ## Deliverables
 
-**D1 — Feynman note** `progress/feynman_notes/F1_5_continuous_distributions.md`
-- [ ] Teach-back, gaps, napkin, summary table, where-it-breaks — all real, zero `⚠️ GAP`
-- [ ] Napkin ≤200 words **said out loud once** (record it; incoherence is inaudible on paper)
-- [ ] **Summary table** — three rows × six columns (PDF, CDF, E[X], Var, MGF, the one fact
-      that matters). Sits directly under the discrete table from `F1.4`.
+**Feynman note** — `progress/feynman_notes/F1_5_continuous_distributions.md`
+- [ ] Teach-back for all three distributions, source closed
+- [ ] Summary table: one row per distribution — PDF, CDF, `E[X]`, `Var(X)`, and the classic problem
+- [ ] Any `⚠️ GAP` logged
 
-**D2 — Problems** (this file, §Tier A/B/C)
-- [ ] Tier A A1–A5 unhinted, on paper
-- [ ] ≥3 of 5 Tier B
-- [ ] Log which needed hints. Hint use is fine; hiding it is not.
+**Problems**
+- [ ] A1–A5 unhinted, on paper
+- [ ] At least three from Tier B
+- [ ] Log which needed hints
 
-**D3 — Code** (this file, §Code problems)
-- [ ] `F1.5-CODE1`, `F1.5-CODE2`, `F1.4-CODE1`, `F1.4-CODE2` — all in one file, all asserting
+**Code** — both problems asserting, with complexity docstrings.
 
-**D3.5 — Concept notes** (2 minutes each, at close)
-Write **two sentences in your own words** into each concept note this stage touched:
-- [ ] `vault/concepts/memorylessness.md` — extends what `F1.4` wrote for the geometric
-- [ ] `vault/concepts/standardisation.md`
-- [ ] `vault/concepts/change-of-variables.md`
-- [ ] `vault/concepts/poisson-exponential-duality.md`
-- [ ] Set `status: ready-for-test` and `actual_h:` in this file's frontmatter
+**Unlock test** — one week after close.
 
-*This is the only vault file you touch during a stage, and it is what makes the vault a live
-system rather than a diagram. Concept notes **accumulate across stages** — geometric started
-memorylessness, exponential extends it — which a per-stage Feynman note structurally cannot do.*
+---
 
-**D4 — Unlock test → at the +1 week review (2026-08-15), not this Saturday**
-- [ ] 5 fresh questions, 45 min, closed-book (Feynman note allowed). Pass ≥80%.
-- [ ] Grade the **day after**, per `04_deliverables_spec.md`.
-- [ ] Includes baseline I.3 cold (`E` and `Var` of `Exp(λ)`) — the red flag this stage exists to close.
+**When it gets hard and you start drifting:** stop reading, write the sentence you can't finish
+into the note as a `⚠️ GAP`, and switch to Tier A on paper. **For these three specifically, sketch
+the density and shade the probability you are being asked for** — most continuous-distribution
+confusion is about which region the integral covers, and a shaded sketch settles it faster than
+re-reading the formula.
 
-*Why D4 is deferred a week: retrieval practice works on a delay. Testing the same day measures
-short-term memory, which is not the thing that has to survive until January. The stage sits at
-`READY_FOR_TEST` until then — that is a real state, not an unfinished one.*
+**If the day collapses, do A1 and A3.** A1 is the tail formula, which shortcuts half the
+expectation questions you will meet; A3 is the exponential's mean and variance.
 
 ---
 ---
@@ -438,13 +367,13 @@ number by ~11%.
 `s,t ≥ 0` — the **Cauchy functional equation** in multiplicative form. With `G` right-continuous,
 monotone, and `G(0)=1`, the only solutions are `G(t) = e^{−λt}`. *(The proof runs: the relation
 forces `G(n) = G(1)^n`, then rationals by the same argument, then all reals by continuity —
-exactly the structure you saw in R.calculus when `dy/dx = y` forced the exponential.)*
+exactly the structure behind `dy/dx = y` forcing the exponential.)*
 
 *Meaning:* a component that has survived 5 years has the **same** remaining-life distribution as
 a new one. For physical parts that is wrong — they wear out, hazard increases, and you want a
 Weibull. For "time until the next trade arrives" in a liquid book it is a reasonable first
 model, because arrivals are driven by a fresh stream of independent decisions rather than by
-accumulated fatigue. Compare F1.4-B2: **geometric is memoryless in discrete time, exponential in
+accumulated fatigue. **Geometric is memoryless in discrete time, exponential in
 continuous time, and they are the only two.**
 
 **B2.** `P(T > t) = P(zero arrivals in [0,t])`. For a Poisson process with rate `λ`, the count in

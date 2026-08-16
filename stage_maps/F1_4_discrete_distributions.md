@@ -2,184 +2,189 @@
 type: stage
 id: F1.4
 name: Discrete Distributions
-kind: foundation
-multiplier: 2.0
 topic: "[[I-4-discrete-random-variables-and-distributions]]"
 concepts: ["[[memorylessness]]", "[[poisson-exponential-duality]]", "[[first-step-conditioning]]", "[[linearity-of-expectation]]"]
 roles: ["[[market-making]]"]
 sprint: S15
 status: ready-for-test
-budget_h: 3
+est_h: 3
 actual_h: 6.0
-d4_due: 2026-08-15
-baseline_closes: [II.1, II.3]
 ---
 
-# Discrete Distributions — Stage Map
-`F1.4` · foundation (new install, 2.0×) · `topics/section_I` §4
-**Sprint 15, Days 12–14 (Fri 07-31 → Sun 08-02)** · **Budget was 3h · actual 6.0h**
+# Discrete Distributions
 
-> **CLOSED PARTIAL 2026-08-02.** Summary table lives in the handnote; code problems deferred to
-> the shared `F1.5` verifier. **D4 unlock test: 2026-08-15.**
->
-> **Scope correction, 2026-08-09:** MGF was listed as core here and it is **not in Ross Ch.4** —
-> Ross puts MGFs in Ch.7. You correctly wrote *"deferred, this is not in the book chapter 4"* in
-> the note, and you were right; A5 was mis-specified, not skipped. It is now marked stretch below.
-> The general fix is in `04_deliverables_spec.md` §D2: **checklists get built from the source's
-> real section headings, and every stretch item names how you actually get it.**
+**Source:** Ross, *A First Course in Probability* 6th ed. — Ch. 4. Navigate by heading: Ross does
+Bernoulli and binomial first, then Poisson, then geometric later in the chapter. **Skip the
+negative binomial and hypergeometric subsections** — same chapter, not this topic.
 
-**Why this stage exists:** baseline I.3 asked for `E[X]` and `Var(X)` of an exponential and got
-`e^λ` and `0` — the *named-distribution* machinery is missing, not the reasoning. This stage
-installs the discrete half of that machinery. Every one of these four shows up in interviews as
-a one-liner you either have or you don't: "what's the expected number of trials until the first
-success?" is not a derivation you want to be doing live.
+**If the Poisson-limit derivation is heavy going,** the single fallback is StatQuest, "The Poisson
+Distribution", 12 minutes. That is the only video here.
 
-**Scope — four distributions, one table each:**
+**Estimated: 6h.** *(Budgeted 3h and took 6 — this is the stage that produced the 2× multiplier
+for new material.)*
+
+> **Closed partial.** The summary table lives in the handnote rather than the repo, and the code
+> problems were folded into the shared continuous-distributions verifier.
+
+---
+
+## What this covers
+
+Four distributions, and one structural fact tying them together. Each shows up in interviews as a
+one-liner you either have or you do not — "expected number of trials until the first success" is
+not a derivation you want to be doing live.
+
 1. **Bernoulli** — the atom
-2. **Binomial** — sum of Bernoullis
-3. **Geometric** — trials until first success
-4. **Poisson** — the limit of binomial, and the arrival-count distribution
+2. **Binomial** — a sum of Bernoullis
+3. **Geometric** — trials until the first success
+4. **Poisson** — the limit of the binomial, and the arrival-count distribution
 
-For each: **PMF · E[X] · Var(X) · one classic problem.** Plus the one structural fact that ties
-them together: **Poisson as the limit of Binomial.**
+For each: PMF, `E[X]`, `Var(X)`, one classic problem. Plus **Poisson as the limit of binomial**,
+which is what makes the four a family rather than a list.
 
-Out of scope: negative binomial, hypergeometric, multinomial, discrete uniform beyond a
-mention. Conditional/joint versions are S1.6.
+**Not here:** negative binomial, hypergeometric, multinomial. Joint and conditional versions come
+with joint distributions.
 
-**Stretch — not in Ross Ch.4:**
-- **MGF** → **DEFERRED to S1.8.** Reason: Ross covers MGFs in **Ch.7**, and *using* them for sums
-  needs convolution machinery this stage doesn't have. The definition is in `F1.5`'s
-  §Stretch notes so the term isn't cold when S1.8 arrives.
-  *(This was originally listed as core and as problem A5 — the error you caught on 07-31.)*
+**Moment generating functions are deliberately absent.** They were originally listed as core here
+and they are **not in Ross Ch.4** — Ross puts them in Ch.7. The gap was caught while studying and
+the item was withdrawn rather than faked. They arrive with expectation and moments.
 
----
-
-## Source — one book, one sitting
-
-| Source | Covers | Time |
-|---|---|---|
-| **Ross, *A First Course in Probability* 6th ed. — Ch. 4** | All four, plus the Poisson limit | **40 min, hard stop** |
-
-Navigate by heading, not section number. The four you want are the named-distribution
-subsections; Ross does Bernoulli/Binomial first, then Poisson, then Geometric later in the
-chapter. **Skip the negative binomial and hypergeometric subsections entirely** — they are in
-the same chapter and they are not in this stage.
-
-**If Ross's Poisson-limit derivation is heavy going,** the single named fallback is
-**StatQuest, "The Poisson Distribution", 12 min**. That is the *only* video in this stage.
-
-**Input cap: 40 min.** Same discipline that made R.linalg land on budget: read once, close the
-book, write from memory.
+*That catch is why the checklist rule exists: build it from the source's real headings, and name
+how you actually get anything outside the chapter.*
 
 ---
 
-## The three-block shape
+## Knowledge checklist — tick when you can produce it cold
 
-Same shape as R.linalg, which hit its 3h allocation. Blocks break cleanly at the hour.
+**Bernoulli and binomial**
+- [x] PMF of `Binomial(n,p)`
+- [x] `E[X] = np` **by linearity over a sum of Bernoullis** — not by summing the series
+- [x] `Var(X) = np(1−p)`, and **which step needs independence**
+- [ ] The factorial-moment route to the variance
 
-| Block | When | Do | Out |
-|---|---|---|---|
-| **1** | 08:00–09:00 | Read (40 min, hard stop) → close book → start §1 teach-back | Teach-back drafted |
-| **2** | afternoon scrap, 30–45 min | Tier A, on paper, closed-book | A1–A5 done |
-| **3** | evening, 60 min | Gap-hunt §1 · Tier B · §3–§6 · numerical anchor | Note closed |
+**Geometric**
+- [x] PMF, and `E[X] = 1/p` by one-step conditioning: `E[X] = 1 + (1−p)E[X]`
+- [x] **Memorylessness** `P(X > m+n | X > n) = P(X > m)`
+- [ ] What memorylessness means for someone who has just seen ten tails in a row
 
-Note skeleton: `progress/feynman_notes/F1_4_discrete_distributions.md`
-
-**If the day collapses: A1, A3, B1 only.** A3 (geometric expectation) is the highest-frequency
-interview item in the stage; B1 (Poisson as binomial limit) is the one that explains *why*
-Poisson exists at all.
-
----
-
-## Tier A — the floor (A1–A4, unhinted, on paper · A5 withdrawn, see below)
-
-**F1.4-A1.** Write the PMF of `Binomial(n, p)`. Derive `E[X] = np` two ways: (i) directly from
-the sum `Σ k·C(n,k)p^k(1−p)^{n−k}`, and (ii) by writing `X = ΣXᵢ` as a sum of `n` Bernoullis
-and using linearity.
-*Method (ii) takes one line. Notice how much work (i) is. That contrast is the lesson —
-decomposition beats summation, and it is the same move as B1 in R.linalg.*
-
-**F1.4-A2.** Derive `Var(X)` for `Binomial(n, p)`. Use the sum-of-Bernoullis decomposition and
-say explicitly **which step needs independence** — that is where the interviewer probes.
-
-**F1.4-A3.** `X ~ Geometric(p)`, the number of trials up to and including the first success.
-Write the PMF. Derive `E[X] = 1/p` two ways: (i) the sum `Σ k(1−p)^{k−1}p`, and (ii) the
-one-step conditioning argument `E[X] = 1 + (1−p)E[X]`.
-*Method (ii) is three lines and no series. Learn it as the reflex — it is the same
-first-step-analysis that solves gambler's ruin (baseline III.1, scored 1) and the HH-flip puzzle
-(II.1, scored 1).*
-
-**F1.4-A4.** `X ~ Poisson(λ)`. Write the PMF, verify it sums to 1 (you need the Taylor series
-for `e^λ` — you derived `e` from `dy/dx = y` in R.calculus), and derive `E[X] = λ`.
-
-**F1.4-A5.** ~~Derive the MGF for Bernoulli, Binomial, and Poisson.~~
-**WITHDRAWN 2026-08-09 — out of chapter.** Ross covers MGFs in Ch.7, not Ch.4. You flagged this
-correctly on 07-31; the answer key below is kept for reference but **A5 does not count against
-Tier A completion**, and the MGF column comes out of the summary table. Moved to S1.8.
-*Tier A for this stage is A1–A4.*
+**Poisson**
+- [x] PMF, and that it sums to one via the Taylor series for `e^λ`
+- [x] `E[X] = Var(X) = λ`
+- [ ] **Poisson as the limit of `Binomial(n, λ/n)`** — and when modelling a count as Poisson is
+      therefore legitimate
+- [ ] Rate scaling: what happens to `λ` when the observation window shrinks
+- [ ] **Overdispersion** — what `Var > E` tells you about real arrival data
 
 ---
 
-## Tier B — the target (≥3 of 5)
+## Problems
 
-**F1.4-B1.** Show that `Binomial(n, λ/n) → Poisson(λ)` as `n → ∞`. Start from the binomial PMF,
-substitute `p = λ/n`, and take the limit term by term.
-*You will need `(1 + x/n)^n → e^x` — which is exactly the `(1+dx)^{1/dx}` insight you wrote into
-R.calculus §6(e). This is that fact doing real work. State in one sentence what the result means:
-when is it legitimate to model a count as Poisson?*
+### Tier A — the floor. All four, unhinted, on paper.
 
-**F1.4-B2.** Prove the geometric distribution is **memoryless**: `P(X > m+n | X > n) = P(X > m)`.
-Then say in one sentence what this means for a trader who has flipped 10 tails in a row.
-*The exponential is the continuous twin of this — you meet it tomorrow in `F1.5`, and it is
-baseline I.3. Getting the discrete version today makes tomorrow's free.*
+**A1.** Write the PMF of `Binomial(n, p)`. Derive `E[X] = np` two ways: directly from the sum
+`Σ k·C(n,k)p^k(1−p)^{n−k}`, and by writing `X = ΣXᵢ` as a sum of `n` Bernoullis and using
+linearity.
 
-**F1.4-B3.** A call desk receives on average 3 calls per hour. What is `P(exactly 5 calls in the
-next hour)`? `P(no calls in the next 20 minutes)`?
-*The second half is the one people fumble: the rate scales with the window. Say what happens to
-`λ` when the window shrinks, and note that "no calls" is the bridge to the exponential
-waiting time.*
+*The second takes one line. Notice how much work the first is — decomposition beats summation,
+and that is the whole method.*
 
-**F1.4-B4.** You flip a fair coin until you get heads. `E[X] = 2` from A3. Now: what is the
-expected number of flips until you see **two heads in a row**?
-*This is baseline II.1, which you scored 1 on — you said 4, the answer is 6. Set up states and
-condition on the first flip. If you can do this cold, that red flag is closed.*
+**A2.** Derive `Var(X)` for `Binomial(n, p)` using the sum-of-Bernoullis decomposition, and say
+explicitly **which step needs independence**. That is where an interviewer probes.
 
-**F1.4-B5.** `X ~ Binomial(n, p)`. Show `E[X(X−1)] = n(n−1)p²` and use it to get `Var(X)`
-without the Bernoulli decomposition.
-*This is the factorial-moment trick. It generalises to the Poisson in one line — do that too if
-there's time, and note which is less work.*
+**A3.** `X ~ Geometric(p)`, the number of trials up to and including the first success. Write the
+PMF. Derive `E[X] = 1/p` two ways: the sum `Σ k(1−p)^{k−1}p`, and the one-step conditioning
+argument `E[X] = 1 + (1−p)E[X]`.
+
+*The second is three lines and no series. Learn it as the reflex — it is the same first-step
+analysis that solves gambler's ruin and every pattern-waiting puzzle.*
+
+**A4.** `X ~ Poisson(λ)`. Write the PMF, verify it sums to one — you need the Taylor series for
+`e^λ` — and derive `E[X] = λ`.
+
+### Tier B — the target. At least three.
+
+**B1.** Show that `Binomial(n, λ/n) → Poisson(λ)` as `n → ∞`. Start from the binomial PMF,
+substitute `p = λ/n`, take the limit term by term.
+
+*You will need `(1 + x/n)^n → e^x`. State in one sentence what the result means: when is it
+legitimate to model a count as Poisson?*
+
+**B2.** Prove the geometric distribution is **memoryless**: `P(X > m+n | X > n) = P(X > m)`. Then
+say in one sentence what that means for a trader who has just flipped ten tails in a row.
+
+**B3.** A call desk receives on average 3 calls per hour. Find `P(exactly 5 calls in the next
+hour)` and `P(no calls in the next 20 minutes)`.
+
+*The second half is the one people fumble — the rate scales with the window. Say what happens to
+`λ` when the window shrinks, and note that "no calls" is the bridge to a continuous waiting time.*
+
+**B4.** You flip a fair coin until you get heads; `E[X] = 2` from A3. Now: what is the expected
+number of flips until you see **two heads in a row**?
+
+*Set up states and condition on the first flip. The intuitive answer of 4 is wrong.*
+
+**B5.** `X ~ Binomial(n, p)`. Show `E[X(X−1)] = n(n−1)p²` and use it to get `Var(X)` without the
+Bernoulli decomposition.
+
+*The factorial-moment trick. It generalises to the Poisson in one line — do that too if there is
+time, and note which is less work.*
+
+### Tier C — only if A and B ran short.
+
+**C1.** Coupon collector: `n` distinct coupons, one per box, uniformly at random. Show
+`E[boxes to collect all n] = n·H_n ≈ n ln n` by decomposing into geometric waiting times.
+
+**C2.** For `Poisson(λ)`, show `E[X] = Var(X) = λ`. Then say what **overdispersion** means in a
+count model, and why it matters when fitting trade-arrival data.
 
 ---
 
-## Tier C — only if A+B ran short
+## Code problems
 
-**F1.4-C1.** Coupon collector: `n` distinct coupons, one per box, uniformly at random. Show
-`E[boxes to collect all n] = n·H_n ≈ n ln n`. Decompose into geometric waiting times.
-*This is baseline II.3, scored 0, and it is on the scrap-time cheap-win list. It is a sum of
-geometrics — which you now own from A3.*
+Both live in `src/solvers/s1_probability/distributions_verify.py`, shared with continuous
+distributions. Standard library only.
 
-**F1.4-C2.** For `Poisson(λ)`, show that `E[X] = Var(X) = λ`. Then say what "overdispersion"
-means in a count model and why it matters when you fit trade-arrival data.
+### 1 · Geometric expectation
+
+> **Input:** success probability `p`, number of trials
+> **Output:** the mean number of Bernoulli(`p`) attempts until the first success
+> **Verify:** simulated mean ≈ `1/p`.
+
+### 2 · Expected flips until two heads in a row
+
+> **Input:** number of simulated runs
+> **Output:** the mean number of fair-coin flips until `HH` appears
+> **Verify:** the mean ≈ `6`.
+
+*You have the first-step-conditioning answer from B4 on paper. The simulation is the referee.*
 
 ---
 
 ## Deliverables
 
-- [ ] `progress/feynman_notes/F1_4_discrete_distributions.md` — all 6 sections real, zero
-      `⚠️ GAP`, napkin ≤200 words **said out loud once**
-- [ ] Tier A A1–A5 unhinted, on paper
-- [ ] ≥3 of 5 Tier B
-- [ ] **Summary table in the note** — four rows (Bernoulli/Binomial/Geometric/Poisson) ×
-      three columns (PMF, E[X], Var — MGF withdrawn 08-09). This table *is* the deliverable; it is what you
-      recall cold in a year.
-- [ ] **Unlock test:** re-answer baseline I.3 cold *(E and Var of an exponential — you will not
-      have covered the exponential yet; answer the discrete analogue, geometric, and note the
-      pairing)*. Plus II.1 (E[flips for HH]) cold, fully correct.
+**Feynman note** — `progress/feynman_notes/F1_4_discrete_distributions.md`
+- [ ] Teach-back for all four distributions, source closed
+- [ ] Summary table: one row per distribution — PMF, `E[X]`, `Var(X)`, and the one classic problem
+- [ ] Any `⚠️ GAP` logged
 
-**Create `src/solvers/` this stage** — first real need. One file:
-`src/solvers/s1_probability/discrete_verify.py`, ~20 lines: simulate the geometric to check
-`E[X]=1/p`, and the B4 two-heads-in-a-row to check it converges to 6. Docstring with complexity,
-per baseline adjustment #9.
+**Problems**
+- [ ] A1–A4 unhinted, on paper
+- [ ] At least three from Tier B
+- [ ] Log which needed hints
+
+**Code** — both problems asserting, with complexity docstrings.
+
+**Unlock test** — one week after close.
+
+---
+
+**When it gets hard and you start drifting:** stop reading, write the sentence you can't finish
+into the note as a `⚠️ GAP`, and switch to Tier A on paper. **For these four specifically, write
+the PMF down and compute `E[X]` for `n=2` or `n=3` by hand** — a distribution becomes concrete the
+moment you have enumerated a tiny case, and never from re-reading its definition.
+
+**If the day collapses, do A1 and A3.** A1 is linearity beating summation; A3 is first-step
+conditioning, which recurs everywhere downstream.
 
 ---
 ---
@@ -223,14 +228,6 @@ Taylor series of `e^λ`.
 `E[X] = Σ k·e^{−λ}λ^k/k!` — drop `k=0`, cancel one `k`, reindex `j=k−1`:
 `= λe^{−λ}Σ_j λ^j/j! = λe^{−λ}e^{λ} = **λ**`.
 
-**A5.** Bernoulli: `M(t) = E[e^{tX}] = (1−p) + pe^t`.
-Binomial: `X = ΣXᵢ` independent, and the MGF of a sum of independents is the *product* of MGFs,
-so `M(t) = **((1−p) + pe^t)^n**` — the Bernoulli's raised to the `n`, exactly as the
-decomposition predicts. **That is why MGFs earn their keep: they turn convolution (hard) into
-multiplication (easy).** You will use this properly in S1.8.
-Poisson: `M(t) = Σ e^{tk}e^{−λ}λ^k/k! = e^{−λ}Σ(λe^t)^k/k! = e^{−λ}e^{λe^t} = **e^{λ(e^t −1)}**`.
-Check: `M'(t) = λe^t·e^{λ(e^t−1)}`, so `M'(0) = λ = E[X]` ✓.
-`M''(0) = λ + λ²= E[X²]`, so `Var = λ + λ² − λ² = **λ**` ✓ — matches A4.
 
 </details>
 
@@ -300,7 +297,7 @@ Then `E[X²] = E[X(X−1)] + E[X] = n(n−1)p² + np`, so
 
 *Poisson version, one line:* `E[X(X−1)] = λ²` by the same reindex, so
 `Var = λ² + λ − λ² = λ`. The factorial-moment route is shorter for Poisson than for Binomial,
-and both are longer than the MGF route in A5. Three ways up the same hill — the MGF is the one
+and both are longer than the moment-generating-function route. Three ways up the same hill, and
 that scales.
 
 </details>
@@ -319,7 +316,7 @@ For `n = 50` coupons: `≈ 50·ln50 + 0.577·50 ≈ 196 + 29 ≈ 225` boxes.
 linearity", which is A1(ii) and A3 combined. Note that linearity applies even though the `Tᵢ`
 are dependent in the ordering sense — you never needed independence.)*
 
-**C2.** Both equal `λ` — shown in A4 and A5. This is a **strong, testable restriction**: real
+**C2.** Both equal `λ` — shown in A4. This is a **strong, testable restriction**: real
 count data with `Var > E` is *overdispersed* and the Poisson fit is wrong.
 For trade arrivals this is the norm, not the exception: trades cluster (one large order triggers
 responses), so empirical variance exceeds the mean, often by a lot. The standard fixes are the

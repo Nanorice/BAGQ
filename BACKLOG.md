@@ -13,7 +13,7 @@ to pick. **Pays into** is why the topic is on the list at all.
 
 <!-- BEGIN GENERATED:backlog -->
 
-**0 closed · 4 awaiting test · 55 not started · ~296h remaining**
+**0 closed · 4 awaiting test · 55 not started · ~292h remaining**
 
 ## I — Probability and combinatorics
 
@@ -22,10 +22,10 @@ to pick. **Pays into** is why the topic is on the list at all.
 | [ ] | [[F1_1_combinatorics]] Combinatorics & Counting | 6.5h | 4h | in progress | Market making · Signal research | — |
 | [ ] | [[I-2-classical-probability]] Classical (Discrete) Probability | 2h | — | not started | — | — |
 | [ ] | [[F1_2_conditional_probability_bayes]] Conditional Probability & Bayes' Theorem | 7h | — | in progress | Signal research | I.1 |
-| [~] | [[F1_4_discrete_distributions]] Discrete Random Variables & Distributions | 6h | 6h | awaiting test | Market making | I.3 |
-| [~] | [[F1_5_continuous_distributions]] Continuous Random Variables & Distributions | 5h | 5h | awaiting test | Market making · Options pricing · Risk management · Signal research | I.4, VIII.1 |
+| [~] | [[F1_4_discrete_distributions]] Discrete Random Variables & Distributions | 3h | 6h | awaiting test | Market making | I.3 |
+| [~] | [[F1_5_continuous_distributions]] Continuous Random Variables & Distributions | 6h | 5h | awaiting test | Market making · Options pricing · Risk management · Signal research | I.4, VIII.1 |
 | [ ] | [[I-6-joint-distributions-and-multivariate-probability]] Joint Distributions & Multivariate Probability | 6h | — | not started | Options pricing · Portfolio construction · Risk management · Signal research | I.5, VII.1 |
-| [ ] | [[F1_7a_expectation_tower_property]] Expectation, Variance & Moments | 8.5h | — | in progress | Market making · Signal research | I.6 |
+| [ ] | [[F1_7_expectation_variance_moments]] Expectation, Variance & Moments | 8.5h | — | in progress | Market making · Signal research | I.6 |
 | [ ] | [[I-8-generating-functions-and-transforms]] Generating Functions & Transforms | 5h | — | not started | — | I.7 |
 
 ## II — Classical puzzles
@@ -81,14 +81,14 @@ to pick. **Pays into** is why the topic is on the list at all.
 
 | | Topic | Est | Actual | Status | Pays into | Blocked by |
 |---|---|--:|--:|---|---|---|
-| [~] | [[R_linear_algebra]] Core Linear Algebra | 3.5h | 3.5h | awaiting test | Portfolio construction · Risk management · Signal research | — |
+| [~] | [[R_linear_algebra]] Core Linear Algebra | 3h | 3.5h | awaiting test | Portfolio construction · Risk management · Signal research | — |
 | [ ] | [[VII-2-applications-in-quant-finance]] Applications in Quant Finance | 5h | — | not started | Portfolio construction · Risk management · Signal research | — |
 
 ## VIII — Calculus and ODEs
 
 | | Topic | Est | Actual | Status | Pays into | Blocked by |
 |---|---|--:|--:|---|---|---|
-| [~] | [[R_calculus]] Ordinary Differential Equations (ODEs) | 5h | 5h | awaiting test | — | — |
+| [~] | [[R_calculus]] Ordinary Differential Equations (ODEs) | 4h | 5h | awaiting test | — | — |
 | [ ] | [[VIII-2-partial-differential-equations]] Partial Differential Equations (PDEs) | 6h | — | not started | — | VIII.1 |
 | [ ] | [[VIII-3-optimization-and-calculus-of-variations]] Optimization & Calculus of Variations | 5h | — | not started | — | — |
 

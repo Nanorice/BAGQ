@@ -2,156 +2,158 @@
 type: stage
 id: R.linalg
 name: Linear Algebra Refresher
-kind: refresher
-multiplier: 1.2
 topic: "[[VII-1-core-linear-algebra]]"
 concepts: ["[[psd-covariance]]"]
 roles: ["[[portfolio-construction]]", "[[signal-research]]"]
 sprint: S15
 status: ready-for-test
-budget_h: 3
+est_h: 3
 actual_h: 3.5
-d4_due: 2026-08-15
-baseline_closes: [VII.1, VII.2]
 ---
 
-# Linear Algebra Refresher — Problem Set
-`stage: R.linalg` · **Sprint 15, Day 10 (Thu 2026-07-30)** · **Budget: 3h in three blocks**
+# Linear Algebra Refresher
 
-**Why this stage exists:** baseline VII.1 gave you `[[2,1],[1,2]]` and you produced the
-*definition* of an eigenvalue but not the numbers (correct: 1 and 3). VII.2 (PSD) scored 1.
-Those two gaps sit directly under PCA (S20), the covariance matrix in every risk model you
-will ever touch, Cholesky sampling for correlated Monte Carlo, and the Markowitz derivation
-you already met via Lagrange in R.calculus. This is the "computation forgotten" stage — you have
-the concepts, you need the hands.
+**Source:** Green Book (Zhou) Ch. 2 — the linear algebra section. Navigate by the headings on
+**eigenvalues/eigenvectors** and **positive definite/semi-definite matrices**; section numbering
+shifts between printings.
 
-**Scope — three things only:**
-1. Eigenvalues + eigenvectors by hand, 2×2 and 3×3, via the characteristic polynomial
-2. Positive semi-definite: three equivalent definitions, and how to test
-3. Why a covariance matrix is always PSD
+**If the eigenvalue treatment is too terse** — it is written for people revising, not learning —
+the single fallback is 3Blue1Brown *Essence of Linear Algebra* ep. 14, 17 minutes. That is the
+only video here. Do not open ep. 1–13.
 
-Out of scope (they belong to later stages, do not chase them): SVD, QR, LU, Sherman-Morrison,
-matrix exponentials, power iteration, condition numbers. PCA proper is S20 — you are building
-its foundation here, not doing it. `topics/section_VII_linear_algebra.md` is the advanced
-backlog, not this.
+**Estimated: 3h.**
 
 ---
 
-## Source — one book, one sitting
+## What this covers
 
-| Source | Covers | Time |
-|---|---|---|
-| **Green Book (Zhou), Ch. 2 — the Linear Algebra section** | All three topics, in interview register | **40 min, hard stop** |
+The concepts are already there; the hands are not. This is the computation-forgotten stage.
 
-Look for the headings on **eigenvalues/eigenvectors** and **positive definite/semi-definite
-matrices**. Section numbering shifts between printings, so navigate by heading, not by number —
-and note the real page range here once you find it: `pp. ____`.
+1. **Eigenvalues and eigenvectors by hand**, 2×2 and 3×3, via the characteristic polynomial
+2. **Positive semi-definite** — three equivalent definitions, and how to test for it
+3. **Why a covariance matrix is always PSD**
 
-**If Green Book's eigenvalue treatment is too terse** (it is written for people revising, not
-learning), the single named fallback is **3Blue1Brown *Essence of Linear Algebra* ep. 14
-("Eigenvectors and eigenvalues"), 17 min**. That is the *only* video in this stage. Do not
-open ep. 1–13. If you find yourself queuing videos, that is the failure mode this stage was
-restructured to kill.
+All three sit directly under principal component analysis, the covariance matrix in every risk
+model, Cholesky sampling for correlated Monte Carlo, and the mean-variance derivation.
 
-**Input cap: 40 min.** Feynman Step 1 is ≤40% of stage time. Everything after that is your
-own pen.
+**Not here:** SVD, QR, LU, Sherman-Morrison, matrix exponentials, power iteration, condition
+numbers. Each returns with the stage that needs it. PCA proper is later — this builds its
+foundation rather than doing it.
 
 ---
 
-## The three-block shape
+## Knowledge checklist — tick when you can produce it cold
 
-Your measured prime hours are 08–09 and the evening, with light-afternoon scrap. This stage is
-built to break cleanly at the hour — no block depends on finishing the previous one mid-thought.
+**Eigenvalues and eigenvectors**
+- [x] `det(A − λI) = 0`, expanded to the characteristic polynomial and solved
+- [x] For any 2×2: `λ² − tr(A)λ + det(A) = 0`, so `λ₁+λ₂ = tr` and `λ₁λ₂ = det`
+- [x] Finding an eigenvector once you have the eigenvalue
+- [x] Symmetric matrices have real eigenvalues and **orthogonal** eigenvectors
+- [x] Exploiting block-diagonal structure instead of expanding a full cubic
 
-| Block | When | Do | Out |
-|---|---|---|---|
-| **1** | 08:00–09:00 | Read (40 min, hard stop) → close the book → start §1 teach-back | Teach-back drafted |
-| **2** | afternoon scrap, 30–45 min | Tier A, on paper, closed-book | A1–A5 done |
-| **3** | evening, 60 min | Gap-hunt §1 · Tier B · §3–§6 · numerical anchor | Note closed |
+**Positive semi-definite**
+- [x] Three equivalent conditions: all eigenvalues `≥ 0` · `xᵀAx ≥ 0` for all `x` · `A = BᵀB`
+- [x] Why leading minors test positive *definite*, not semi-definite
+- [x] Testing a specific matrix two different ways
 
-Note skeleton: `progress/feynman_notes/R_linear_algebra.md`
-
----
-
-## Tier A — the floor (all five, unhinted, on paper)
-
-**R.linalg-A1.** Find the eigenvalues of `A = [[2,1],[1,2]]` by hand. Write out `det(A − λI) = 0`
-explicitly, expand to the characteristic polynomial, solve. Then find an eigenvector for each
-eigenvalue.
-*This is baseline VII.1. Answer: λ = 1, 3. If you cannot do this cold, the stage is not complete.*
-
-**R.linalg-A2.** For a general `2×2` matrix `[[a,b],[c,d]]`, show that the characteristic polynomial
-is `λ² − (a+d)λ + (ad−bc) = 0`. Name the two coefficients — you have met both before.
-*Then use it to shortcut A1 in one line.*
-
-**R.linalg-A3.** Find the eigenvalues of `B = [[4,1],[2,3]]`. Not symmetric, so check: are the
-eigenvectors still orthogonal? Compare with A1 and say what changed.
-
-**R.linalg-A4.** Find the eigenvalues of the `3×3` matrix `C = [[2,0,0],[0,3,4],[0,4,9]]` by hand.
-*Hint: it is block-diagonal — exploit that rather than expanding a full cubic. Recognising
-structure before grinding is itself the skill being tested.*
-
-**R.linalg-A5.** State three equivalent conditions for a symmetric matrix to be positive
-semi-definite. Then test `[[2,1],[1,2]]` and `[[1,2],[2,1]]` — one is PSD, one is not. Say which,
-and show it two different ways.
+**Covariance**
+- [x] **Why `Σ` is always PSD** — start from `xᵀΣx` and turn it into the variance of something
+- [x] Why it is PSD and not always PD, and what the singular case breaks
+- [x] `Σ = BᵀB` as the reason Cholesky exists, and what it buys for correlated simulation
 
 ---
 
-## Tier B — the target (≥3 of 5)
+## Problems
 
-**R_linear_algebra-B1.** Prove that any covariance matrix `Σ` is PSD.
-*Start from `xᵀΣx` and turn it into the variance of something. One line of algebra, and it is
-the single most-asked linear-algebra question in a QR interview. If you get one thing from this
+### Tier A — the floor. All five, unhinted, on paper.
+
+**A1.** Find the eigenvalues of `A = [[2,1],[1,2]]` by hand. Write out `det(A − λI) = 0`
+explicitly, expand to the characteristic polynomial, solve. Then find an eigenvector for each.
+
+**A2.** For a general `[[a,b],[c,d]]`, show the characteristic polynomial is
+`λ² − (a+d)λ + (ad−bc) = 0`. Name the two coefficients — you have met both before. Then use it to
+shortcut A1 in one line.
+
+**A3.** Find the eigenvalues of `B = [[4,1],[2,3]]`. Not symmetric, so check: are the eigenvectors
+still orthogonal? Compare with A1 and say what changed.
+
+**A4.** Find the eigenvalues of `C = [[2,0,0],[0,3,4],[0,4,9]]` by hand.
+*It is block-diagonal — exploit that rather than expanding a full cubic. Recognising structure
+before grinding is itself the skill being tested.*
+
+**A5.** State three equivalent conditions for a symmetric matrix to be positive semi-definite.
+Then test `[[2,1],[1,2]]` and `[[1,2],[2,1]]` — one is PSD, one is not. Say which, and show it two
+different ways.
+
+### Tier B — the target. At least three.
+
+**B1.** Prove that any covariance matrix `Σ` is PSD.
+*Start from `xᵀΣx` and turn it into the variance of something. One line of algebra, and the
+single most-asked linear-algebra question in a quant interview. If you get one thing from this
 stage, get this.*
 
-**R_linear_algebra-B2.** Show that a real symmetric matrix has real eigenvalues. Then show eigenvectors
+**B2.** Show that a real symmetric matrix has real eigenvalues. Then show that eigenvectors
 belonging to distinct eigenvalues are orthogonal.
-*The second half is two lines from `Av₁ = λ₁v₁`, `Av₂ = λ₂v₂`. The first half is harder — if
-it stalls, note the stall and move on; the orthogonality result is the one that matters
-downstream.*
+*The second half is two lines from `Av₁ = λ₁v₁`, `Av₂ = λ₂v₂`. The first half is harder — if it
+stalls, log the stall and move on; orthogonality is the result that matters downstream.*
 
-**R_linear_algebra-B3.** `Σ = [[0.04, 0.01], [0.01, 0.09]]` — the covariance matrix from R_calculus-C2. Find its
-eigenvalues by hand. What fraction of total variance does the largest explain?
-*That fraction is the "explained variance ratio" of the first principal component. You have
-now done PCA on two assets without calling it that.*
+**B3.** `Σ = [[0.04, 0.01], [0.01, 0.09]]`. Find its eigenvalues by hand. What fraction of total
+variance does the largest explain?
+*That fraction is the explained-variance ratio of the first principal component. You have now
+done PCA on two assets without calling it that.*
 
-**R_linear_algebra-B4.** A correlation matrix for three assets with every pairwise correlation `ρ`. Write it
-down. For which `ρ` is it a valid (PSD) correlation matrix?
-*Answer is not `[−1,1]`. Worth knowing why: this is exactly the trap in hand-specified
-correlation matrices, and why risk systems reject them.*
+**B4.** A correlation matrix for three assets with every pairwise correlation `ρ`. Write it down.
+For which `ρ` is it a valid, PSD correlation matrix?
+*The answer is not `[−1,1]`. This is exactly the trap in hand-specified correlation matrices, and
+why risk systems reject them.*
 
-**R_linear_algebra-B5.** If `Σ` is PSD, show `Σ = BᵀB` for some `B`. Then say what this buys you when you
-want to simulate correlated random variables.
-*This is Cholesky's reason for existing. You will use it in S25 and in every multi-asset
-Monte Carlo.*
+**B5.** If `Σ` is PSD, show `Σ = BᵀB` for some `B`. Say what that buys you when you want to
+simulate correlated random variables.
+*Cholesky's reason for existing, and the thing every multi-asset Monte Carlo depends on.*
+
+### Tier C — only if A and B ran short.
+
+**C1.** Trace and determinant equal the sum and product of the eigenvalues. Verify on A1 and A4,
+then explain why this gives a free sanity check on any hand computation.
+
+**C2.** `[[1,1],[0,1]]` has a repeated eigenvalue. How many linearly independent eigenvectors does
+it have, and what breaks?
+*A defective matrix — the case where diagonalisation fails.*
 
 ---
 
-## Tier C — only if A+B ran short
+## Code problems
 
-**R_linear_algebra-C1.** Trace and determinant equal the sum and product of eigenvalues. Verify on A1 and A4,
-then explain why this gives a free sanity check on any hand computation.
-
-**R_linear_algebra-C2.** `[[1,1],[0,1]]` has a repeated eigenvalue. How many linearly independent
-eigenvectors does it have? What breaks?
-*This is a defective matrix — the case where diagonalisation fails.*
+**None this stage.** One check belongs inline in the note: eigenvalues of `[[2,1],[1,2]]` by hand,
+verified against `np.linalg.eig`. Confirm you get `1` and `3`, and that the eigenvectors match
+yours up to scale — numpy normalises to unit length and may flip the sign, so a differing factor
+is not an error. Say why in the note.
 
 ---
 
 ## Deliverables
 
-- [ ] `progress/feynman_notes/R_linear_algebra.md` — all 6 sections real, zero `⚠️ GAP`,
-      napkin ≤200 words **said out loud once**
-- [ ] Tier A A1–A5 unhinted, on paper
-- [ ] ≥3 of 5 Tier B
-- [ ] **Numerical anchor:** eigenvalues of `[[2,1],[1,2]]` by hand → verify with
-      `np.linalg.eig`. Confirm you get `1` and `3`, and check the eigenvectors match yours up
-      to scale *(numpy normalises to unit length and may flip the sign — if your answer differs
-      by a factor, that is not an error; say why in the note)*
-- [ ] **Unlock test:** re-answer baseline VII.1 and VII.2 cold. Both fully correct.
+**Feynman note** — `progress/feynman_notes/R_linear_algebra.md`
+- [ ] Teach-back for all three topics, source closed
+- [ ] The numerical check above, worked into the note
+- [ ] Any `⚠️ GAP` logged
 
-**No solver files this stage.** The `np.linalg.eig` check is three lines, inline in the note.
-`src/solvers/` gets created when the Monte Carlo verifiers need it.
+**Problems**
+- [ ] A1–A5 unhinted, on paper
+- [ ] At least three from Tier B
+- [ ] Log which needed hints
+
+**Unlock test** — one week after close.
+
+---
+
+**When it gets hard and you start drifting:** stop reading, write the sentence you can't finish
+into the note as a `⚠️ GAP`, and switch to Tier A on paper. **For eigenvalues specifically, use
+trace and determinant as a shortcut** — `λ² − tr·λ + det = 0` turns most 2×2 problems into one
+line, and it doubles as a check on anything you compute the long way.
+
+**If the day collapses, do A1 and B1.** A1 is the computation; B1 is why covariance matrices
+behave the way they do.
 
 ---
 ---

@@ -2,119 +2,167 @@
 type: stage
 id: R.calculus
 name: Calculus Refresher
-kind: refresher
-multiplier: 1.2
 topic: "[[VIII-1-ordinary-differential-equations]]"
 concepts: ["[[itos-lemma]]"]
 roles: ["[[options-pricing]]"]
 sprint: S15
 status: ready-for-test
-budget_h: 4
+est_h: 4
 actual_h: 5.0
-d4_due: 2026-08-15
-baseline_closes: [VIII.1, VIII.3]
 ---
 
-# R.calculus — Calculus & ODE Refresher · Problem Set
+# Calculus Refresher
 
-**Stage:** R.calculus · **Sprint:** 15 (Days 6–7, 2026-07-25 → 07-26) · **Budget:** ~105 min input+teach-back, ~60 min problems
+**Source:** Green Book (Zhou) §2.2 "Calculus" — the ODE subsection — and §2.3 "Optimization" for
+the worked Lagrange examples.
 
-**Why this stage exists:** baseline VIII.1 asked `dy/dx = y, y(0)=1` and got `sqrt(2/(x-2))`. The answer is `eˣ`. That is the single most canonical ODE in existence and it gates everything downstream — GBM, OU mean reversion, discounting, Feynman-Kac. VIII.3 (Lagrange) was also fuzzy, and Lagrange is how Markowitz optimization is derived. This stage is mandatory-deep, not a skim (`baseline_scores.md` adjustment #6).
+**If a concept will not land from the page:** 3Blue1Brown *Essence of Calculus* Ch. 5
+("What's so special about Euler's number e?") is literally `dy/dx = y` drawn out. One video, as a
+fallback, not as part of the main path.
 
-**Scope — four things only:**
-1. Separable ODEs
-2. Linear first-order ODEs (integrating factor)
-3. Chain rule / implicit differentiation
-4. Lagrange multipliers
+**Estimated: 4h.**
 
-Everything else in `topics/section_VIII_calculus_des.md` (PDEs, Riccati, Carr-Madan, Euler-Lagrange, KKT) is **out of scope** — that file is the full inventory, not this stage. See [vault/topics/](../vault/topics/) for what this stage closed vs deferred.
-
----
-
-## Sources — read in this order, stop when the concept clicks
-
-| # | Source | Covers | Time | Have it? |
-|---|---|---|---|---|
-| S1 | 3Blue1Brown, *Essence of Calculus* **Ch. 4** ("Visualizing the chain rule and product rule") | Topic 3 | 12 min | free, YouTube |
-| S2 | 3Blue1Brown, *Essence of Calculus* **Ch. 5** ("What's so special about Euler's number e?") | Topic 1 — this is literally `dy/dx = y` | 14 min | free, YouTube |
-| S3 | 3Blue1Brown, *Essence of Calculus* **Ch. 6** ("Implicit differentiation, what's going on here?") | Topic 3 | 15 min | free, YouTube |
-| S4 | Khan Academy, "Lagrange multipliers, introduction" + "Interpretation of Lagrange multipliers" | Topic 4 | 20 min | free |
-| S5 | **Green Book (Zhou), §2.2 "Calculus"** — the ODE subsection | Topics 1–2, in interview register | 20 min | ✅ on hand |
-| S6 | **Green Book, §2.3 "Optimization"** — Lagrange worked examples | Topic 4 | 15 min | ✅ on hand |
-| S7 | **Ross, Appendix / Ch.5 §5.5** — exponential distribution derivation | Optional: sanity-check that `e^{-λx}` is a separable-ODE solution | 10 min | ✅ on hand |
-
-**Input time-box: 45 min.** Feynman protocol Step 1 caps input at ≤40% of stage time. Do not watch all seven. Pick what closes your gap; S2 and S5 are the non-negotiables.
+> This stage originally listed seven sources across three media, and choosing between them cost
+> more time than studying did. One source, one fallback — that change is why the next refresher
+> landed in a single day.
 
 ---
 
-## How to use this set
+## What this covers
 
-Problems are tiered. **Tier A is the floor — all six must be done unhinted.** Tier B is the target. Tier C only if Tier A+B took under 45 min.
+Four things, and the first one gates everything downstream — geometric Brownian motion, mean
+reversion, discounting, Feynman-Kac all reduce to `dy/dx ∝ y`.
 
-Work them on paper, closed-book, *after* the teach-back draft. Answer keys are at the bottom — do not scroll early; a peeked problem is a `⚠️ GAP` you'll never find.
+1. **Separable ODEs** — including `dy/dx = y`, the most canonical ODE there is
+2. **Linear first-order ODEs** via integrating factor
+3. **Chain rule and implicit differentiation**
+4. **Lagrange multipliers** — and the shadow-price reading of `λ`, which is how mean-variance
+   optimisation is actually derived
 
-Cite these IDs in your Feynman note §7 ("Problems solved") and in the unlock test.
-
----
-
-## Tier A — the floor (must pass unhinted)
-
-**R.calculus-A1.** Solve `dy/dx = y` with `y(0) = 1`. Show every step of the separation, including where the constant of integration goes and why it becomes a multiplicative constant.
-*This is baseline VIII.1. If you cannot do this one cold, the stage is not complete.*
-
-**R.calculus-A2.** Solve `dy/dx = ky` with `y(0) = y₀`, for constant `k`. Then state in one sentence what this means when `y` is a bank balance and `k` is a continuously-compounded interest rate.
-
-**R.calculus-A3.** Solve `dy/dx = xy` with `y(0) = 1`. Note where the answer differs in *shape* from A1 and say why the `x` on the right changes the exponent.
-
-**R.calculus-A4.** Differentiate `f(x) = e^{3x²}` with respect to `x`. Then differentiate `g(x) = ln(cos x)`. Name which rule you used at each step.
-
-**R.calculus-A5.** Minimize `f(x,y) = x² + y²` subject to `x + y = 1` using Lagrange multipliers. Give `x*`, `y*`, the minimum value, and `λ`.
-*This is baseline VIII.3. Answer: x=y=1/2, min=1/2.*
-
-**R.calculus-A6.** Solve the mean-reverting ODE `dx/dt = κ(θ − x)` with `x(0) = x₀`. Show that `x(t) → θ` as `t → ∞` regardless of `x₀`, provided `κ > 0`.
-*This is the deterministic skeleton of Ornstein-Uhlenbeck. You will meet it again in S4 and in every mean-reversion strategy you ever backtest.*
+**Not here:** PDEs, Riccati equations, Carr-Madan, Euler-Lagrange, KKT conditions. They are in the
+full inventory but not in this refresher, and each returns with the stage that needs it.
 
 ---
 
-## Tier B — the target
+## Knowledge checklist — tick when you can produce it cold
 
-**R_calculus-B1.** Solve the linear first-order ODE `y' + 2y = e^{-x}` with `y(0) = 0`, using an integrating factor. State the integrating factor explicitly and why `μ(x) = e^{∫p dx}` is the right choice — what does multiplying by it *do* to the left-hand side?
+**Separable equations**
+- [x] `dy/dx = y` → `y = Ae^x`, and why the integration constant becomes multiplicative
+- [x] `dy/dx = ky` → `y = y₀e^{kx}`, and what that means for continuous compounding
+- [x] The mean-reverting form `dx/dt = κ(θ−x)` and its solution `θ + (x₀−θ)e^{−κt}`
+- [x] Why it converges to `θ` for any `κ>0`, regardless of the starting point
 
-**R_calculus-B2.** Solve `y' + (1/x)y = x` for `x > 0`, with `y(1) = 1/3`.
+**Linear first-order**
+- [x] The integrating factor `μ(x) = e^{∫p dx}`, and **what multiplying by it does** — it collapses
+      the left side into a single product-rule derivative
+- [x] Time-varying rates: `dV/dt = r(t)V` → `V₀exp(∫r)`, which is the discount factor
 
-**R_calculus-B3.** A perpetuity pays continuously at rate `c`, growing at rate `g`, discounted at `r > g`. Its present value `V` satisfies `rV − gV = c`. Derive `V = c/(r−g)`. Then explain in one sentence what happens as `g → r` and why that is financially sensible rather than a mathematical accident.
+**Chain rule and implicit differentiation**
+- [x] Differentiating composed exponentials and logs, naming the rule at each step
+- [x] Implicit differentiation on a constraint curve, and checking the result geometrically
 
-**R_calculus-B4.** Given `x² + y² = 25`, find `dy/dx` at the point `(3, 4)` by implicit differentiation. Verify geometrically (the tangent to a circle is perpendicular to the radius — check the slopes multiply to −1).
-
-**R_calculus-B5.** Maximize `f(x,y) = xy` subject to `x + y = 10`. Then state the general result this special case illustrates about the rectangle of fixed perimeter and maximum area.
-
-**R_calculus-B6.** In A5 you found `λ`. Now change the constraint to `x + y = 1.1` and re-solve. Compare the change in the minimum value to `λ × 0.1`. This is why `λ` is called the **shadow price** of the constraint — write one sentence explaining what that means to a portfolio manager.
-
-**R_calculus-B7.** Solve `dV/dt = r(t)V` with `V(0) = V₀` for a *time-varying* rate `r(t)`. Show `V(t) = V₀ exp(∫₀ᵗ r(s)ds)`. Say why this justifies the discount factor `exp(−∫r)` you see everywhere in fixed income.
-
----
-
-## Tier C — stretch (only if A+B ran short)
-
-**R_calculus-C1.** Solve the logistic ODE `dN/dt = rN(1 − N/K)` with `N(0) = N₀`. (Hint: separable, then partial fractions.) Sketch the S-curve.
-
-**R_calculus-C2.** *Markowitz, two assets.* Minimize `½wᵀΣw` subject to `wᵀ1 = 1` for `Σ = [[0.04, 0.01], [0.01, 0.09]]`. Set up the Lagrangian, solve for `w*`, and confirm the weights sum to 1. This is the minimum-variance portfolio — the single most-asked Lagrange application in a QR interview.
-
-**R_calculus-C3.** Green Book has a class of problems asking for `max`/`min` of a function on a constrained region. Find two in §2.3 and do them.
+**Lagrange multipliers**
+- [x] Setting up `L = f − λ(g − c)` and solving the stationarity conditions
+- [x] **`λ` is the shadow price** — the rate at which the optimum improves as the constraint
+      relaxes, to first order
+- [x] Why `∇f` and `∇g` must be parallel at a constrained optimum
 
 ---
 
-## Deliverables for this stage
+## Problems
 
-Per `04_deliverables_spec.md` and `02_feynman_protocol.md`:
+### Tier A — the floor. All six, unhinted, on paper.
 
-- [ ] `progress/feynman_notes/R_calculus.md` — all 6 template sections, zero remaining `⚠️ GAP`, napkin version ≤200 words said out loud once
-- [ ] All 6 Tier-A problems solved unhinted, worked on paper, answers logged
-- [ ] ≥4 of 7 Tier-B solved
-- [ ] Numerical anchor in the note: solve A1 by hand, then verify with `scipy.integrate.solve_ivp` or a 3-line Euler scheme, and confirm it lands on `e¹ ≈ 2.71828` at `x=1`
-- [ ] Unlock test: re-answer baseline VIII.1 and VIII.3 cold. Both must be fully correct.
+**A1.** Solve `dy/dx = y` with `y(0) = 1`. Show every step of the separation, including where the
+constant of integration goes and why it becomes a multiplicative constant.
 
-**No solver files this stage.** `src/solvers/` gets created at T1.X (Day 11) when the Monte Carlo verifiers actually need it. The one numerical check above can live inline in the Feynman note.
+**A2.** Solve `dy/dx = ky` with `y(0) = y₀`, for constant `k`. Then state in one sentence what this
+means when `y` is a bank balance and `k` is a continuously-compounded interest rate.
+
+**A3.** Solve `dy/dx = xy` with `y(0) = 1`. Note where the answer differs in *shape* from A1 and
+say why the `x` on the right changes the exponent.
+
+**A4.** Differentiate `f(x) = e^{3x²}`, then `g(x) = ln(cos x)`. Name which rule you used at each
+step.
+
+**A5.** Minimise `f(x,y) = x² + y²` subject to `x + y = 1` using Lagrange multipliers. Give `x*`,
+`y*`, the minimum value, and `λ`.
+
+**A6.** Solve the mean-reverting ODE `dx/dt = κ(θ − x)` with `x(0) = x₀`. Show that `x(t) → θ` as
+`t → ∞` regardless of `x₀`, provided `κ > 0`.
+
+*The deterministic skeleton of Ornstein-Uhlenbeck. You will meet it again in every mean-reversion
+strategy you ever backtest.*
+
+### Tier B — the target. At least four.
+
+**B1.** Solve `y' + 2y = e^{-x}` with `y(0) = 0` using an integrating factor. State the factor
+explicitly and say why `μ(x) = e^{∫p dx}` is the right choice — **what does multiplying by it do**
+to the left-hand side?
+
+**B2.** Solve `y' + (1/x)y = x` for `x > 0`, with `y(1) = 1/3`.
+
+**B3.** A perpetuity pays continuously at rate `c`, growing at `g`, discounted at `r > g`. Its
+present value satisfies `rV − gV = c`. Derive `V = c/(r−g)`. Then explain in one sentence what
+happens as `g → r`, and why that is financially sensible rather than a mathematical accident.
+
+**B4.** Given `x² + y² = 25`, find `dy/dx` at `(3, 4)` by implicit differentiation. Verify
+geometrically — the tangent to a circle is perpendicular to the radius, so the slopes multiply
+to `−1`.
+
+**B5.** Maximise `f(x,y) = xy` subject to `x + y = 10`. State the general result this special case
+illustrates about rectangles of fixed perimeter.
+
+**B6.** In A5 you found `λ`. Change the constraint to `x + y = 1.1` and re-solve. Compare the
+change in the minimum to `λ × 0.1`. **Write one sentence on what the shadow price means to a
+portfolio manager.**
+
+**B7.** Solve `dV/dt = r(t)V` with `V(0) = V₀` for a *time-varying* rate. Show
+`V(t) = V₀ exp(∫₀ᵗ r(s)ds)`, and say why this justifies the discount factor `exp(−∫r)` that
+appears throughout fixed income.
+
+### Tier C — only if A and B ran short.
+
+**C1.** Solve the logistic ODE `dN/dt = rN(1 − N/K)` with `N(0) = N₀`. *(Separable, then partial
+fractions.)* Sketch the S-curve.
+
+**C2.** *Two-asset minimum variance.* Minimise `½wᵀΣw` subject to `wᵀ1 = 1` for
+`Σ = [[0.04, 0.01], [0.01, 0.09]]`. Set up the Lagrangian, solve for `w*`, confirm the weights sum
+to one.
+*The single most-asked Lagrange application in a quant interview.*
+
+---
+
+## Code problems
+
+**None this stage.** One numerical check belongs inline in the note rather than in a file: solve
+A1 by hand, then verify with a three-line Euler scheme that it lands on `e¹ ≈ 2.71828` at `x = 1`.
+
+---
+
+## Deliverables
+
+**Feynman note** — `progress/feynman_notes/R_calculus.md`
+- [ ] Teach-back for all four topics, source closed
+- [ ] The numerical check above, worked into the note
+- [ ] Any `⚠️ GAP` logged
+
+**Problems**
+- [ ] A1–A6 unhinted, on paper
+- [ ] At least four from Tier B
+- [ ] Log which needed hints
+
+**Unlock test** — one week after close.
+
+---
+
+**When it gets hard and you start drifting:** stop reading, write the sentence you can't finish
+into the note as a `⚠️ GAP`, and switch to Tier A on paper. **For ODEs specifically, separate the
+variables and integrate before you understand why** — the mechanics land first and the meaning
+follows, not the other way round.
+
+**If the day collapses, do A1 and A5.** A1 is the exponential ODE that gates everything
+downstream; A5 is Lagrange, which is how portfolio optimisation is derived.
 
 ---
 ---

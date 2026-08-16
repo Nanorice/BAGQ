@@ -47,8 +47,7 @@ graph LR
     SF12ConditionalProbabilit["Conditional Probability & Bayes"]:::stage
     SF14DiscreteDistributions["Discrete Distributions ✅"]:::stage
     SF15ContinuousDistributio["Continuous Distributions ✅"]:::stage
-    SF17AExpectationTowerProp["Linearity, LOTUS, Tower Property"]:::stage
-    SF17BMomentInequalitiesMg["Moment Inequalities & MGF"]:::stage
+    SF17ExpectationVarianceMo["Expectation, Variance and Moments"]:::stage
     SRCalculus["Calculus Refresher ✅"]:::stage
     SRLinearAlgebra["Linear Algebra Refresher ✅"]:::stage
     CBaseRateFallacy("base rate fallacy"):::concept
@@ -194,11 +193,11 @@ graph LR
     SF15ContinuousDistributio --> CMemorylessness
     SF15ContinuousDistributio --> CPoissonExponentialDualit
     SF15ContinuousDistributio --> CStandardisation
-    SF17AExpectationTowerProp --> CFirstStepConditioning
-    SF17AExpectationTowerProp --> CLinearityOfExpectation
-    SF17AExpectationTowerProp --> CTowerProperty
-    SF17BMomentInequalitiesMg --> CJensenInequality
-    SF17BMomentInequalitiesMg --> CMomentGeneratingFunction
+    SF17ExpectationVarianceMo --> CFirstStepConditioning
+    SF17ExpectationVarianceMo --> CJensenInequality
+    SF17ExpectationVarianceMo --> CLinearityOfExpectation
+    SF17ExpectationVarianceMo --> CMomentGeneratingFunction
+    SF17ExpectationVarianceMo --> CTowerProperty
     SRCalculus --> CItosLemma
     SRLinearAlgebra --> CPsdCovariance
 ```
@@ -240,11 +239,11 @@ afternoon buys you the tail-risk and pricing machinery.
 | Role | Stages closed | Stages mapped | Applications |
 |---|---:|---:|---|
 | **Backtesting and infrastructure** | 0 | 0 | [[backtest-engine]] · [[coding-screen]] · [[data-pipeline]] · [[monte-carlo-pricer]] |
-| **Market making and execution** | 2 | 6 | [[adverse-selection]] · [[arrival-modelling]] · [[coding-screen]] · [[execution-tca]] · [[inventory-management]] · [[kelly-sizing]] · [[market-structure]] · [[time-to-fill]] |
+| **Market making and execution** | 2 | 5 | [[adverse-selection]] · [[arrival-modelling]] · [[coding-screen]] · [[execution-tca]] · [[inventory-management]] · [[kelly-sizing]] · [[market-structure]] · [[time-to-fill]] |
 | **Options pricing and hedging** | 2 | 2 | [[black-scholes-pricer]] · [[greeks-delta-hedging]] · [[monte-carlo-pricer]] · [[vol-surface]] |
 | **Portfolio construction** | 1 | 1 | [[covariance-estimation]] · [[factor-model]] · [[kelly-sizing]] · [[mean-variance-optimiser]] · [[risk-parity]] |
 | **Risk management** | 1 | 2 | [[greeks-delta-hedging]] · [[risk-attribution]] · [[scenario-pnl]] · [[stress-testing]] · [[var-tail-risk]] · [[volatility-modelling]] |
-| **Signal research** | 1 | 5 | [[alpha-decay]] · [[factor-model]] · [[feature-construction]] · [[signal-testing]] |
+| **Signal research** | 1 | 4 | [[alpha-decay]] · [[factor-model]] · [[feature-construction]] · [[signal-testing]] |
 <!-- END GENERATED:status -->
 
 Each role note in `vault/roles/` carries its own live Dataview of the stages feeding it, plus the

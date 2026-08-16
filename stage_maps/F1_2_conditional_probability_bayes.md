@@ -11,42 +11,47 @@ est_h: 7
 actual_h:
 ---
 
-# Conditional Probability & Bayes — Stage Map
-`F1.2` · foundation (new install, 2.0×) · `topics/section_I` §3
-**Sprint 17, Days 1–2 (Mon 08-17 → Tue 08-18)** · **Budget: 7h across two passes**
+# Conditional Probability and Bayes
 
-> **PRINT THIS PAGE.** Everything you need for both sessions is on it: source pages, the
-> checklist, the problems, the answer key. No PC required until the code problem.
+**Source:** `topics/section_I_probability_combinatorics.md` §3 — core concepts and all ten
+problems.
 
-> Shares nothing with `F1.1` mechanically, but **depends on it**: Bayes problems routinely need
-> a denominator built from combinatorics (`P(A)` via counting equally-likely outcomes). If a
-> problem below needs a count you can't produce, that is an `F1.1` gap, not an `F1.2` one — log
-> it separately.
+**Why the topic file and not Ross:** Ross Ch.3 covers conditional probability well but buries the
+base-rate vocabulary — sensitivity, specificity, PPV are medical-testing language, not a named
+Ross subsection, and that vocabulary is exactly the gap. The topic file states it directly.
+**Read Ross Ch.3 §3.1–§3.4 as a backup** only if total probability or independence will not land
+from the one-liners.
 
-**Why this stage exists:** baseline I.2 (disease-testing / base-rate problem) scored **0** —
-pure vocabulary gap, not a reasoning failure (Adjustment #3, the "cheap win" that never got its
-30-min slot in S16 and is now a full stage instead). Bayes' rule itself is one line; what fails
-under pressure is **which probability is which** — sensitivity vs. specificity vs. prevalence
-vs. posterior — and interviewers ask this exact question (disease test, spam filter, fraud
-detection) more than almost anything else in Section I.
+**Estimated: 7h.**
 
-**Scope — five things:**
-1. **Conditional probability** `P(A|B) = P(A∩B)/P(B)` — the definition everything else follows from
+---
+
+## What this covers
+
+Bayes' rule itself is one line. What fails under pressure is **which probability is which** —
+sensitivity versus specificity versus prevalence versus posterior — and the disease-test, spam
+filter and fraud-detection questions built on that confusion are asked more than almost anything
+else in elementary probability.
+
+1. **Conditional probability** `P(A|B) = P(A∩B)/P(B)` — the definition everything follows from
 2. **Law of total probability** — partition the sample space, weight by the partition
-3. **Bayes' rule** — invert the conditioning, and *why* you'd want to
-4. **Independence vs. conditional independence** — these are different claims, not the same idea twice
-5. **The base-rate vocabulary**: sensitivity, specificity, prevalence, PPV/NPV — named, not just computed
+3. **Bayes' rule** — invert the conditioning, and *why* you would want to
+4. **Independence versus conditional independence** — different claims, not the same idea twice
+5. **The base-rate vocabulary** — sensitivity, specificity, prevalence, PPV and NPV, named rather
+   than merely computed
 
-Out of scope: Simpson's Paradox proof machinery beyond one worked example, the two-envelopes
-philosophical resolution beyond stating the flaw, prosecutor's-fallacy legal context. These are
-Tier B/C drills, not core.
+**Depends on combinatorics:** Bayes problems routinely need a denominator built by counting
+equally likely outcomes. If a problem below needs a count you cannot produce, that is a counting
+gap rather than a Bayes one — log it as such.
+
+**Not here:** Simpson's paradox beyond one worked example, the two-envelopes resolution beyond
+stating the flaw, the prosecutor's-fallacy legal context. Those are Tier B and C drills.
 
 ---
 
 ## Knowledge checklist — tick when you can produce it cold
 
-**Built from `topics/section_I` §3's actual content** (this file's own heading, not Ross —
-see §Source below for why).
+Built from the topic file's own headings. Tick at the close of a block, not while reading.
 
 **Core Concepts**
 - [ ] `P(A|B) = P(A∩B)/P(B)`, stated and one sentence on *why* dividing by `P(B)` is "shrinking
@@ -67,7 +72,6 @@ see §Source below for why).
 
 ### Stretch — beyond the core five
 
-*Rule (`04_deliverables_spec.md` §D2): resolve inline, named source, or deferred with reason.*
 
 - [ ] **Simpson's Paradox** → **INLINE**, one worked numerical example in Tier B (B3). Full
       causal-inference treatment is out of scope — the interview ask is "construct an example
@@ -79,63 +83,13 @@ see §Source below for why).
 
 ---
 
-## Source — one file, one sitting (topic inventory, not Ross)
-
-| Source | Covers | Time |
-|---|---|---|
-| **`topics/section_I_probability_combinatorics.md` §3**, lines 63–89 | Core concepts + all 10 problems | **25 min, hard stop** |
-
-**Why the topic file and not Ross this time:** Ross Ch.3 covers conditional probability well but
-buries the base-rate vocabulary (sensitivity/specificity/PPV) — it's medical-testing language,
-not a named Ross subsection, and baseline I.2 is exactly that vocabulary. `topics/section_I` §3
-states it directly. **Read Ross Ch.3 §3.1–§3.4 as backup only if a concept doesn't click** —
-listed below, not the primary source, so this doesn't silently become a two-source stage.
-
-| Backup | Covers | Use only if |
-|---|---|---|
-| Ross 6th ed. Ch. 3, §3.1–§3.4 | Formal treatment, more worked examples | The topic file's one-liners aren't enough for total probability or independence |
-
-**Two passes, separate days — this is new material** (Adj #12). Pass 2 (Tue 08-18) opens on
-the `⚠️ GAP` list from Pass 1, ≤20 min, before moving to problems.
-
 ---
 
-## The shape of the two sessions
+## Problems
 
-**Pass 1 — Mon 08-17, AM block (before work).** Read + teach-back only. No problems yet.
+### Tier A — the floor. All five, unhinted, on paper.
 
-| Block | Minutes | Do |
-|---|---:|---|
-| Read | 25 | `topics/section_I` §3, hard stop |
-| Teach-back | 20 | Note §1 — book/file **closed** |
-
-**Target: 45 min, fits a pre-work slot.** If it overruns 45, stop anyway and write the
-unfinished sentence as a `⚠️ GAP` — that becomes Pass 2's opener.
-
-**Pass 2 — Tue 08-18, AM block + one evening block. The 120 min of problems does not fit
-before work — only the gap re-read does.**
-
-| When | Block | Minutes | Do |
-|---|---|---:|---|
-| AM | Gap re-read | 20 | Open ONLY on Mon's `⚠️ GAP` list |
-| PM | Tier A | 60 | A1–A5 on paper, unhinted |
-| PM | Tier B | 40 | ≥3 of 5 |
-| PM | Code | 20 | `F1.2-CODE1` (needs PC) |
-
-**If the day collapses: A1, A5.** A1 is Bayes derived from the definition (the mechanical
-floor); A5 is the disease-test vocabulary drill (the baseline item this stage exists to close).
-
-**The drift move (Adj #13).** Hard + attention scattering → **stop reading, write the sentence
-you can't finish into note §2 as a `⚠️ GAP`, switch to Tier A on paper.** For this stage
-specifically: **draw the 2×2 confusion table** (disease × test result) with made-up numbers —
-100 people, split by prevalence, then split again by test accuracy. Bayes' rule on a table of
-actual counts is almost always easier than Bayes' rule on symbols.
-
----
-
-## Tier A — the floor (all five, unhinted, on paper)
-
-**F1.2-A1.** Derive Bayes' rule from the definition of conditional probability in two lines:
+**A1.** Derive Bayes' rule from the definition of conditional probability in two lines:
 start from `P(A∩B) = P(A|B)P(B) = P(B|A)P(A)`, solve for `P(B|A)`. Then state the law of total
 probability and show why you'd substitute it into the denominator when you only know
 `P(A|Bᵢ)` for each piece of a partition, not `P(A)` directly.
@@ -143,21 +97,21 @@ probability and show why you'd substitute it into the denominator when you only 
 read in the other direction. If you can produce this derivation cold, you cannot forget the
 formula, because you can rebuild it in ten seconds.*
 
-**F1.2-A2. Monty Hall.** You pick one of three doors. The host, who knows what's behind each
+**A2. Monty Hall.** You pick one of three doors. The host, who knows what's behind each
 door, opens a losing door you didn't pick. Should you switch? Compute `P(win | switch)` and
 `P(win | stay)` explicitly, conditioning on which door hides the car.
 *The standard trap is treating the host's action as uninformative. It isn't — the host's choice
 is constrained by what you picked and where the car is, and that constraint is where the
 information comes from. Say explicitly what the host **cannot** do.*
 
-**F1.2-A3.** The disease test: sensitivity 99%, specificity 95%, prevalence 1%. Compute
+**A3.** The disease test: sensitivity 99%, specificity 95%, prevalence 1%. Compute
 `P(disease | positive test)`. **Do it two ways:** once with Bayes' rule symbolically, once with
 a table of 10,000 people split by the four combinations of {disease, test result}. Confirm they
 agree.
 *This is baseline I.2, verbatim. The table method is the one to trust under interview pressure
 — it is harder to make a sign error with actual head-counts than with symbols.*
 
-**F1.2-A4.** State the difference between independence and conditional independence in one
+**A4.** State the difference between independence and conditional independence in one
 sentence each, then construct a concrete example (three events/variables) where `A` and `B` are
 **dependent** unconditionally but **independent given `C`**.
 *The standard example: two coins where `C` = "at least one is heads." Marginally the coins are
@@ -165,7 +119,7 @@ independent; conditioned on `C`, knowing one is heads changes what you know abou
 Getting your own example, not the textbook one, is the point — it proves you understand the
 mechanism, not just the label.*
 
-**F1.2-A5.** Define sensitivity, specificity, prevalence, and PPV in one sentence each, **cold,
+**A5.** Define sensitivity, specificity, prevalence, and PPV in one sentence each, **cold,
 no formula sheet.** Then explain in your own words why PPV can be low (e.g., under 20%) even
 when both sensitivity and specificity are above 95%, if prevalence is low enough.
 *This is the vocabulary baseline I.2 was missing. The number in A3 is the proof; this problem
@@ -173,33 +127,33 @@ is the naming, which is what actually transfers to a differently-worded intervie
 
 ---
 
-## Tier B — the target (≥3 of 5)
+### Tier B — the target. At least three.
 
-**F1.2-B1. The Taxi-Cab Problem.** 85% of cabs are green, 15% blue. A witness who is correct
+**B1. The Taxi-Cab Problem.** 85% of cabs are green, 15% blue. A witness who is correct
 80% of the time says the cab was blue. What's `P(cab was blue | witness says blue)`?
 *Same computation as A3, different cover story — confirm you recognise it as the same problem
 before computing. The point of this tier is pattern recognition, not new arithmetic.*
 
-**F1.2-B2. Updating with multiple evidence.** A coin is fair or double-headed, prior 50/50. You
+**B2. Updating with multiple evidence.** A coin is fair or double-headed, prior 50/50. You
 observe 5 heads in a row. What's the posterior it's fair?
 *Sequential Bayes update — each flip's likelihood multiplies in. Do it as one Bayes computation
 with the combined likelihood, not five separate updates, and note that both give the same
 answer (this is worth confirming once).*
 
-**F1.2-B3. Simpson's Paradox, constructed.** Build a two-treatment, two-subgroup numerical
+**B3. Simpson's Paradox, constructed.** Build a two-treatment, two-subgroup numerical
 example where Treatment A has a higher success rate in *both* subgroups but a lower overall
 success rate. Explain the mechanism in one sentence.
 *The mechanism is always an imbalance in how the subgroups are weighted between the two
 treatment arms — say that explicitly, don't just present the numbers.*
 
-**F1.2-B4. Prosecutor's Fallacy.** A DNA match has a `10⁻⁶` false-match probability. In a city of
+**B4. Prosecutor's Fallacy.** A DNA match has a `10⁻⁶` false-match probability. In a city of
 1,000,000 people with no other evidence, what's `P(guilty | match)` if you assume the true
 culprit is equally likely to be anyone in the city? Why does this differ from `P(match | guilty)`?
 *The fallacy is treating the two conditional probabilities as interchangeable. Compute the
 actual posterior — it is much lower than `1 − 10⁻⁶` — and say in one sentence why the city's
 population size, not just the test's accuracy, determines the answer.*
 
-**F1.2-B5. Two Envelopes.** One envelope has twice the money of the other. You pick one, see
+**B5. Two Envelopes.** One envelope has twice the money of the other. You pick one, see
 `$x`. The "switching" argument says the other envelope has expected value `1.25x`. Where does
 the argument break?
 *It assigns a fixed prior distribution to the unknown amount that can't actually be uniform over
@@ -208,9 +162,9 @@ here. You don't need the full resolution, just the location of the flaw.*
 
 ---
 
-## Tier C — only if A+B ran short
+### Tier C — only if A and B ran short.
 
-**F1.2-C1. The Broken Stick.** A stick of length 1 is broken at a uniform random point. Given
+**C1. The Broken Stick.** A stick of length 1 is broken at a uniform random point. Given
 the longer piece is `> 0.7`, what's the expected length of the shorter piece?
 *Conditioning restricts the sample space to a sub-interval of the break point — reparametrise
 and integrate over just that restricted region.*
@@ -222,7 +176,7 @@ and integrate over just that restricted region.*
 `src/solvers/s1_probability/bayes_verify.py` — new file. Docstring with time + space
 complexity, one `assert`-based `__main__`.
 
-**F1.2-CODE1** — Verify A3 (the disease test) two ways: (1) closed-form Bayes' rule, (2) Monte
+**CODE1** — Verify A3 (the disease test) two ways: (1) closed-form Bayes' rule, (2) Monte
 Carlo — simulate 1,000,000 people with the given prevalence, apply sensitivity/specificity as
 random flips, and estimate `P(disease | positive)` empirically. Assert the two agree within
 0.5% absolute.
@@ -234,29 +188,23 @@ under the assert tolerance given the ~1% base rate.*
 
 ## Deliverables
 
-**D1 — Feynman note** `progress/feynman_notes/F1_2_conditional_probability_bayes.md`
+**Feynman note** — `progress/feynman_notes/F1_2_conditional_probability_bayes.md`
 - [ ] Teach-back (Pass 1), source closed
 - [ ] Zero remaining `⚠️ GAP`
 - [ ] Napkin ≤200 words, said out loud
 - [ ] Summary: the base-rate vocabulary table (sensitivity/specificity/prevalence/PPV) in §5
 - [ ] ≥2 items in "Where this breaks"
 
-**D2 — Problems** (this file)
+**Problems**
 - [ ] A1–A5 unhinted, on paper
 - [ ] ≥3 of Tier B
 - [ ] Log which needed hints
 
-**D3 — Code**
-- [ ] `F1.2-CODE1` in `bayes_verify.py`, asserting, with the complexity docstring
+**Code**
+- [ ] `CODE1` in `bayes_verify.py`, asserting, with the complexity docstring
 
-**D3.5 — Concept notes** (2 min each, at close)
-- [ ] `vault/concepts/bayes-rule.md`
-- [ ] `vault/concepts/law-of-total-probability.md`
-- [ ] `vault/concepts/base-rate-fallacy.md`
-- [ ] Set `status: ready-for-test` and `actual_h:` in this file's frontmatter
 
-**D4 — Unlock test:** 2026-08-29 (+1wk from Pass 2 close, Fri of Week 2 — see `sprints/S17.md`
-for why not the more usual +1wk-from-Tuesday date).
+**Unlock test** — one week after close.
 
 ---
 ---
