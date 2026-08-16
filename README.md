@@ -1,6 +1,6 @@
 # BAGQ — Be A Good Quant
 
-A self-directed 25-week curriculum toward buy-side QR / HFT quant interviews.
+A self-directed 25-week curriculum toward a better quant.
 Target: first interview **2027-01-15**. Baseline taken 2026-07-24 at **0.88 / 5**.
 
 Not a course. A closed loop with a measurement at both ends: a graded diagnostic
