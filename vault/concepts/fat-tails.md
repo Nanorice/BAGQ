@@ -2,7 +2,7 @@
 type: concept
 name: fat tails
 topics: ["[[IX-3-regression-and-time-series]]"]
-applications: ["[[var-tail-risk]]", "[[stress-testing]]"]
+applications: ["[[var-tail-risk]]", "[[stress-testing]]", "[[scenario-pnl]]", "[[volatility-modelling]]"]
 ---
 
 # fat tails
@@ -10,7 +10,7 @@ applications: ["[[var-tail-risk]]", "[[stress-testing]]"]
 > Real returns are leptokurtic and volatility clusters. Var>E breaks a Poisson fit; normal tails understate loss.
 
 **Arises in:** [[IX-3-regression-and-time-series]]
-**Feeds:** [[var-tail-risk]] · [[stress-testing]]
+**Feeds:** [[var-tail-risk]] · [[stress-testing]] · [[scenario-pnl]] · [[volatility-modelling]]
 
 ## In my own words
 <!-- fill this when a stage first teaches it - one paragraph, no jargon -->

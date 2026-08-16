@@ -10,7 +10,9 @@
 > ⚠️ **This is reference, not a plan.** It never drives sequencing — the DAG does that. Two
 > competing calendars is exactly what made the DAG's traversal table go stale.
 >
-> **Last updated:** 2026-08-09
+> **Generated, not hand-maintained.** The diagram and the coverage table below are built from
+> frontmatter by `vault/build_capability_map.py`. Run it after writing a stage map, and at each
+> sprint retro. Editing between the `GENERATED` markers by hand will be overwritten.
 
 ---
 
@@ -20,17 +22,20 @@
 
 > **stage** you study → *(concept)* that carries the idea → **application** you could build → **role** that pays for it
 
-- **Stages** are split to sub-topic level, matching the stage maps — `F1.5` appears as
-  *uniform*, *exponential* and *normal* separately, because they feed different capabilities by
-  different routes.
-- **Concepts** *(rounded, dashed)* appear **only where they explain a jump** a stage title
-  doesn't. `S10.1 → coding screen` needs no concept in between. They are not a layer everything
-  must pass through.
-- **Applications** are the concrete things a quant builds — and the things you can point at in
-  an interview.
+- **Stages** come from `stage_maps/*.md`. `✅` = closed or ready-for-test.
+- **Concepts** *(rounded, dashed)* appear where they explain a jump a stage title doesn't. A stage
+  naming a role with no concept between them draws a direct arrow instead — concepts are not a
+  layer everything must pass through.
+- **Applications** are the concrete things a quant builds, and the things you can point at in an
+  interview.
 
-Wide by design; pan and zoom. No containers, so strands stay traceable.
+An arrow exists because a file's frontmatter says so. **If a strand looks wrong, fix the
+frontmatter, not the diagram.** The generator also reports dangling links — a `[[concept]]` with
+no note behind it — which is how the whole graph was silently disconnected until 2026-08-16.
 
+Wide by design; pan and zoom.
+
+<!-- BEGIN GENERATED:diagram -->
 ```mermaid
 graph LR
     classDef stage fill:#f5f5f5,stroke:#666,stroke-width:1px
@@ -38,153 +43,166 @@ graph LR
     classDef app fill:#dae8fc,stroke:#6c8ebf,stroke-width:1.5px
     classDef role fill:#e1d5e7,stroke:#9673a6,stroke-width:3px
 
-    %% ================= STAGES =================
-    RC[R.calculus ✅]:::stage
-    RL[R.linalg ✅]:::stage
-    BIN[F1.4a binomial ~]:::stage
-    GEO[F1.4a geometric ~]:::stage
-    POI[F1.4a Poisson ~]:::stage
-    UNI[F1.4b uniform + inverse transform]:::stage
-    EXP[F1.4b exponential]:::stage
-    NOR[F1.4b normal]:::stage
-    COMB[F1.1 combinatorics]:::stage
-    BAY[S1.2 Bayes]:::stage
-    JNT[S1.6 joint dists]:::stage
-    MVN[S1.6 MVN]:::stage
-    TOW[S1.7 expectation + tower]:::stage
-    MGF[S1.8 MGF]:::stage
-    PUZ[S2 puzzles]:::stage
-    MC1[S3.1 Markov chains]:::stage
-    MC2[S3.2 absorbing + first passage]:::stage
-    BM[S4.1 Brownian motion]:::stage
-    MAR[S4.2 martingales + OST]:::stage
-    ITO[S4.3 Ito + SDEs]:::stage
-    PP[S4.4 Poisson processes]:::stage
-    BT[S6.1 binomial trees]:::stage
-    BS[S6.2 Black-Scholes + Greeks]:::stage
-    MCP[S6.5 Monte Carlo pricing]:::stage
-    PCA[S7 PCA + covariance]:::stage
-    MLE[S9.1 MLE]:::stage
-    HYP[S9.2 hypothesis testing]:::stage
-    REG[S9.3 regression]:::stage
-    GAR[S9.3 GARCH]:::stage
-    BYS[S9.4 Bayesian]:::stage
-    ARR[S10.1 arrays + hash]:::stage
-    DP[S10.2 DP]:::stage
-    GRF[S10.3 graphs + BFS]:::stage
-    NUM[S10.4 numerical methods]:::stage
-    KEL[S11 Kelly + entropy]:::stage
+    SF11Combinatorics["Combinatorics ~"]:::stage
+    SF12ConditionalProbabilit["Conditional Probability & Bayes"]:::stage
+    SF14DiscreteDistributions["Discrete Distributions ✅"]:::stage
+    SF15ContinuousDistributio["Continuous Distributions ✅"]:::stage
+    SF17AExpectationTowerProp["Linearity, LOTUS, Tower Property"]:::stage
+    SF17BMomentInequalitiesMg["Moment Inequalities & MGF"]:::stage
+    SRCalculus["Calculus Refresher ✅"]:::stage
+    SRLinearAlgebra["Linear Algebra Refresher ✅"]:::stage
+    CBaseRateFallacy("base rate fallacy"):::concept
+    CBayesRule("Bayes' rule"):::concept
+    CBiasVariance("bias variance"):::concept
+    CBijectionProof("proof by bijection"):::concept
+    CChangeOfVariables("change of variables"):::concept
+    CComplementaryCounting("complementary counting"):::concept
+    CConditionalInformation("conditional information"):::concept
+    CFatTails("fat tails"):::concept
+    CFirstStepConditioning("first step conditioning"):::concept
+    CInclusionExclusion("inclusion-exclusion"):::concept
+    CItosLemma("itos lemma"):::concept
+    CJensenInequality("Jensen's inequality"):::concept
+    CLawOfTotalProbability("law of total probability"):::concept
+    CLinearityOfExpectation("linearity of expectation"):::concept
+    CMeanReversion("mean reversion"):::concept
+    CMemorylessness("memorylessness"):::concept
+    CMomentGeneratingFunction("moment generating function"):::concept
+    CMultinomialCoefficient("multinomial coefficient"):::concept
+    COrderBookMechanics("order book mechanics"):::concept
+    COrderedVsUnordered("ordered vs unordered"):::concept
+    CPoissonExponentialDualit("poisson exponential duality"):::concept
+    CPsdCovariance("psd covariance"):::concept
+    CRiskNeutralReplication("risk neutral replication"):::concept
+    CStandardisation("standardisation"):::concept
+    CTowerProperty("tower property"):::concept
+    AAdverseSelection["Adverse selection"]:::app
+    AAlphaDecay["Alpha decay analysis"]:::app
+    AArrivalModelling["Arrival modelling"]:::app
+    ABacktestEngine["Backtest engine"]:::app
+    ABlackScholesPricer["Black-Scholes pricer"]:::app
+    ACodingScreen["Coding screen (LC medium/hard)"]:::app
+    ACovarianceEstimation["Covariance estimation"]:::app
+    ADataPipeline["Data pipeline"]:::app
+    AExecutionTca["Execution and TCA"]:::app
+    AFactorModel["Factor model / PCA"]:::app
+    AFeatureConstruction["Feature construction"]:::app
+    AGreeksDeltaHedging["Greeks / delta hedging"]:::app
+    AInventoryManagement["Inventory management"]:::app
+    AKellySizing["Kelly bet sizing"]:::app
+    AMarketStructure["Market structure"]:::app
+    AMeanVarianceOptimiser["Mean-variance optimiser"]:::app
+    AMonteCarloPricer["Monte Carlo pricer"]:::app
+    ARiskAttribution["Risk attribution"]:::app
+    ARiskParity["Risk parity allocation"]:::app
+    AScenarioPnl["Scenario P&L"]:::app
+    ASignalTesting["Signal + significance testing"]:::app
+    AStressTesting["Stress testing"]:::app
+    ATimeToFill["Time-to-fill / queue position"]:::app
+    AVarTailRisk["VaR / tail risk"]:::app
+    AVolSurface["Vol surface"]:::app
+    AVolatilityModelling["Volatility modelling"]:::app
+    RBacktestingInfra(["BACKTESTING AND INFRASTRUCTURE"]):::role
+    RMarketMaking(["MARKET MAKING AND EXECUTION"]):::role
+    ROptionsPricing(["OPTIONS PRICING AND HEDGING"]):::role
+    RPortfolioConstruction(["PORTFOLIO CONSTRUCTION"]):::role
+    RRiskManagement(["RISK MANAGEMENT"]):::role
+    RSignalResearch(["SIGNAL RESEARCH"]):::role
 
-    %% ================= CONCEPTS =================
-    cMEM(memorylessness):::concept
-    cPEX(Poisson ↔ Exponential<br/>counts vs gaps):::concept
-    cFSC(first-step conditioning):::concept
-    cTOW(tower property):::concept
-    cLIN(linearity of expectation):::concept
-    cCOV(change of variables<br/>→ log-normal):::concept
-    cRN(replication → risk-neutral):::concept
-    cITO(Ito's lemma):::concept
-    cSTD(standardisation<br/>z-scores):::concept
-    cFAT(fat tails · vol clustering):::concept
-    cBV(bias–variance):::concept
-    cPSD(PSD · why Markowitz breaks):::concept
-
-    %% ================= APPLICATIONS =================
-    aFILL[Time-to-fill<br/>queue position]:::app
-    aARRV[Arrival modelling]:::app
-    aSCRN[Coding screen<br/>LC medium/hard]:::app
-    aBS[Black-Scholes pricer]:::app
-    aGRK[Greeks · delta hedging]:::app
-    aVOL[Vol surface]:::app
-    aMC[Monte Carlo pricer]:::app
-    aVAR[VaR · tail risk]:::app
-    aSTR[Stress testing]:::app
-    aFAC[Factor model · PCA]:::app
-    aOPT[Mean-variance optimiser]:::app
-    aSIZ[Kelly bet sizing]:::app
-    aSIG[Signal + significance testing]:::app
-    aBKT[Backtest engine]:::app
-
-    %% ================= ROLES =================
-    RK1([OPTIONS PRICING]):::role
-    RK2([PORTFOLIO CONSTRUCTION]):::role
-    RK3([SIGNAL RESEARCH]):::role
-    RK4([MARKET MAKING]):::role
-    RK5([RISK MANAGEMENT]):::role
-    RK6([BACKTESTING · INFRA]):::role
-
-    %% ---------- ARRIVALS → MARKET MAKING ----------
-    EXP --> cMEM --> aFILL --> RK4
-    GEO --> cMEM
-    POI --> cPEX --> aARRV --> RK4
-    EXP --> cPEX
-    PP --> aARRV
-    aARRV --> aFILL
-    PUZ --> cFSC --> aFILL
-    GEO --> cFSC
-    MC1 --> cFSC
-    MC2 --> aFILL
-    ARR --> aSCRN --> RK4
-    DP --> aSCRN
-    GRF --> aSCRN
-    aSCRN --> RK6
-
-    %% ---------- PRICING ----------
-    UNI --> cCOV
-    NOR --> cCOV --> aBS --> RK1
-    JNT --> cCOV
-    BM --> cITO
-    ITO --> cITO --> aBS
-    RC --> cITO
-    BT --> cRN --> aBS
-    MAR --> cRN
-    TOW --> cRN
-    BS --> aGRK --> RK1
-    aBS --> aGRK
-    BS --> aVOL --> RK1
-    MCP --> aMC --> RK1
-    UNI --> aMC
-    NUM --> aMC
-    MGF --> cCOV
-    aGRK --> RK5
-
-    %% ---------- RISK ----------
-    NOR --> cSTD --> aVAR --> RK5
-    EXP --> aVAR
-    GAR --> cFAT --> aVAR
-    cFAT --> aSTR --> RK5
-    MVN --> aVAR
-    BM --> aSTR
-
-    %% ---------- PORTFOLIO ----------
-    RL --> cPSD --> aOPT --> RK2
-    MVN --> cPSD
-    PCA --> aFAC --> RK2
-    cPSD --> aFAC
-    aFAC --> aVAR
-    aFAC --> RK3
-    KEL --> aSIZ --> RK2
-    aSIZ --> RK4
-
-    %% ---------- SIGNAL / INFERENCE ----------
-    MLE --> cBV --> aSIG --> RK3
-    BYS --> cBV
-    TOW --> cTOW --> cBV
-    BAY --> cTOW
-    HYP --> aSIG
-    REG --> aSIG
-    COMB --> cLIN --> aSIG
-    TOW --> cLIN
-    BIN --> cLIN
-    BIN --> cSTD
-    BIN --> cRN
-    cLIN --> aFILL
-    REG --> aBKT --> RK6
-    HYP --> aBKT
-    aSIG --> aBKT
-    NUM --> aBKT
-    GAR --> aSIG
+    AAdverseSelection --> RMarketMaking
+    AAlphaDecay --> RSignalResearch
+    AArrivalModelling --> RMarketMaking
+    ABacktestEngine --> RBacktestingInfra
+    ABlackScholesPricer --> ROptionsPricing
+    ACodingScreen --> RBacktestingInfra
+    ACodingScreen --> RMarketMaking
+    ACovarianceEstimation --> RPortfolioConstruction
+    ADataPipeline --> RBacktestingInfra
+    AExecutionTca --> RMarketMaking
+    AFactorModel --> RPortfolioConstruction
+    AFactorModel --> RSignalResearch
+    AFeatureConstruction --> RSignalResearch
+    AGreeksDeltaHedging --> ROptionsPricing
+    AGreeksDeltaHedging --> RRiskManagement
+    AInventoryManagement --> RMarketMaking
+    AKellySizing --> RMarketMaking
+    AKellySizing --> RPortfolioConstruction
+    AMarketStructure --> RMarketMaking
+    AMeanVarianceOptimiser --> RPortfolioConstruction
+    AMonteCarloPricer --> RBacktestingInfra
+    AMonteCarloPricer --> ROptionsPricing
+    ARiskAttribution --> RRiskManagement
+    ARiskParity --> RPortfolioConstruction
+    AScenarioPnl --> RRiskManagement
+    ASignalTesting --> RSignalResearch
+    AStressTesting --> RRiskManagement
+    ATimeToFill --> RMarketMaking
+    AVarTailRisk --> RRiskManagement
+    AVolSurface --> ROptionsPricing
+    AVolatilityModelling --> RRiskManagement
+    CBaseRateFallacy --> ASignalTesting
+    CBayesRule --> AAdverseSelection
+    CBayesRule --> ASignalTesting
+    CBiasVariance --> AAlphaDecay
+    CBiasVariance --> ASignalTesting
+    CBijectionProof --> ASignalTesting
+    CChangeOfVariables --> ABlackScholesPricer
+    CComplementaryCounting --> ATimeToFill
+    CConditionalInformation --> AAdverseSelection
+    CFatTails --> AScenarioPnl
+    CFatTails --> AStressTesting
+    CFatTails --> AVarTailRisk
+    CFatTails --> AVolatilityModelling
+    CFirstStepConditioning --> ATimeToFill
+    CInclusionExclusion --> ASignalTesting
+    CItosLemma --> ABlackScholesPricer
+    CJensenInequality --> ABlackScholesPricer
+    CJensenInequality --> AKellySizing
+    CLawOfTotalProbability --> ASignalTesting
+    CLinearityOfExpectation --> ASignalTesting
+    CLinearityOfExpectation --> ATimeToFill
+    CMeanReversion --> AExecutionTca
+    CMeanReversion --> AInventoryManagement
+    CMemorylessness --> ATimeToFill
+    CMomentGeneratingFunction --> AVarTailRisk
+    CMultinomialCoefficient --> ASignalTesting
+    COrderBookMechanics --> AMarketStructure
+    COrderedVsUnordered --> ASignalTesting
+    CPoissonExponentialDualit --> AArrivalModelling
+    CPsdCovariance --> ACovarianceEstimation
+    CPsdCovariance --> AFactorModel
+    CPsdCovariance --> AMeanVarianceOptimiser
+    CPsdCovariance --> ARiskAttribution
+    CPsdCovariance --> ARiskParity
+    CRiskNeutralReplication --> ABlackScholesPricer
+    CStandardisation --> AFeatureConstruction
+    CStandardisation --> AVarTailRisk
+    CTowerProperty --> ASignalTesting
+    SF11Combinatorics --> CBijectionProof
+    SF11Combinatorics --> CComplementaryCounting
+    SF11Combinatorics --> CInclusionExclusion
+    SF11Combinatorics --> CMultinomialCoefficient
+    SF11Combinatorics --> COrderedVsUnordered
+    SF12ConditionalProbabilit --> CBaseRateFallacy
+    SF12ConditionalProbabilit --> CBayesRule
+    SF12ConditionalProbabilit --> CLawOfTotalProbability
+    SF14DiscreteDistributions --> CFirstStepConditioning
+    SF14DiscreteDistributions --> CLinearityOfExpectation
+    SF14DiscreteDistributions --> CMemorylessness
+    SF14DiscreteDistributions --> CPoissonExponentialDualit
+    SF15ContinuousDistributio --> CChangeOfVariables
+    SF15ContinuousDistributio --> CMemorylessness
+    SF15ContinuousDistributio --> CPoissonExponentialDualit
+    SF15ContinuousDistributio --> CStandardisation
+    SF17AExpectationTowerProp --> CFirstStepConditioning
+    SF17AExpectationTowerProp --> CLinearityOfExpectation
+    SF17AExpectationTowerProp --> CTowerProperty
+    SF17BMomentInequalitiesMg --> CJensenInequality
+    SF17BMomentInequalitiesMg --> CMomentGeneratingFunction
+    SRCalculus --> CItosLemma
+    SRLinearAlgebra --> CPsdCovariance
 ```
+<!-- END GENERATED:diagram -->
 
 ### Reading it — the chain that started this
 
@@ -213,102 +231,24 @@ afternoon buys you the tail-risk and pricing machinery.
 
 ---
 
-## The capabilities, one table each
+## Coverage by role
 
-**Status** counts stages closed / stages listed. `✅` closed · `~` partial · blank = not started.
+> Generated from frontmatter. **Stages mapped** counts stage maps naming that role; **closed**
+> counts those past `ready-for-test`. A low count is a statement about the calendar, not the plan.
 
-### Options pricing and hedging
+<!-- BEGIN GENERATED:status -->
+| Role | Stages closed | Stages mapped | Applications |
+|---|---:|---:|---|
+| **Backtesting and infrastructure** | 0 | 0 | [[backtest-engine]] · [[coding-screen]] · [[data-pipeline]] · [[monte-carlo-pricer]] |
+| **Market making and execution** | 2 | 6 | [[adverse-selection]] · [[arrival-modelling]] · [[coding-screen]] · [[execution-tca]] · [[inventory-management]] · [[kelly-sizing]] · [[market-structure]] · [[time-to-fill]] |
+| **Options pricing and hedging** | 2 | 2 | [[black-scholes-pricer]] · [[greeks-delta-hedging]] · [[monte-carlo-pricer]] · [[vol-surface]] |
+| **Portfolio construction** | 1 | 1 | [[covariance-estimation]] · [[factor-model]] · [[kelly-sizing]] · [[mean-variance-optimiser]] · [[risk-parity]] |
+| **Risk management** | 1 | 2 | [[greeks-delta-hedging]] · [[risk-attribution]] · [[scenario-pnl]] · [[stress-testing]] · [[var-tail-risk]] · [[volatility-modelling]] |
+| **Signal research** | 1 | 5 | [[alpha-decay]] · [[factor-model]] · [[feature-construction]] · [[signal-testing]] |
+<!-- END GENERATED:status -->
 
-| | |
-|---|---|
-| **What it is** | Given a contract, produce a price and the sensitivities that let you hedge it. |
-| **Interview form** | "Price a European call." · "What's delta on a 1-week ATM vs a 1-year ATM?" · "Why is gamma highest near expiry?" |
-| **Work form** | Pricing library, Greeks engine, vol surface, hedge P&L attribution |
-| **Capstone** | **P1 Options Pricer** (Sprint 26) |
-| **Stages** | R.calculus ✅ · F1.5 · S1.6 · S1.8 · S4.1 · S4.2 · S4.3 · S6.1 · S6.2 · S6.5 |
-| **Key concepts** | change of variables → log-normal · replication → risk-neutral · Ito's lemma |
-| **Applications** | Black-Scholes pricer · Greeks / delta hedging · vol surface · Monte Carlo pricer |
-| **Status** | **1 / 10** |
-
-*Baseline signal:* VI.3 (Greeks intuition) scored **3** — your best derivative answer, and it was
-pure reasoning. VI.1 (binomial call) scored 0. The intuition is there; the machinery isn't.
-
-### Portfolio construction
-
-| | |
-|---|---|
-| **What it is** | Turn a set of return forecasts and a covariance estimate into position sizes. |
-| **Interview form** | "What does a covariance matrix have to satisfy?" · "Why does Markowitz blow up in practice?" · "How would you size a bet with edge?" |
-| **Work form** | Mean-variance / risk-parity optimisers, factor models, shrinkage, position limits |
-| **Stages** | R.linalg ✅ · S1.6 · S7 · S9.3 · S11 (Kelly) |
-| **Key concepts** | PSD · why Markowitz breaks |
-| **Applications** | Mean-variance optimiser · factor model / PCA · Kelly bet sizing |
-| **Status** | **1 / 5** |
-
-*Already banked:* your `R.linalg` note derived why Σ is PSD **and** why it's PSD-not-PD — the
-singular case that breaks Cholesky and naive Markowitz. That is a portfolio-construction insight
-sitting in a linear algebra note.
-
-### Signal research
-
-| | |
-|---|---|
-| **What it is** | Find something that predicts returns, and establish it isn't noise. |
-| **Interview form** | "How do you know this signal isn't overfit?" · "What are the OLS assumptions?" · "What's the difference between in-sample and out-of-sample R²?" |
-| **Work form** | Feature construction, regression, multiple-testing control, decay analysis |
-| **Stages** | F1.1 · S1.2 · S1.7 · S9.1 · S9.2 · S9.3 · S9.4 · S7 |
-| **Key concepts** | bias–variance · tower property · linearity of expectation |
-| **Applications** | Signal + significance testing · factor model · backtest engine |
-| **Status** | **0 / 8** |
-
-*Baseline signal:* Section IX scored **1.00** — joint lowest with algos, and this is the single
-most QR-relevant capability on the list. MLE scored 0.
-
-### Market making and execution
-
-| | |
-|---|---|
-| **What it is** | Quote two-sided prices, manage inventory, and get filled at good prices. |
-| **Interview form** | "Expected number of trades before your quote is hit?" · "What's your edge if you're picked off X% of the time?" · fast mental arithmetic, LC-medium under time pressure |
-| **Work form** | Queue position modelling, adverse-selection cost, order routing, latency budgets |
-| **Stages** | F1.4 ~ · F1.5 · S2 · S3.1 · S4.4 · S10.1 · S10.2 · S10.3 · S10.4 |
-| **Key concepts** | memorylessness · Poisson ↔ Exponential (counts vs gaps) · first-step conditioning |
-| **Applications** | Time-to-fill / queue position · arrival modelling · coding screen · Kelly sizing |
-| **Status** | **0.5 / 9** |
-
-*Baseline red flag:* X.4 — "don't know what BFS is." Named an HFT-screen blocker; S10.3 is the
-primary focus of Sprint 19. **This capability is where the exponential distribution stops being
-abstract**: memorylessness *is* the model for time-to-next-trade, and `min(X,Y) ~ Exp(λ₁+λ₂)` is
-first-to-fill across venues.
-
-### Risk management
-
-| | |
-|---|---|
-| **What it is** | Quantify what you can lose, and know where the estimate fails. |
-| **Interview form** | "Compute 99% 1-day VaR." · "Why is VaR not coherent?" · "What breaks when returns aren't normal?" |
-| **Work form** | VaR / ES, stress testing, factor risk decomposition, tail modelling |
-| **Stages** | F1.5 · S1.6 · S7 · S9.2 · S9.3 · S4.2 |
-| **Key concepts** | standardisation / z-scores · fat tails · vol clustering |
-| **Applications** | VaR / tail risk · stress testing · factor risk · delta hedging |
-| **Status** | **0 / 6** |
-
-*Note the direct line from Wednesday's stage:* 1.645 vs 1.96 vs 2.326 is a VaR calculation, and
-mixing them up is a production bug, not a quiz slip. `Var > E` breaking the Poisson fit is why
-naive arrival models understate tail risk.
-
-### Backtesting and infrastructure
-
-| | |
-|---|---|
-| **What it is** | Simulate a strategy on history without lying to yourself. |
-| **Interview form** | Less directly asked — shows up as "how would you test that?" and in code screens |
-| **Work form** | Event-driven backtesters, look-ahead / survivorship control, transaction costs, reproducibility |
-| **Stages** | S9.2 · S9.3 · S10.1 · S10.2 · S10.4 · S6.5 |
-| **Key concepts** | bias–variance (overfitting vs out-of-sample) |
-| **Applications** | Backtest engine · coding screen · Monte Carlo convergence |
-| **Status** | **0 / 6** |
-| **Overlap credit** | Contract §A.1a — quantamental work touching §IX or §X **dual-counts** here. This is the one capability your 6h/week side project directly advances. |
+Each role note in `vault/roles/` carries its own live Dataview of the stages feeding it, plus the
+interview form and work form. This table is the summary; the note is the detail.
 
 ---
 
@@ -343,6 +283,12 @@ ones exist. Nobody gets to skip a column.
   things you actually want, rather than against stage counts.
 - **Do not schedule from this file.** The DAG owns order; this owns motivation.
 
-**Update cadence:** status counts at each sprint retro. Structure only when a stage is added or
-dropped — the capability and competency layers should be near-static. If they churn, the target
-is drifting.
+**To regenerate:**
+
+```
+python vault/build_capability_map.py
+```
+
+Reads every stage map and vault note, rewrites the two generated blocks, and prints any dangling
+link it found. Run it after writing a stage map and at each sprint retro. `--demo` runs its
+self-check.

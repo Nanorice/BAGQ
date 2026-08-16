@@ -272,7 +272,7 @@ Weeks reference the working weeks within each sprint (W1 = week 1 of sprint, W2 
 |---|---|---|---|
 | **15** (setup) | 2026-07-20 → 08-02 | **Baseline test** (this weekend) · T0.A Python env · T0.B Git repo hygiene · read all 6 learning-system files · fill `05_commitment_contract.md` A+B (done) | Repo scaffolded, baseline scores logged, Sprint 16 planned |
 | **16** | 08-03 → 08-16 | Calculus refresher `R.calculus` · Linear algebra refresher `R.linalg` · S1.1 Combinatorics (start) | 2 refresher notes + S1.1 Feynman note started |
-| **17** | 08-17 → 08-30 | S1.1 Combinatorics (complete) · S1.2 Cond prob + Bayes · **S1.7 Expectation + tower (PULLED FORWARD)** · **S10.1 arrays/hash parallel** | S1.1 + S1.2 + S1.7 COMPLETE · 10 LC-easy done |
+| **17** | 08-17 → 08-30 | `F1.2` Cond prob + Bayes · **`F1.7a`/`F1.7b` Expectation + tower, split (PULLED FORWARD)** · S10.1 scrap-tier only | `F1.2` + `F1.7a` + `F1.7b` COMPLETE · 4 LC-easy done — see `sprints/S17.md` for the authoritative day-by-day (written 08-15) |
 | **18** | 08-31 → 09-13 | S1.4 Discrete RVs · S10.1 cont'd · S10.2 DP intro | S1.4 COMPLETE · 20 LC-easy total · first DP problems |
 | **19** | 09-14 → 09-27 | F1.5 Continuous RVs · S10.3 graphs (BFS/DFS) | `F1.5` COMPLETE · graph solvers |
 | **20** | 09-28 → 10-11 | S1.6 Joint dists + MVN · S7 Linear algebra deepen (PCA) | S1.6 COMPLETE · PCA on toy covariance |

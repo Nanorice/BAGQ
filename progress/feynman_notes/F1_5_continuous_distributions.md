@@ -46,7 +46,17 @@ id: F1.5
 3. Poisson is measuring how many events per given time window. Exponential is measuring time before event occurs. they are all described using k (rate), only that latter measure is continuous. 
 4. Tail formula: Lemma: E(x) = Integral(inf,0)(P(X>x)dx), faster integral comparing to x*f(x)
 5. Jacobian: f(y)dy = f(x)dx -> f(y)=f(x)*|dx/dy|
+6. proof of lemma 2.1, why E(x)=int(P(X>x))
+7. Theoretical ex 5. E(x^n)
+8. integral trick, integral of some exponential -> sqrt(pi)
 
+错题集：5,10,12,14,15,16,17,18
+
+	(5) conversion between random variables, and their distribution
+	(10) Bayseian rule: union of monotonicity can be simplified to single prob. e.g. P(x>40|x>30) = [P(x>40) U P(x>30)]/P(x>30) = P(x>40)/P(x>30)
+	(12) extract normal distribution proxy from sample data?
+	(14) distribution function F can be used directly for probability. for example, P(x<3) = integral(f(x)dx)|(3,0) = F(3); for getting E(x), just substitute to F(x)-F(0) in the integral. Remaining question: how to get Var?
+	(17) did we use npq in the end to proxy vriance? if so is this a poisson distribution? if so then for getting probbility we further used a normal distribution? This reminds me of Kelly Criterion. Effectively even at high multiple, when win rate is low, long term expectation is low if not sized properly
 
 ## 3. Napkin version (≤200 words)
 

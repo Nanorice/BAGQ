@@ -2,7 +2,7 @@
 type: concept
 name: psd covariance
 topics: ["[[VII-1-core-linear-algebra]]", "[[VII-2-applications-in-quant-finance]]", "[[I-6-joint-distributions-and-multivariate-probability]]"]
-applications: ["[[mean-variance-optimiser]]", "[[factor-model]]"]
+applications: ["[[mean-variance-optimiser]]", "[[factor-model]]", "[[risk-attribution]]", "[[risk-parity]]", "[[covariance-estimation]]"]
 ---
 
 # psd covariance
@@ -10,7 +10,7 @@ applications: ["[[mean-variance-optimiser]]", "[[factor-model]]"]
 > x'Sigma x IS a portfolio variance, so it cannot be negative. PSD not PD, because a portfolio can have exactly zero variance - the singular case that breaks Cholesky and naive Markowitz.
 
 **Arises in:** [[VII-1-core-linear-algebra]] · [[VII-2-applications-in-quant-finance]] · [[I-6-joint-distributions-and-multivariate-probability]]
-**Feeds:** [[mean-variance-optimiser]] · [[factor-model]]
+**Feeds:** [[mean-variance-optimiser]] · [[factor-model]] · [[risk-attribution]] · [[risk-parity]] · [[covariance-estimation]]
 
 ## In my own words
 <!-- fill this when a stage first teaches it - one paragraph, no jargon -->

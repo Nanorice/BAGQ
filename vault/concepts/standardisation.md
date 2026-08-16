@@ -2,7 +2,7 @@
 type: concept
 name: standardisation
 topics: ["[[I-5-continuous-random-variables-and-distributions]]"]
-applications: ["[[var-tail-risk]]"]
+applications: ["[[var-tail-risk]]", "[[feature-construction]]"]
 ---
 
 # standardisation
@@ -10,7 +10,7 @@ applications: ["[[var-tail-risk]]"]
 > Z=(X-mu)/sigma reduces every normal question to one table lookup. 1.645 one-tail, 1.96 two-tail, 2.326 for 99% VaR.
 
 **Arises in:** [[I-5-continuous-random-variables-and-distributions]]
-**Feeds:** [[var-tail-risk]]
+**Feeds:** [[var-tail-risk]] · [[feature-construction]]
 
 ## In my own words
 <!-- fill this when a stage first teaches it - one paragraph, no jargon -->

@@ -2,7 +2,7 @@
 type: concept
 name: bias variance
 topics: ["[[IX-1-estimation-theory]]", "[[IX-4-bayesian-inference]]"]
-applications: ["[[signal-testing]]"]
+applications: ["[[signal-testing]]", "[[alpha-decay]]"]
 ---
 
 # bias variance
@@ -10,7 +10,7 @@ applications: ["[[signal-testing]]"]
 > An estimator can be wrong on average (bias) or unstable (variance). Overfitting trades bias for variance until out-of-sample performance dies.
 
 **Arises in:** [[IX-1-estimation-theory]] · [[IX-4-bayesian-inference]]
-**Feeds:** [[signal-testing]]
+**Feeds:** [[signal-testing]] · [[alpha-decay]]
 
 ## In my own words
 <!-- fill this when a stage first teaches it - one paragraph, no jargon -->
