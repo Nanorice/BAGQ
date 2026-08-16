@@ -279,7 +279,7 @@ Rare events, many trials, mean 1.*
 
 ## Code problems
 
-Both live in `src/solvers/s1_probability/counting_verify.py`. Standard library only, no test
+Both live in `code/codify.ipynb` under `# Counting`. Standard library only, no test
 framework. Each: one function computing the answer, one verifying it independently, and an
 `assert` in `__main__` that fails loudly if they disagree.
 

@@ -141,7 +141,7 @@ count model, and why it matters when fitting trade-arrival data.
 
 ## Code problems
 
-Both live in `src/solvers/s1_probability/distributions_verify.py`, shared with continuous
+Both live in `code/codify.ipynb` under `# Distributions`, shared with continuous
 distributions. Standard library only.
 
 ### 1 · Geometric expectation

@@ -228,7 +228,7 @@ nothing more.*
 
 ## Code problems
 
-Both live in `src/solvers/s1_probability/conditional_expectation_verify.py`. Standard library
+Both live in `code/codify.ipynb` under `# Conditional expectation`. Standard library
 only, no test framework. Each: one function computing the answer, one verifying it independently,
 an `assert` in `__main__`, and a docstring with time and space complexity.
 

@@ -110,8 +110,8 @@ Monte Carlo only when it isn't. When a file has both, say which is which and why
 the transferable skill. For Monte Carlo, require a comment naming the trial count and why — a
 flaky assert is worse than none.
 
-Path: `src/solvers/s1_probability/<name>_verify.py`. Prefer one file per topic over one per
-problem.
+Everything goes in `code/codify.ipynb`, under a `# <Topic>` markdown heading. One notebook, no
+`src/` package, no pytest — the whole deliverable is a function, a verifier and an assert.
 
 ### Deliverables
 

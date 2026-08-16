@@ -227,8 +227,8 @@ coordinate trick. *This is where the `1/√(2π)` in the normal PDF comes from.*
 
 ## Code problems
 
-Both live in `src/solvers/s1_probability/distributions_verify.py`, shared with discrete
-distributions. **This file creates `src/solvers/`.** Standard library only, no test framework.
+Both live in `code/codify.ipynb` under `# Distributions`, shared with discrete distributions.
+Standard library only, no test framework.
 
 ### 1 · Sampling an exponential by inverse transform
 

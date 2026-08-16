@@ -13,7 +13,7 @@
 2. Settings → Community plugins → Browse → install and enable **Dataview**.
 3. Open `vault/HOME.md`. If you see code blocks instead of tables, Dataview isn't on.
 
-`inventory/`, `pine_scripts/`, `.claude/`, `src/`, `tests/` are excluded from the vault by
+`inventory/`, `code/`, `pine_scripts/` and `.claude/` are excluded from the vault by
 `.obsidianignore` — deliberately. `inventory/` alone is 3,440 lines and would swamp the graph.
 
 ---
@@ -211,6 +211,7 @@ vault/method/progression.md    ← what unlocks what. OWNS STUDY ORDER.
 CAPABILITY_MAP.md          ← why a stage matters (GitHub-readable)
 vault/method/done.md    ← definition of done, D1–D4
 vault/method/contract.md  ← time budget, invariants, circuit breakers
+code/codify.ipynb          ← every code deliverable, one heading per topic
 inventory/                    ← 911-problem inventory. Excluded from vault.
 ```
 
@@ -235,6 +236,7 @@ Each of these came from something going wrong. They are not preferences.
 | **Small stages localise overrun** | `F1.4` blew its budget; `F1.5` carried cleanly because they were separate |
 | **D4 at +1 week, not at close** | Four stages closed, zero tested — the gap that had no artifact |
 | **No new textbooks** | Ross, Green Book, Hull, CLM. Over-collecting is procrastination. |
+| **One notebook, no `src/` package** | `src/solvers/` was specced in July and never written across three sprints. A function plus a verifier plus an assert is a cell. |
 
 ---
 

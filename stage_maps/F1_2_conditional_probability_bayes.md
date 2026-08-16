@@ -173,7 +173,7 @@ and integrate over just that restricted region.*
 
 ## Code problems
 
-`src/solvers/s1_probability/bayes_verify.py` — new file. Docstring with time + space
+`code/codify.ipynb` under a new `# Bayes` heading. Docstring with time + space
 complexity, one `assert`-based `__main__`.
 
 **CODE1** — Verify A3 (the disease test) two ways: (1) closed-form Bayes' rule, (2) Monte

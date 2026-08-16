@@ -46,20 +46,29 @@ A stretch item that says only "→ S1.8" is a to-do, not a learning path. **No n
 "named source" means Ross, Green Book, Hull, or CLM.
 
 ### D3 — Code twin (computational)
-- **Code problems are stated in the stage map**, in a `## Code problems` section, numbered
-  `<STAGE>-CODE<N>`. They are specified up front like any other problem — not improvised at
-  the close block.
-- Solver in `src/solvers/<section>/<snake_case>.py`. Every solver contains:
-  1. **Analytical / closed-form function** (if one exists)
-  2. **Monte Carlo simulator** converging to the same answer within tolerance
-  3. **Docstring with time + space complexity** (baseline adjustment #9)
-- One `assert`-based `__main__` self-check is enough at this stage. Promote to
-  `tests/solvers/...` pytest files when a stage has enough solvers to justify it.
-- For pure-algorithmic problems (Section X), the code twin is: implementation + complexity
-  comment + edge-case checks.
 
-**Minimum coverage:** every stage ships at least one runnable check. Interview-favourites
+- **Code problems are stated in the stage map**, in a `## Code problems` section. Specified up
+  front like any other problem — never improvised at the close block.
+- **Everything goes in `code/codify.ipynb`**, one `# Topic` markdown heading per topic, newest
+  at the bottom. Standard library only.
+- Each code problem is one cell containing:
+  1. **Analytical / closed-form function**, if one exists
+  2. **An independent verifier** converging to the same answer within tolerance
+  3. **A docstring with time + space complexity** — interviewers grade Big-O explicitly
+  4. **An `assert`** comparing the two. A cell that runs silently has passed.
+- **Choosing the verifier:** exact enumeration when the state space is small enough to walk,
+  Monte Carlo only when it isn't. When a cell has both, say which is which and why — that choice
+  is the transferable skill. Monte Carlo needs a comment naming the trial count and why.
+- For pure-algorithmic problems (Section X), the code twin is implementation + complexity
+  comment + edge-case asserts.
+
+**Minimum coverage:** every stage ships at least one runnable check. Interview favourites
 (expected-flips-to-HH, gambler's ruin, coupon collector) are mandatory.
+
+**One notebook until it hurts.** No `src/` package, no pytest. Both were specced in July,
+neither got written in three sprints, and the whole deliverable is one function plus one
+verifier plus one assert — that is a cell, not a package. Split a topic into
+`code/<topic>.ipynb` only when a section genuinely needs importing somewhere else.
 
 ### D3.5 — Concept notes (2 min each, at stage close)
 
@@ -119,11 +128,8 @@ A capstone additionally requires:
 
 ## Grading rubrics (keep them honest)
 
-Save your per-stage rubric alongside the unlock test at:
-`progress/unlock_tests/<stage_id>/rubric.md`
-`progress/unlock_tests/<stage_id>/attempt_YYYY-MM-DD.md`
-
-Rubric skeleton:
+Unlock tests are written into the sprint file (`progress/sprints/S<NN>.md`) for whatever is
+due that sprint, with the attempt and grade logged in the same place. Rubric skeleton:
 
 ```markdown
 # Unlock test rubric — <stage_id>
@@ -142,33 +148,17 @@ Rubric skeleton:
 
 ---
 
-## Directory layout summary (created lazily as you progress)
+## Directory layout
 
 ```
+code/codify.ipynb        every code deliverable, one heading per topic
+inventory/               the 911-problem scope inventory
+stage_maps/              what to do, per topic
 progress/
   baseline_scores.md
-  stage_log.md
-  feynman_notes/
-    S1.1_combinatorics.md
-    ...
-  problem_solutions/
-    S1.1/
-      p01.md
-      p02.md
-  unlock_tests/
-    S1.1/
-      rubric.md
-      attempt_2026-08-03.md
-
-src/solvers/
-  s1_probability/
-    s1_1_stars_and_bars.py
-    s1_2_bayes_disease_test.py
-  s3_markov/
-    ...
-tests/solvers/
-  s1_probability/
-    test_s1_1_stars_and_bars.py
+  sprints/S<NN>.md       log + retro, one per sprint
+  feynman_notes/         what was understood, one per topic
+vault/                   the Obsidian graph — method/, topics/, concepts/, applications/, roles/
 ```
 
 ---

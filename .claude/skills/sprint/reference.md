@@ -89,7 +89,7 @@ Names only, grouped by target file, one line pointing at the maps.
 
 Specs live in the stage maps — inputs, method, verifier, and the complexity to state.
 
-**`src/solvers/s1_probability/bayes_verify.py`**
+**`code/codify.ipynb` — `# Bayes`**
 - Base-rate simulation against the closed-form posterior
 - Sequential updating, checked against a single batch update
 ```

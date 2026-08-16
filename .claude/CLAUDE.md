@@ -137,8 +137,8 @@ any row happened.
     schedule · problems A/B/C · code problems · deliverables · answer key. Written before the block.
   - `progress/feynman_notes/<id>_<slug>.md` — **what you understood.** Teach-back, gaps, napkin,
     summary table, where-it-breaks. The user writes this; never draft it.
-- **Obsidian vault (added 08-09).** Repo root is a vault; `inventory/`, `code/`, `src/`, `tests/`,
-  `pine_scripts/`, `.claude/` are excluded via `.obsidianignore`. Chain:
+- **Obsidian vault (added 08-09).** Repo root is a vault; `inventory/`, `code/`,
+  `pine_scripts/` and `.claude/` are excluded via `.obsidianignore`. Chain:
   `stage → topic → concept → application → role`, all in `vault/`. **91 stubs exist already —
   do not create more without asking.** `vault/HOME.md` is the Dataview dashboard.
   `TOPIC_MAP.md` and `tracker.md` are both **deleted**; their content lives in topic-note
@@ -166,11 +166,14 @@ any row happened.
   `READY_FOR_TEST` — a real state. Sprint retro reviews *process*; D4 tests *knowledge*.
 - **No `tracker.md`** (deleted 08-04). Schedule + actuals + invariants live in
   `progress/sprints/S<NN>.md`, one file per sprint.
-- **Solvers:** `src/solvers/<section>/<snake_case>.py` — (a) analytical fn if closed-form exists,
-  (b) Monte Carlo verifier, (c) docstring with time + space complexity.
-  **`src/` does not exist yet** — it gets created by `F1.5`'s close block, one shared verifier
-  covering `F1.4` + `F1.5`. Do not scaffold it early.
-- **Tests:** `tests/solvers/<section>/test_<name>.py`, pytest, analytical ≈ MC within tolerance.
+- **Code lives in `code/codify.ipynb`** — one `# Topic` markdown heading per topic, newest at the
+  bottom. Each problem is one cell: closed form, an independent verifier, a docstring with time +
+  space complexity (baseline adjustment #9), and an `assert`. Standard library only.
+  **No `src/` package and no pytest** — both were specced in July and neither got written across
+  three sprints, because the deliverable is a function plus a verifier plus an assert, which is a
+  cell. Split to `code/<topic>.ipynb` only when something genuinely needs importing elsewhere.
+- **Verifier choice is part of the answer** — enumerate exactly when the state space is walkable,
+  Monte Carlo only when it isn't; a Monte Carlo needs a comment naming the trial count and why.
 - **Dates:** ISO 8601. **Time-shape:** learning = prime (≥60 min); quantamental = scrap (15 min).
 
 ---
