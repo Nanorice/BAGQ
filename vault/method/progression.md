@@ -5,7 +5,7 @@
 > You cannot start a stage until its prerequisites are `COMPLETE`.
 >
 > **This file is bottom-up** — *what can I start next?* For the top-down view — *why does this
-> stage matter?* — see [CAPABILITY_MAP.md](CAPABILITY_MAP.md), which traces stages up to the six
+> stage matter?* — see [CAPABILITY_MAP.md](../../CAPABILITY_MAP.md), which traces stages up to the six
 > capabilities a quant is hired for. Same stages, opposite direction. **This file owns
 > sequencing; that one is reference only.**
 
@@ -21,7 +21,7 @@ LOCKED  →  UNLOCKED  →  IN_PROGRESS  →  READY_FOR_TEST  →  COMPLETE
 - **LOCKED**: at least one prereq is not COMPLETE.
 - **UNLOCKED**: all prereqs COMPLETE. You may start.
 - **IN_PROGRESS**: you're working on Learn / Feynman / Problems / Solvers.
-- **READY_FOR_TEST**: all deliverables of `04_deliverables_spec.md` met.
+- **READY_FOR_TEST**: all deliverables of `done.md` met.
 - **COMPLETE**: unlock test passed (≥ 80% on fresh problems + oral napkin).
 - **REGRESSED**: a review (+1w/+1m/+3m) failed → drop back to IN_PROGRESS, redo Feynman step 3–4.
 
@@ -32,7 +32,7 @@ Track state in `progress/stage_log.md` (one row per stage).
 ## Stage naming convention
 
 **Adopted 2026-08-04**, replacing the old `T0.<letter>` / `S<n>.<m>` mix — which carried no depth
-signal and whose section numbers did not actually match `topics/`.
+signal and whose section numbers did not actually match `inventory/`.
 
 ```
 <TYPE><section>.<subsection><split>
@@ -46,9 +46,9 @@ signal and whose section numbers did not actually match `topics/`.
 | `F` | **Foundation** — new install, never held before | ≈ **2.0×** |
 | `D` | **Deepen** — a section revisited later at greater depth | TBD (first one is S9.3) |
 
-**section.subsection — indexes `topics/`, 1:1 with the Roman numerals.**
+**section.subsection — indexes `inventory/`, 1:1 with the Roman numerals.**
 
-| # | `topics/` file | | # | `topics/` file |
+| # | `inventory/` file | | # | `inventory/` file |
 |---|---|---|---|---|
 | 1 | `section_I_probability_combinatorics` | | 8 | `section_VIII_calculus_des` |
 | 2 | `section_II_classical_puzzles` | | 9 | `section_IX_statistics_estimation` |
@@ -59,7 +59,7 @@ signal and whose section numbers did not actually match `topics/`.
 | 7 | `section_VII_linear_algebra` | | | |
 
 The subsection number is the **`##` heading number inside that file** — so `F1.4` means
-`topics/section_I` §4 (*Discrete* RVs & Distributions) and `F1.5` means §5 (*Continuous* RVs &
+`inventory/section_I` §4 (*Discrete* RVs & Distributions) and `F1.5` means §5 (*Continuous* RVs &
 Distributions). **Open the file and read the heading before assigning a number.** This has been
 got wrong twice:
 
@@ -67,7 +67,7 @@ got wrong twice:
 - `F1.4a`/`F1.4b` assumed both distribution stages lived in §4. They don't — discrete is §4,
   continuous is §5. They were never a split of one subsection *(fixed 08-09)*
 
-**split letter (optional)** — `a`/`b`/`c` **only** when one genuine `topics/` subsection is too
+**split letter (optional)** — `a`/`b`/`c` **only** when one genuine `inventory/` subsection is too
 big for a day-stage. `F1.1a/b/c` (combinatorics over three days) is the real case. If two stages
 map to two different subsections, they get two different numbers — not a split letter.
 
@@ -216,7 +216,7 @@ graph LR
 > and a tested 2.0× multiplier exist. Until then, `progress/sprints/S<NN>.md` is the truth for
 > anything inside the current sprint; this table is directional only.
 
-**Role target (from `05_commitment_contract.md` §B):** Buy-side QR / systematic PM (primary) + HFT / market-making (secondary).
+**Role target (from `contract.md` §B):** Buy-side QR / systematic PM (primary) + HFT / market-making (secondary).
 
 **Sprint alignment:** the plan runs across **13 two-week sprints** (Sprint 15 → Sprint 27), matching the user's existing personal-agile cadence. Sprint 15 (started 2026-07-20, mid-sprint at time of planning) is treated as **Sprint 0 — setup only**. Sprint 27 ends 2027-01-17, two days after the Jan 15 interview target.
 
@@ -270,7 +270,7 @@ Weeks reference the working weeks within each sprint (W1 = week 1 of sprint, W2 
 
 | Sprint | Dates | Focus | Sprint goal / demo |
 |---|---|---|---|
-| **15** (setup) | 2026-07-20 → 08-02 | **Baseline test** (this weekend) · T0.A Python env · T0.B Git repo hygiene · read all 6 learning-system files · fill `05_commitment_contract.md` A+B (done) | Repo scaffolded, baseline scores logged, Sprint 16 planned |
+| **15** (setup) | 2026-07-20 → 08-02 | **Baseline test** (this weekend) · T0.A Python env · T0.B Git repo hygiene · read all 6 learning-system files · fill `contract.md` A+B (done) | Repo scaffolded, baseline scores logged, Sprint 16 planned |
 | **16** | 08-03 → 08-16 | Calculus refresher `R.calculus` · Linear algebra refresher `R.linalg` · S1.1 Combinatorics (start) | 2 refresher notes + S1.1 Feynman note started |
 | **17** | 08-17 → 08-30 | `F1.2` Cond prob + Bayes · **`F1.7a`/`F1.7b` Expectation + tower, split (PULLED FORWARD)** · S10.1 scrap-tier only | `F1.2` + `F1.7a` + `F1.7b` COMPLETE · 4 LC-easy done — see `sprints/S17.md` for the authoritative day-by-day (written 08-15) |
 | **18** | 08-31 → 09-13 | S1.4 Discrete RVs · S10.1 cont'd · S10.2 DP intro | S1.4 COMPLETE · 20 LC-easy total · first DP problems |
@@ -333,6 +333,6 @@ Based on `progress/baseline_scores.md` (combined mean 0.88, no section > 1.5, no
 6. **R.calculus calculus refresher expanded and made mandatory-deep** — must cover: ODEs (separable + linear first-order, esp. dy/dx=y ↔ y=eˣ), Lagrange multipliers, chain rule. Feynman note required. VIII.1 answered wrong = red flag.
 7. **Sprint 17 S10.1 explicitly includes hash-map pattern** (Two-sum, contains-duplicate, group-anagrams). Complexity annotations mandatory.
 8. **Sprint 19 S10.3 (graphs/BFS/DFS) upgraded from "parallel" to primary focus** — BFS being unknown is a critical HFT-screen blocker.
-9. **Every solver from Sprint 17 onward requires docstring with time + space complexity** (added to D3 in `04_deliverables_spec.md`). X.1 lost points for wrong complexity despite correct answer.
+9. **Every solver from Sprint 17 onward requires docstring with time + space complexity** (added to D3 in `done.md`). X.1 lost points for wrong complexity despite correct answer.
 10. **"Cheap wins" mini-stage in Sprint 16** — 30-min blocks per topic on vocabulary-only zero-scorers: Bayes disease-test, coupon collector formula, put-call parity direction, Vickrey auction, Shannon entropy formula. Total ~2.5 h for ~5-point score jump.
 11. **Sections IX and X are both critical-path and both scored ~1.0** — no acceleration possible. Sprints 23–25 (stats) and Sprints 17–22 (algo parallel) run at full sprint capacity, no shortcuts.

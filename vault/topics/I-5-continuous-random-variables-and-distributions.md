@@ -4,7 +4,7 @@ id: I.5
 name: Continuous Random Variables & Distributions
 section: I
 section_no: 1
-source: "../../topics/section_I_probability_combinatorics.md#5-continuous-random-variables-and-distributions"
+source: "../../inventory/section_I_probability_combinatorics.md#5-continuous-random-variables-and-distributions"
 concepts: ["[[change-of-variables]]", "[[memorylessness]]", "[[standardisation]]"]
 covered_by: ["[[F1_5_continuous_distributions]]"]
 coverage: partial
@@ -13,7 +13,7 @@ deferred: "log-normal -> S6 (with Black-Scholes) · chi-squared -> S9.2 · Gamma
 
 # I.5 — Continuous Random Variables & Distributions
 
-**Section I** · [source problem list](../../topics/section_I_probability_combinatorics.md)
+**Section I** · [source problem list](../../inventory/section_I_probability_combinatorics.md)
 
 ## Concepts this topic carries
 

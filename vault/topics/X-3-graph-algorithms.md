@@ -4,7 +4,7 @@ id: X.3
 name: Graph Algorithms
 section: X
 section_no: 10
-source: "../../topics/section_X_algorithms_ds.md#3-graph-algorithms"
+source: "../../inventory/section_X_algorithms_ds.md#3-graph-algorithms"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # X.3 — Graph Algorithms
 
-**Section X** · [source problem list](../../topics/section_X_algorithms_ds.md)
+**Section X** · [source problem list](../../inventory/section_X_algorithms_ds.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

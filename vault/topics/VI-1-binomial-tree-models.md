@@ -4,7 +4,7 @@ id: VI.1
 name: Binomial Tree Models
 section: VI
 section_no: 6
-source: "../../topics/section_VI_derivative_pricing.md#1-binomial-tree-models"
+source: "../../inventory/section_VI_derivative_pricing.md#1-binomial-tree-models"
 concepts: ["[[risk-neutral-replication]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # VI.1 — Binomial Tree Models
 
-**Section VI** · [source problem list](../../topics/section_VI_derivative_pricing.md)
+**Section VI** · [source problem list](../../inventory/section_VI_derivative_pricing.md)
 
 ## Concepts this topic carries
 

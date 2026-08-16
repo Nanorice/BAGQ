@@ -4,7 +4,7 @@ id: V.1
 name: Optimal Stopping Theory
 section: V
 section_no: 5
-source: "../../topics/section_V_stochastic_control.md#1-optimal-stopping-theory"
+source: "../../inventory/section_V_stochastic_control.md#1-optimal-stopping-theory"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # V.1 — Optimal Stopping Theory
 
-**Section V** · [source problem list](../../topics/section_V_stochastic_control.md)
+**Section V** · [source problem list](../../inventory/section_V_stochastic_control.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

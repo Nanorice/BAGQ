@@ -4,7 +4,7 @@ id: X.4
 name: Numerical Methods & Simulation
 section: X
 section_no: 10
-source: "../../topics/section_X_algorithms_ds.md#4-numerical-methods-and-simulation"
+source: "../../inventory/section_X_algorithms_ds.md#4-numerical-methods-and-simulation"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # X.4 — Numerical Methods & Simulation
 
-**Section X** · [source problem list](../../topics/section_X_algorithms_ds.md)
+**Section X** · [source problem list](../../inventory/section_X_algorithms_ds.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

@@ -9,7 +9,7 @@ Sources, in priority order:
 
 Estimates for topics with no stage map come from ESTIMATES below - deliberate guesses,
 replaced by the real est_h the moment a stage map is written. Prereqs come from PREREQS,
-transcribed from the DAG in 03_gated_progression.md, which owns sequencing.
+transcribed from the DAG in vault/method/progression.md, which owns sequencing.
 
 Stdlib only.
 """
@@ -159,7 +159,7 @@ def main():
         "",
         "**Est** is the stage map's `est_h` where one exists, otherwise a rough guess that gets",
         "replaced the moment a map is written. **Blocked by** comes from the DAG in",
-        "`03_gated_progression.md`, which owns sequencing — a topic with entries there is not ready",
+        "`vault/method/progression.md`, which owns sequencing — a topic with entries there is not ready",
         "to pick. **Pays into** is why the topic is on the list at all.",
         "",
         "<!-- BEGIN GENERATED:backlog -->",

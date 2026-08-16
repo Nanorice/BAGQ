@@ -4,7 +4,7 @@ id: VI.6
 name: Numerical PDE Methods
 section: VI
 section_no: 6
-source: "../../topics/section_VI_derivative_pricing.md#6-numerical-pde-methods"
+source: "../../inventory/section_VI_derivative_pricing.md#6-numerical-pde-methods"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # VI.6 — Numerical PDE Methods
 
-**Section VI** · [source problem list](../../topics/section_VI_derivative_pricing.md)
+**Section VI** · [source problem list](../../inventory/section_VI_derivative_pricing.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

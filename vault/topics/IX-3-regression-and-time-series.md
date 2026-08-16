@@ -4,7 +4,7 @@ id: IX.3
 name: Regression & Time Series
 section: IX
 section_no: 9
-source: "../../topics/section_IX_statistics_estimation.md#3-regression-and-time-series"
+source: "../../inventory/section_IX_statistics_estimation.md#3-regression-and-time-series"
 concepts: ["[[fat-tails]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # IX.3 — Regression & Time Series
 
-**Section IX** · [source problem list](../../topics/section_IX_statistics_estimation.md)
+**Section IX** · [source problem list](../../inventory/section_IX_statistics_estimation.md)
 
 ## Concepts this topic carries
 

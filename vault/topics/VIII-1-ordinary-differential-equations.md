@@ -4,7 +4,7 @@ id: VIII.1
 name: Ordinary Differential Equations (ODEs)
 section: VIII
 section_no: 8
-source: "../../topics/section_VIII_calculus_des.md#1-ordinary-differential-equations"
+source: "../../inventory/section_VIII_calculus_des.md#1-ordinary-differential-equations"
 concepts: []
 covered_by: ["[[R_calculus]]"]
 coverage: partial
@@ -13,7 +13,7 @@ deferred: "PDEs (heat equation, BS PDE, Feynman-Kac) + 2nd-order ODEs -> post-S4
 
 # VIII.1 — Ordinary Differential Equations (ODEs)
 
-**Section VIII** · [source problem list](../../topics/section_VIII_calculus_des.md)
+**Section VIII** · [source problem list](../../inventory/section_VIII_calculus_des.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

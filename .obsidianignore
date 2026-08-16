@@ -1,5 +1,6 @@
-topics/
+inventory/
 pine_scripts/
+code/
 .claude/
 src/
 tests/

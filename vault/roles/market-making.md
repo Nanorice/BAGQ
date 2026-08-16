@@ -9,7 +9,7 @@ tilt: hft
 > Quote two-sided prices, manage inventory, get filled at good prices.
 
 **Tilt:** `hft` — this is a *scheduling weight* for S23+, not a statement about which branch is
-real. Every role below matters to both targets. See [[../../03_gated_progression|the fork]].
+real. Every role below matters to both targets. See [[../method/progression|the fork]].
 
 ## Applications that feed it
 

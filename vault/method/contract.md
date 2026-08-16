@@ -105,7 +105,7 @@ The ~12.5 h buffer absorbs travel, sickness, mood dips, social overflow, and ent
 
 ### Sprint cadence (2-week sprints, aligned with your existing agile system)
 
-Learning is scheduled in **2-week sprints** that align 1:1 with your existing personal-agile cadence. Each sprint owns a slice of the traversal in `03_gated_progression.md`.
+Learning is scheduled in **2-week sprints** that align 1:1 with your existing personal-agile cadence. Each sprint owns a slice of the traversal in `progression.md`.
 
 **Sprint anatomy (14 days):**
 
@@ -118,7 +118,7 @@ Learning is scheduled in **2-week sprints** that align 1:1 with your existing pe
 | Sun of week 2 (Day 14) — Sprint retro + next planning | 60 min: retro on this sprint, plan next |
 
 **Sprint deliverables (the "demo" at Day 13–14):**
-- Every stage marked COMPLETE this sprint must have D1–D4 passed (per `04_deliverables_spec.md`)
+- Every stage marked COMPLETE this sprint must have D1–D4 passed (per `done.md`)
 - Sprint goal in `progress/sprints/S<NN>.md` is closed with a ✅ or ❌ and a one-paragraph retro
 - If a capstone project shipped, tag the commit
 
@@ -156,7 +156,7 @@ Answer these in `progress/weekly_reviews/YYYY-WW.md`:
 
 1. Retake **one** unlock test from a stage completed 3+ weeks ago. Did it stick?
 2. Re-audit Section A time buckets — has real life shifted?
-3. Are you on track for the Q1 traversal in `03_gated_progression.md`?
+3. Are you on track for the Q1 traversal in `progression.md`?
    - If **> 2 weeks behind**: cut scope (defer more advanced stages) or push target date.
    - If **> 1 week ahead**: pull in one deferred stage from Tier 4.
 4. Update this contract's numbers in place; snapshot to `progress/contracts/contract_YYYY-MM-DD.md`.

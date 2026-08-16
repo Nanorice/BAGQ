@@ -4,7 +4,7 @@ id: XII.1
 name: Two-Player Zero-Sum Games
 section: XII
 section_no: 12
-source: "../../topics/section_XII_game_theory.md#1-two-player-zero-sum-games"
+source: "../../inventory/section_XII_game_theory.md#1-two-player-zero-sum-games"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # XII.1 — Two-Player Zero-Sum Games
 
-**Section XII** · [source problem list](../../topics/section_XII_game_theory.md)
+**Section XII** · [source problem list](../../inventory/section_XII_game_theory.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

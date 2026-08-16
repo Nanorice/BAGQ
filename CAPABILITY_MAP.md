@@ -3,7 +3,7 @@
 > **The question this file answers:** "I'm deriving `E[Exp(λ)] = 1/λ` on a Wednesday evening.
 > What does that have to do with being a quant?"
 >
-> [03_gated_progression.md](03_gated_progression.md) is **bottom-up**: what can I start next,
+> [vault/method/progression.md](vault/method/progression.md) is **bottom-up**: what can I start next,
 > given prerequisites. This file is **top-down**: which real capabilities am I building, and
 > which stages feed them. Same stages, opposite direction.
 >

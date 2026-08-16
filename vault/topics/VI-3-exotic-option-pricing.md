@@ -4,7 +4,7 @@ id: VI.3
 name: Exotic Option Pricing
 section: VI
 section_no: 6
-source: "../../topics/section_VI_derivative_pricing.md#3-exotic-option-pricing"
+source: "../../inventory/section_VI_derivative_pricing.md#3-exotic-option-pricing"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # VI.3 — Exotic Option Pricing
 
-**Section VI** · [source problem list](../../topics/section_VI_derivative_pricing.md)
+**Section VI** · [source problem list](../../inventory/section_VI_derivative_pricing.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

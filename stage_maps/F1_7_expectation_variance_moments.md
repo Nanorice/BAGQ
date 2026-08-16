@@ -13,7 +13,7 @@ actual_h:
 
 # Expectation, Variance and Moments
 
-**Source:** `topics/section_I_probability_combinatorics.md` §7 — Core Concepts and problems 1–9.
+**Source:** `inventory/section_I_probability_combinatorics.md` §7 — Core Concepts and problems 1–9.
 
 **Backup, only if something doesn't click:** Ross, *A First Course in Probability* 6th ed.
 Ch. 7 — §7.1–§7.4 and §7.7.1 for conditional expectation, §7.7 for the inequalities and the MGF

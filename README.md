@@ -22,42 +22,38 @@ Everything in this repo is scaffolding for that sentence.
 
 | If you are… | Read |
 |---|---|
-| A new AI agent picking this up cold | **[AGENT_CONTEXT.md](AGENT_CONTEXT.md)** — full state in ~5 min |
 | **How do I actually run this?** | **[MANUAL.md](MANUAL.md)** — the operating procedure. Start here after a gap. |
-| Me, on a given morning | **[progress/sprints/S16.md](progress/sprints/S16.md)** — active sprint: schedule + actuals |
-| Curious what the whole plan is | [SYLLABUS.md](SYLLABUS.md) — one page, 13 sprints |
-| Wondering *why* a stage matters | [CAPABILITY_MAP.md](CAPABILITY_MAP.md) — top-down: stages → the 6 things a quant does |
+| An agent picking this up cold | [.claude/CLAUDE.md](.claude/CLAUDE.md) — full state in ~5 min, auto-loaded in Claude Code |
+| Me, on a given morning | [progress/sprints/S16.md](progress/sprints/S16.md) — active sprint: log + retro |
+| Curious what the whole plan is | [vault/method/syllabus.md](vault/method/syllabus.md) — one page, 13 sprints |
+| Wondering *why* a topic matters | [CAPABILITY_MAP.md](CAPABILITY_MAP.md) — top-down: topics → the 6 things a quant does |
 
 ---
 
 ## Layout
 
 ```
-├── 00_README.md              method overview
-├── AGENT_CONTEXT.md          portable brain-dump: state, decisions, conventions
-├── SYLLABUS.md               25 weeks on one page
-├── 01_baseline_assessment.md the diagnostic
-├── 02_feynman_protocol.md    the 4-step study method  ← the theory of change
-├── 03_gated_progression.md   skill-tree DAG + 13-sprint traversal
-├── 04_deliverables_spec.md   what "done" means
-├── 05_commitment_contract.md time audit, cadence, circuit breakers
-├── stage_maps/             per-stage problems, written at study level
-├── vault/topics/              stage ↔ topics/ section mapping: what's in scope, what's deferred
-├── CAPABILITY_MAP.md         top-down: which capabilities each stage builds (reference, not a plan)
-├── topics/                   13-section topic inventory (911 problems, full scope)
-└── progress/
-    ├── sprints/              one file per sprint — plan, actuals, retro
-    ├── baseline_scores.md    graded diagnostic + red flags
-    ├── sprints/              per-sprint plan + retro
-    ├── feynman_notes/        the core output — one per stage
-    ├── weekly_reviews/       Sunday 30-min logs
-    └── mocks/                interview transcripts (from S26)
+├── MANUAL.md              the operating procedure — day, stage, sprint
+├── BACKLOG.md             every topic, ranked        (generated)
+├── CAPABILITY_MAP.md      topics → what a quant does (generated)
+├── inventory/             13-section problem inventory, 911 problems, full scope
+├── stage_maps/            what to do, per topic — source, checklist, tiered problems
+├── progress/
+│   ├── sprints/           one file per sprint — log + retro
+│   ├── feynman_notes/     the core output — what was understood, one per topic
+│   └── baseline_scores.md graded diagnostic + red flags
+└── vault/                 the Obsidian graph
+    ├── HOME.md            Dataview dashboard
+    ├── method/            how the system works — baseline, feynman, progression, done, contract
+    ├── topics/            59 stubs indexing inventory/ 1:1
+    ├── concepts/          the ideas topics carry
+    ├── applications/      where a concept gets used
+    └── roles/             the 6 quant roles the whole thing points at
 ```
 
-**`stage_maps/` vs `topics/`** — `topics/` is an inherited inventory written for
-someone who already has the material (Riccati equations, Carr-Madan FFT). It is kept
-for scope, not used as the curriculum. `stage_maps/` holds the actual study-level
-problems, written per stage as it comes up.
+**`stage_maps/` vs `inventory/`** — `inventory/` is inherited, written for someone who already
+has the material (Riccati equations, Carr-Madan FFT). Kept for scope, never used as the
+curriculum. `stage_maps/` holds the study-level problems, written per topic as it comes up.
 
 ---
 

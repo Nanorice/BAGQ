@@ -1,10 +1,9 @@
 # BAGQ — Agent Context
 
 > Auto-loaded each session. If you are picking this repo up cold, this file is enough.
-> A human on a fresh machine (or a non-Claude agent) should be handed `AGENT_CONTEXT.md`
-> (repo root), which points here. For the operating procedure, `MANUAL.md`.
+> For the operating procedure, `MANUAL.md`.
 
-**Last updated:** 2026-08-09 (Sprint 16, Week 1 end — `F1.5` closed, Week 2 maps written)
+**Last updated:** 2026-08-16 (Sprint 16 end — file structure flattened, `vault/method/` created)
 
 ---
 
@@ -17,7 +16,7 @@ parallel personal "quantamental" project (agent-driven vibe coding, capped at 6 
 Prefers agile — plans life in 2-week sprints.
 
 Committed **~11 h/week prime + ~3 h/week scrap** (from a 36.5-hour discretionary pool). Full
-time audit and circuit breakers in `05_commitment_contract.md`.
+time audit and circuit breakers in `vault/method/contract.md`.
 
 ---
 
@@ -26,7 +25,7 @@ time audit and circuit breakers in `05_commitment_contract.md`.
 25 weeks = **13 two-week sprints (S15 → S27)**. S15 = setup + baseline + T0 refreshers.
 S16 onward = content. Target is buy-side QR + HFT, so probability + stats + algos are pulled
 forward; exotic derivatives + measure theory deferred. Full calendar in
-`03_gated_progression.md`. Two capstones (P1 Options Pricer, P16 HMM Regime Detection) plus
+`vault/method/progression.md`. Two capstones (P1 Options Pricer, P16 HMM Regime Detection) plus
 4 mock interviews in S26–27.
 
 ---
@@ -44,7 +43,7 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
 - **Red flags:** VIII.1 (`dy/dx = y` answered as a sqrt formula) — **closed by R.calculus** ·
   X.4 (BFS unknown, HFT-screen blocker) — open, S10.3 in S19 ·
   VII.1/VII.2 (eigenvalues, PSD) — **closed by R.linalg** · I.3 (E/Var of Exp) — open, `F1.5`.
-- 11 baseline-driven adjustments applied, documented at the bottom of `03_gated_progression.md`.
+- 11 baseline-driven adjustments applied, documented at the bottom of `vault/method/progression.md`.
 
 ---
 
@@ -52,16 +51,16 @@ Per-question detail in `progress/baseline_scores.md`. Key findings:
 
 | Decision | Rationale | Documented |
 |---|---|---|
-| 25-week runway to Q1-2027 | User's target date | `05_commitment_contract.md` §B |
-| Buy-side QR + HFT dual target | User's stated preference | `05_commitment_contract.md` §B |
-| Quantamental capped 6h/week, scrap mode | Time-shape principle | `05_commitment_contract.md` §A.0 |
+| 25-week runway to Q1-2027 | User's target date | `vault/method/contract.md` §B |
+| Buy-side QR + HFT dual target | User's stated preference | `vault/method/contract.md` §B |
+| Quantamental capped 6h/week, scrap mode | Time-shape principle | `vault/method/contract.md` §A.0 |
 | S1.7 tower property pulled to S17 | Scored 0; blocks S3 + S9 | Adjustment #1 |
 | Every solver needs a complexity docstring | Baseline X.1: right answer, wrong Big-O | Adjustment #9 |
 | No new textbooks | Has Ross, Green Book, Hull, CLM. Over-collecting = procrastination | Chat 07-24 |
-| `topics/` is the scope inventory, NOT the curriculum | 911 problems written far above baseline. Per-stage sets live in `stage_maps/` | Chat 07-25 |
+| `inventory/` is the scope inventory, NOT the curriculum | 911 problems written far above baseline. Per-stage sets live in `stage_maps/` | Chat 07-25 |
 | Problem sets written just-in-time | Retiering all 13 sections now = speculative work for December stages | Chat 07-25 |
 | **One source per stage, named chapter + page range** | 7 sources across 3 media cost R.calculus more time choosing than studying. Video only as a single named fallback, never in the main path | Chat 07-29 |
-| **Plain-English stage names lead, IDs subscript** | Write the name first, ID as subscript. See §6 + `03_gated_progression.md` for the `R`/`F`/`D` scheme adopted 08-04 | Chat 07-29, revised 08-04 |
+| **Plain-English stage names lead, IDs subscript** | Write the name first, ID as subscript. See §6 + `vault/method/progression.md` for the `R`/`F`/`D` scheme adopted 08-04 | Chat 07-29, revised 08-04 |
 | `T1.X` split into Discrete `F1.4` + Continuous `F1.5` | 9 distributions ≈ 8h — Tier-1 sized wearing a Tier-0 label. Log-normal → S6, χ² → S9.2 | Chat 07-29 |
 | **Size stages by type: refresher ×1.2, new material ×2.0** | Measured over S15's three stages. The one-source 40-min cap fixed *fragmentation*, not *depth* — it was calibrated on a refresher | S15 retro §2 |
 | **New material gets two input passes on separate days** | One pass doesn't install machinery never held. `F1.4`'s second pass happened anyway — unplanned, unbudgeted, spread over 3 days | Adj #12 |
@@ -125,9 +124,9 @@ any row happened.
 
 ## 6. Working conventions
 
-- **Stage IDs — `<TYPE><section>.<sub><split>`** (adopted 08-04, full spec in `03_gated_progression.md`).
+- **Stage IDs — `<TYPE><section>.<sub><split>`** (adopted 08-04, full spec in `vault/method/progression.md`).
   `R` refresher (×1.2) · `F` foundation (×2.0) · `D` deepen. **Type first because it is the cost
-  driver.** Section number indexes `topics/` 1:1 (1 = `section_I`, 7 = `section_VII`, …); the sub
+  driver.** Section number indexes `inventory/` 1:1 (1 = `section_I`, 7 = `section_VII`, …); the sub
   number is the `##` heading *inside* that file. **Open the file and read the heading before
   assigning — this has been got wrong twice** (`S1.3`→`F1.4`, then `F1.4a`/`F1.4b`→`F1.4`/`F1.5`,
   because §4 is Discrete RVs and §5 is Continuous — different subsections).
@@ -138,17 +137,22 @@ any row happened.
     schedule · problems A/B/C · code problems · deliverables · answer key. Written before the block.
   - `progress/feynman_notes/<id>_<slug>.md` — **what you understood.** Teach-back, gaps, napkin,
     summary table, where-it-breaks. The user writes this; never draft it.
-- **Obsidian vault (added 08-09).** Repo root is a vault; `topics/`, `src/`, `tests/`,
+- **Obsidian vault (added 08-09).** Repo root is a vault; `inventory/`, `code/`, `src/`, `tests/`,
   `pine_scripts/`, `.claude/` are excluded via `.obsidianignore`. Chain:
   `stage → topic → concept → application → role`, all in `vault/`. **91 stubs exist already —
   do not create more without asking.** `vault/HOME.md` is the Dataview dashboard.
   `TOPIC_MAP.md` and `tracker.md` are both **deleted**; their content lives in topic-note
   frontmatter and the sprint files respectively.
+- **Root holds four files only** — `README` · `MANUAL` · `BACKLOG` · `CAPABILITY_MAP` (last two
+  generated). Methodology lives in `vault/method/`: `baseline` `feynman` `progression` `done`
+  `contract` `syllabus` `vault-design`. **`inventory/` was `topics/`** (renamed 08-16 — it
+  collided with `vault/topics/`, which holds the 59 stubs that index *into* it). `00_README.md`
+  and `AGENT_CONTEXT.md` were deleted as duplicates of this file and `README.md`.
 - **Knowledge checklists are built from the source's real `##` headings**, with section numbers
   attached — never from what interviews tend to ask. Anything interview-critical but outside the
   chapter is **stretch**, and every stretch item resolves one of three ways: written inline,
   a named chapter in a book already owned, or deferred **with the reason**. Full rule in
-  `04_deliverables_spec.md` §D2.
+  `vault/method/done.md` §D2.
 - **Dataview inline fields are parsed anywhere in a file** — blockquotes and prose included.
   Never write a live `[field:: value]` in guidance text; put examples in fenced code blocks.
   Never put `|` in a table cell (aliased wikilinks, `|x|`) — it splits the row.
@@ -220,13 +224,14 @@ failing, and saying so plainly was more useful than a pass.
 3. `stage_maps/<id>_<slug>.md` — the active stage: checklist, source, problems, deliverables
 4. `progress/feynman_notes/<id>_<slug>.md` — what the user has written
 5. `progress/baseline_scores.md` — starting point + the red flags stages are built to close
-6. `04_deliverables_spec.md` — D1–D4, the stretch-item rule, definition of done
-7. `03_gated_progression.md` — **owns study order.** DAG is current; the 13-sprint traversal
+6. `vault/method/done.md` — D1–D4, the stretch-item rule, definition of done
+7. `vault/method/progression.md` — **owns study order.** DAG is current; the 13-sprint traversal
    table is marked stale, rewrite scheduled for the S16 retro (08-16)
-8. `vault/HOME.md` — Dataview dashboard; `vault/topics/` holds coverage + deferrals
+8. `vault/HOME.md` — Dataview dashboard; `vault/topics/` holds coverage + deferrals.
+   `vault/method/README.md` indexes the methodology notes
 9. `CAPABILITY_MAP.md` — top-down, why a stage matters. **Reference only, never a planning
    input** — the DAG owns sequencing
-10. `SYLLABUS.md` — one-page overview *(overlaps the sprint files; treat as stale if they disagree)*
+10. `vault/method/syllabus.md` — one-page overview *(overlaps the sprint files; treat as stale if they disagree)*
 
 ---
 

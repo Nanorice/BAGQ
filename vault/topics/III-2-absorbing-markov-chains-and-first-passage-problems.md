@@ -4,7 +4,7 @@ id: III.2
 name: Absorbing Markov Chains & First-Passage Problems
 section: III
 section_no: 3
-source: "../../topics/section_III_markov_chains.md#2-absorbing-markov-chains-and-first-passage-problems"
+source: "../../inventory/section_III_markov_chains.md#2-absorbing-markov-chains-and-first-passage-problems"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # III.2 — Absorbing Markov Chains & First-Passage Problems
 
-**Section III** · [source problem list](../../topics/section_III_markov_chains.md)
+**Section III** · [source problem list](../../inventory/section_III_markov_chains.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

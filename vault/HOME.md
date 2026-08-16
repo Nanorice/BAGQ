@@ -77,9 +77,9 @@ FROM "vault/concepts" SORT file.name ASC
 | **What to do** for a stage | `stage_maps/<id>_<slug>.md` |
 | **What I understood** | `progress/feynman_notes/<id>_<slug>.md` |
 | Schedule, actuals, retro | `progress/sprints/S<NN>.md` — *not in the graph, by design* |
-| Sequencing (what unlocks what) | [Gated Progression](../03_gated_progression.md) — **owns study order** |
+| Sequencing (what unlocks what) | [Gated Progression](../vault/method/progression.md) — **owns study order** |
 | Why a stage matters | [Capability Map](../CAPABILITY_MAP.md) — GitHub-readable schematic |
-| Problem inventory | `topics/` — **excluded from the vault**, 911 problems, would swamp the graph |
+| Problem inventory | `inventory/` — **excluded from the vault**, 911 problems, would swamp the graph |
 
 **Sequencing lives in the DAG, not here.** This vault records relationships; it never decides
 what to study next.

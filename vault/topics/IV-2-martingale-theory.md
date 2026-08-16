@@ -4,7 +4,7 @@ id: IV.2
 name: Martingale Theory
 section: IV
 section_no: 4
-source: "../../topics/section_IV_continuous_time_processes.md#2-martingale-theory"
+source: "../../inventory/section_IV_continuous_time_processes.md#2-martingale-theory"
 concepts: ["[[risk-neutral-replication]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # IV.2 — Martingale Theory
 
-**Section IV** · [source problem list](../../topics/section_IV_continuous_time_processes.md)
+**Section IV** · [source problem list](../../inventory/section_IV_continuous_time_processes.md)
 
 ## Concepts this topic carries
 

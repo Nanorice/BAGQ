@@ -4,7 +4,7 @@ id: III.4
 name: Hidden Markov Models (HMM)
 section: III
 section_no: 3
-source: "../../topics/section_III_markov_chains.md#4-hidden-markov-models"
+source: "../../inventory/section_III_markov_chains.md#4-hidden-markov-models"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # III.4 — Hidden Markov Models (HMM)
 
-**Section III** · [source problem list](../../topics/section_III_markov_chains.md)
+**Section III** · [source problem list](../../inventory/section_III_markov_chains.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

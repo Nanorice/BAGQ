@@ -4,7 +4,7 @@ id: VIII.3
 name: Optimization & Calculus of Variations
 section: VIII
 section_no: 8
-source: "../../topics/section_VIII_calculus_des.md#3-optimization-and-calculus-of-variations"
+source: "../../inventory/section_VIII_calculus_des.md#3-optimization-and-calculus-of-variations"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # VIII.3 — Optimization & Calculus of Variations
 
-**Section VIII** · [source problem list](../../topics/section_VIII_calculus_des.md)
+**Section VIII** · [source problem list](../../inventory/section_VIII_calculus_des.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

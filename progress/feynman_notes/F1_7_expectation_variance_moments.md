@@ -6,7 +6,7 @@ id: F1.7
 
 # Expectation, Variance & Moments
 `F1.7` (a+b) · Completed:
-**Time spent:** __h · **Source(s):** `topics/section_I` §7
+**Time spent:** __h · **Source(s):** `inventory/section_I` §7
 
 > This note is **shared across `F1.7a` and `F1.7b`** — one note, two sub-stages, same as
 > `F1.1`'s pattern. Write §1(a) after `F1.7a` (Thu/Fri), §1(b) after `F1.7b` (Sat), close

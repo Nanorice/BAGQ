@@ -4,7 +4,7 @@ id: VII.2
 name: Applications in Quant Finance
 section: VII
 section_no: 7
-source: "../../topics/section_VII_linear_algebra.md#2-applications-in-quant-finance"
+source: "../../inventory/section_VII_linear_algebra.md#2-applications-in-quant-finance"
 concepts: ["[[psd-covariance]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # VII.2 — Applications in Quant Finance
 
-**Section VII** · [source problem list](../../topics/section_VII_linear_algebra.md)
+**Section VII** · [source problem list](../../inventory/section_VII_linear_algebra.md)
 
 ## Concepts this topic carries
 

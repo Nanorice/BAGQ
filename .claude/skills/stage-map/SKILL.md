@@ -36,7 +36,7 @@ The file should read as a real document about a real subject.
 
 ## Steps
 
-1. **Identify the topic** in `vault/topics/` — the 59 notes there index `topics/` 1:1. Read the
+1. **Identify the topic** in `vault/topics/` — the 59 notes there index `inventory/` 1:1. Read the
    matching note for `concepts:` and any `deferred:` list already recorded.
 2. **Find the source.** Ross, Green Book, Hull, CLM — the user owns these; never recommend a new
    textbook. Get the real section headings before writing the checklist.

@@ -4,7 +4,7 @@ id: I.3
 name: Conditional Probability & Bayes' Theorem
 section: I
 section_no: 1
-source: "../../topics/section_I_probability_combinatorics.md#3-conditional-probability-and-bayes-theorem"
+source: "../../inventory/section_I_probability_combinatorics.md#3-conditional-probability-and-bayes-theorem"
 concepts: ["[[tower-property]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # I.3 — Conditional Probability & Bayes' Theorem
 
-**Section I** · [source problem list](../../topics/section_I_probability_combinatorics.md)
+**Section I** · [source problem list](../../inventory/section_I_probability_combinatorics.md)
 
 ## Concepts this topic carries
 

@@ -4,7 +4,7 @@ id: III.3
 name: Branching Processes
 section: III
 section_no: 3
-source: "../../topics/section_III_markov_chains.md#3-branching-processes"
+source: "../../inventory/section_III_markov_chains.md#3-branching-processes"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # III.3 — Branching Processes
 
-**Section III** · [source problem list](../../topics/section_III_markov_chains.md)
+**Section III** · [source problem list](../../inventory/section_III_markov_chains.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

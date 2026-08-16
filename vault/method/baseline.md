@@ -1,19 +1,13 @@
-# Baseline Assessment — Anchor Your Starting Point
+# Baseline Assessment
 
-> **Purpose:** an honest, timed diagnostic across all 13 sections of `codify_list.md`.
-> Output → a radar chart of `{section → score 0–5}`, which determines your entry point in the DAG.
->
-> **Do not study for this.** The point is to measure *today's* self, not tomorrow's.
+The diagnostic: 60 questions across the 13 sections of `inventory/`, timed, closed book, no AI.
+Taken 2026-07-23/24 → **0.88 / 5 combined**. Results and red flags in
+[`progress/baseline_scores.md`](../../progress/baseline_scores.md).
 
----
-
-## How to take it
-
-1. **Two sittings, ~2 hours each**, on two consecutive days. Timer on. Closed book. No AI.
-2. Write answers in `progress/baseline/attempt_2026-07-XX.md` (create the folder).
-3. **Rate honestly with the self-grading rubric below** the next day (fresh eyes).
-4. Compute per-section score → fill `progress/baseline_scores.md` (template at bottom).
-5. Radar chart: use `matplotlib.pyplot.subplot(projection='polar')` or paste scores into any radar tool.
+Kept as the **retest instrument** — the questions below are reused at the mid-checkpoint (S21)
+and the final retest (S27), which is what makes the scores comparable. Two sittings of ~2h on
+consecutive days; grade the next day with fresh eyes. Do not study for it: the point is to
+measure today's self.
 
 ---
 
@@ -214,7 +208,7 @@ Save as `progress/baseline_scores.md`:
 ## Notes
 - Which sections surprised me (better than expected)?
 - Which sections surprised me (worse than expected)?
-- Adjustments to the traversal plan in `03_gated_progression.md`:
+- Adjustments to the traversal plan in `progression.md`:
 ```
 
 ---
@@ -228,57 +222,3 @@ Save as `progress/baseline_scores.md`:
 ---
 
 *Version: 0.1 | Created: 2026-07-23*
-# Learning System — Meta-Layer for the Quant Roadmap
-
-> **Purpose:** This folder is *how* you learn. The rest of `roadmap/` is *what* you learn.
-> If you ever feel lost, re-read this file.
-
----
-
-## Why this exists
-
-The existing `roadmap/` has two strong tracks:
-- **Track A (Builder):** `curriculum_roadmap.md` + `project_roadmap.md` + `phase_1.md` — 20 concrete build projects for a desk-strat role.
-- **Track B (Interviewee):** `codify_list.md` + `section_I…XIII.md` — an encyclopedia of interview topics.
-
-Neither track alone answers:
-1. **Where am I today?** → Pillar 1: Baseline Assessment
-2. **Why doesn't the knowledge stick?** → Pillar 2: Feynman Protocol
-3. **What do I do next, in what order?** → Pillar 3: Gated Progression (skill-tree DAG)
-4. **How do I prove I actually learned it?** → Pillar 4: Deliverables Spec (theory + code twin)
-5. **How much time, over how long?** → `05_commitment_contract.md`
-
----
-
-## The five files, in order of use
-
-| # | File | When to read | Output |
-|---|---|---|---|
-| 01 | `01_baseline_assessment.md` | **First. Once.** Then quarterly. | `progress/baseline_scores.md` (radar of 13 sections) |
-| 02 | `02_feynman_protocol.md` | Read once, apply to every topic forever. | `progress/feynman_notes/<stage_id>.md` per topic |
-| 03 | `03_gated_progression.md` | Read after baseline. Refer weekly. | The DAG; your current node; unlock log |
-| 04 | `04_deliverables_spec.md` | Read once. Refer at each stage's unlock test. | Passing rubric per stage |
-| 05 | `05_commitment_contract.md` | Fill in week 1. Renegotiate monthly. | Signed contract with yourself |
-
----
-
-## The one-sentence loop
-
-> **Pick a node in the DAG → Learn it → Write the Feynman note → Solve the problems → Code the solvers → Pass the unlock test → Mark node complete → Pick the next unlocked node.**
-
-That's it. Everything else is scaffolding for that loop.
-
----
-
-## Non-negotiables (the anti-drift rules)
-
-1. **No stage is "complete" without a Feynman note.** Reading ≠ knowing.
-2. **Every problem with a numerical answer gets a Monte Carlo verifier.** Simulation is the truth serum for probability.
-3. **≤20% overcommitment.** If your contract says 15h/week, plan 12h and let 3h be slack. You will get sick / tired / interrupted.
-4. **Weekly 30-min review, Sunday evening.** What unlocked? What stalled? Adjust next week. Log it.
-5. **Quarterly re-baseline.** Retake a slice of the diagnostic every 3 months. If a topic regressed, that's the *signal*, not a failure — schedule a Feynman refresh.
-
----
-
-*Version: 0.1 | Created: 2026-07-23*
-

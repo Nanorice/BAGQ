@@ -4,7 +4,7 @@ id: IV.5
 name: Stopping Times & First-Passage Problems (Continuous)
 section: IV
 section_no: 4
-source: "../../topics/section_IV_continuous_time_processes.md#5-stopping-times-and-first-passage-problems"
+source: "../../inventory/section_IV_continuous_time_processes.md#5-stopping-times-and-first-passage-problems"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # IV.5 — Stopping Times & First-Passage Problems (Continuous)
 
-**Section IV** · [source problem list](../../topics/section_IV_continuous_time_processes.md)
+**Section IV** · [source problem list](../../inventory/section_IV_continuous_time_processes.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

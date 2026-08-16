@@ -4,7 +4,7 @@ id: IV.4
 name: Poisson Processes & Jump Processes
 section: IV
 section_no: 4
-source: "../../topics/section_IV_continuous_time_processes.md#4-poisson-processes-and-jump-processes"
+source: "../../inventory/section_IV_continuous_time_processes.md#4-poisson-processes-and-jump-processes"
 concepts: ["[[poisson-exponential-duality]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # IV.4 — Poisson Processes & Jump Processes
 
-**Section IV** · [source problem list](../../topics/section_IV_continuous_time_processes.md)
+**Section IV** · [source problem list](../../inventory/section_IV_continuous_time_processes.md)
 
 ## Concepts this topic carries
 

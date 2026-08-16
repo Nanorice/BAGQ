@@ -4,7 +4,7 @@ id: I.7
 name: Expectation, Variance & Moments
 section: I
 section_no: 1
-source: "../../topics/section_I_probability_combinatorics.md#7-expectation-variance-and-moments"
+source: "../../inventory/section_I_probability_combinatorics.md#7-expectation-variance-and-moments"
 concepts: ["[[linearity-of-expectation]]", "[[tower-property]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # I.7 — Expectation, Variance & Moments
 
-**Section I** · [source problem list](../../topics/section_I_probability_combinatorics.md)
+**Section I** · [source problem list](../../inventory/section_I_probability_combinatorics.md)
 
 ## Concepts this topic carries
 

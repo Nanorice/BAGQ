@@ -4,7 +4,7 @@ id: IX.4
 name: Bayesian Inference
 section: IX
 section_no: 9
-source: "../../topics/section_IX_statistics_estimation.md#4-bayesian-inference"
+source: "../../inventory/section_IX_statistics_estimation.md#4-bayesian-inference"
 concepts: ["[[bias-variance]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # IX.4 — Bayesian Inference
 
-**Section IX** · [source problem list](../../topics/section_IX_statistics_estimation.md)
+**Section IX** · [source problem list](../../inventory/section_IX_statistics_estimation.md)
 
 ## Concepts this topic carries
 

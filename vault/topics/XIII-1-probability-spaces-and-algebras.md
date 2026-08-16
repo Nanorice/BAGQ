@@ -4,7 +4,7 @@ id: XIII.1
 name: Probability Spaces & σ-Algebras
 section: XIII
 section_no: 13
-source: "../../topics/section_XIII_measure_theory.md#1-probability-spaces-and-algebras"
+source: "../../inventory/section_XIII_measure_theory.md#1-probability-spaces-and-algebras"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # XIII.1 — Probability Spaces & σ-Algebras
 
-**Section XIII** · [source problem list](../../topics/section_XIII_measure_theory.md)
+**Section XIII** · [source problem list](../../inventory/section_XIII_measure_theory.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

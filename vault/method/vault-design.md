@@ -30,7 +30,7 @@ Six. Only the first two are things you write during a study block.
 |---|---:|---|---|
 | **Stage map** | ~30 | ✍️ before a block | What to do: checklist, source, problems, code, deliverables |
 | **Feynman note** | ~30 | ✍️ during/after | What you understood |
-| **Topic** | 59 | stub, once | `topics/` subsection — the intuitive middle layer |
+| **Topic** | 59 | stub, once | `inventory/` subsection — the intuitive middle layer |
 | **Concept** | ~12 | stub, once | The named idea that carries explanatory weight |
 | **Application** | ~14 | stub, once | The concrete thing a quant builds |
 | **Role** | 6 | stub, once | What a quant is hired to do |
@@ -44,7 +44,7 @@ Feynman note ─┐
 stage map ────┘
 ```
 
-**Topics are the new layer, and they are the reason this works.** `topics/section_*.md` already
+**Topics are the new layer, and they are the reason this works.** `inventory/section_*.md` already
 has 59 numbered subsections with canonical names — "I.5 Continuous Random Variables &
 Distributions", "X.3 Graph Algorithms". They are the natural granularity between a stage and a
 concept, they are more intuitive than concept names, and **you did not have to invent any of
@@ -59,7 +59,7 @@ One `I.5` note covers all three, and the stage map already handles per-distribut
 
 **A. `F1.4b` is misnamed. It should be `F1.5`.**
 
-`topics/section_I` §4 is *Discrete* RVs; §5 is *Continuous* RVs. They are **different
+`inventory/section_I` §4 is *Discrete* RVs; §5 is *Continuous* RVs. They are **different
 subsections**. On 08-04 I verified §3 was Bayes but assumed both distribution stages sat in §4.
 
 | Now | Correct | Why |
@@ -71,7 +71,7 @@ They were never a split of one subsection — that premise was wrong. Renaming m
 a clean 1:1 and removes the `a`/`b` split letters entirely.
 
 **Cost:** third rename this week; `F1.4a`/`F1.4b` appear in commits, notes, S15 retro, S16 plan.
-**Recommendation: do it**, and treat "check the heading in `topics/` before assigning" as a rule
+**Recommendation: do it**, and treat "check the heading in `inventory/` before assigning" as a rule
 that has now been violated twice.
 
 **B. `TOPIC_MAP.md` dissolves.** Its whole job — stage ↔ topic mapping, what's covered, what's
@@ -89,17 +89,17 @@ BAGQ/
 │   ├── feynman_notes/   F1_5_continuous_distributions.md      ← unchanged
 │   └── sprints/         S16.md                                ← inline fields for velocity
 ├── vault/                                                     ← NEW, all stubs
-│   ├── topics/          I-5-continuous-rvs.md         (59)
+│   ├── inventory/          I-5-continuous-rvs.md         (59)
 │   ├── concepts/        memorylessness.md             (12)
 │   ├── applications/    var-tail-risk.md              (14)
 │   └── roles/           market-making.md              (6)
-├── topics/                                            ← EXCLUDED from vault (.obsidianignore)
+├── inventory/                                            ← EXCLUDED from vault (.obsidianignore)
 └── CAPABILITY_MAP.md    hand-maintained Mermaid, stays for GitHub
 ```
 
 **91 new stub files.** Written upfront, 3–6 lines each, no prose.
 
-**`topics/` is excluded** — 3,440 lines of problem inventory would swamp the graph. The 59 topic
+**`inventory/` is excluded** — 3,440 lines of problem inventory would swamp the graph. The 59 topic
 *notes* in `vault/topics/` link back to it by markdown path, so nothing is lost.
 
 **Sprints stay standalone but out of the graph** — per your call, they are artifacts, not mind-map
@@ -134,7 +134,7 @@ type: topic
 id: I.5
 name: Continuous Random Variables & Distributions
 section: I
-source: "../../topics/section_I_probability_combinatorics.md#5-continuous-random-variables--distributions"
+source: "../../inventory/section_I_probability_combinatorics.md#5-continuous-random-variables--distributions"
 concepts: ["[[memorylessness]]", "[[standardisation]]", "[[change-of-variables]]"]
 covered_by: ["[[F1.5]]"]
 coverage: partial         # none | partial | full
@@ -239,7 +239,7 @@ GitHub-readable schematic.
 
 | # | Step | Files | Reversible |
 |---|---|---|---|
-| 1 | `.obsidian/` config + `.obsidianignore` for `topics/` | 2 new | trivially |
+| 1 | `.obsidian/` config + `.obsidianignore` for `inventory/` | 2 new | trivially |
 | 2 | Create 59 topic stubs | 59 new | delete folder |
 | 3 | Create 12 concept + 14 application + 6 role stubs | 32 new | delete folder |
 | 4 | Wire concept→topic, app→concept, role links | edits to stubs | git |
@@ -263,5 +263,5 @@ is the one to confirm before I run it.
 3. **59 topic stubs, or only the ~25 for non-deferred sections?** You said all upfront; flagging
    that ~20 are for sections (measure theory, game theory, stochastic control) that may never be
    studied. They cost ~4 lines each and complete the map.
-4. **Does `SYLLABUS.md` survive?** It overlaps the sprint notes and would be a third place the
+4. **Does `syllabus.md` survive?** It overlaps the sprint notes and would be a third place the
    calendar can drift. Suggest folding it into a Dataview query over stages.

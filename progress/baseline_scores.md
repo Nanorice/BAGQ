@@ -123,7 +123,7 @@ The two additional insights Sitting 2 gave:
 
 ---
 
-## Adjustments to `03_gated_progression.md` (updated after Sitting 2)
+## Adjustments to `vault/method/progression.md` (updated after Sitting 2)
 
 Already applied from Sitting 1:
 1. ✅ S1.7 pulled forward to Sprint 17

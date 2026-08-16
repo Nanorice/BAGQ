@@ -4,7 +4,7 @@ id: I.1
 name: Combinatorics & Counting
 section: I
 section_no: 1
-source: "../../topics/section_I_probability_combinatorics.md#1-combinatorics-and-counting"
+source: "../../inventory/section_I_probability_combinatorics.md#1-combinatorics-and-counting"
 concepts: ["[[linearity-of-expectation]]"]
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # I.1 — Combinatorics & Counting
 
-**Section I** · [source problem list](../../topics/section_I_probability_combinatorics.md)
+**Section I** · [source problem list](../../inventory/section_I_probability_combinatorics.md)
 
 ## Concepts this topic carries
 

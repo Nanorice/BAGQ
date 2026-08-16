@@ -4,7 +4,7 @@ id: I.8
 name: Generating Functions & Transforms
 section: I
 section_no: 1
-source: "../../topics/section_I_probability_combinatorics.md#8-generating-functions-and-transforms"
+source: "../../inventory/section_I_probability_combinatorics.md#8-generating-functions-and-transforms"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # I.8 — Generating Functions & Transforms
 
-**Section I** · [source problem list](../../topics/section_I_probability_combinatorics.md)
+**Section I** · [source problem list](../../inventory/section_I_probability_combinatorics.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

@@ -95,11 +95,11 @@ The check that passes is agreement to a tolerance set by dx, not equality.
 ## 7. Links
 
 - **Problems solved:** R.calculus-A1…A6 (Tier A complete). Tier B not logged individually.
-  Also `topics/section_VIII` §1: *Exponential Growth/Decay* and *Logistic Growth*.
+  Also `inventory/section_VIII` §1: *Exponential Growth/Decay* and *Logistic Growth*.
 - **Prereqs:** none (Tier 0)
 - **Unlocks:** R.linalg linear algebra · `F1.5` continuous RVs · S4.x SDEs · S9.3 regression
 - **Baseline questions this closes:** VIII.1 (`dy/dx=y`), VIII.3 (Lagrange)
-- **Deferred to post-S4/S6 (2026-07-29):** `topics/section_VIII` §2 PDEs (heat equation,
+- **Deferred to post-S4/S6 (2026-07-29):** `inventory/section_VIII` §2 PDEs (heat equation,
   BS PDE, Feynman-Kac), 2nd-order ODEs, and §3 Kelly criterion. Useful framing, but they
   need the finance first — revisit when S4 (BM/Itô) and S6 (BS/Greeks) are in hand.
 

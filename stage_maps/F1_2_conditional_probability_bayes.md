@@ -13,7 +13,7 @@ actual_h:
 
 # Conditional Probability and Bayes
 
-**Source:** `topics/section_I_probability_combinatorics.md` §3 — core concepts and all ten
+**Source:** `inventory/section_I_probability_combinatorics.md` §3 — core concepts and all ten
 problems.
 
 **Why the topic file and not Ross:** Ross Ch.3 covers conditional probability well but buries the

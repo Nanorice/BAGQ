@@ -9,7 +9,7 @@ tilt: both
 > Quantify what you can lose, and know where the estimate fails.
 
 **Tilt:** `both` — this is a *scheduling weight* for S23+, not a statement about which branch is
-real. Every role below matters to both targets. See [[../../03_gated_progression|the fork]].
+real. Every role below matters to both targets. See [[../method/progression|the fork]].
 
 ## Applications that feed it
 

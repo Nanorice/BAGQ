@@ -4,7 +4,7 @@ id: II.1
 name: Dice Problems
 section: II
 section_no: 2
-source: "../../topics/section_II_classical_puzzles.md#1-dice-problems"
+source: "../../inventory/section_II_classical_puzzles.md#1-dice-problems"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # II.1 — Dice Problems
 
-**Section II** · [source problem list](../../topics/section_II_classical_puzzles.md)
+**Section II** · [source problem list](../../inventory/section_II_classical_puzzles.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

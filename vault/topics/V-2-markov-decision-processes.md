@@ -4,7 +4,7 @@ id: V.2
 name: Markov Decision Processes (MDP)
 section: V
 section_no: 5
-source: "../../topics/section_V_stochastic_control.md#2-markov-decision-processes"
+source: "../../inventory/section_V_stochastic_control.md#2-markov-decision-processes"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # V.2 — Markov Decision Processes (MDP)
 
-**Section V** · [source problem list](../../topics/section_V_stochastic_control.md)
+**Section V** · [source problem list](../../inventory/section_V_stochastic_control.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

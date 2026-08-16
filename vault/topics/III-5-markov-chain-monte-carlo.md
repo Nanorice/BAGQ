@@ -4,7 +4,7 @@ id: III.5
 name: Markov Chain Monte Carlo (MCMC)
 section: III
 section_no: 3
-source: "../../topics/section_III_markov_chains.md#5-markov-chain-monte-carlo"
+source: "../../inventory/section_III_markov_chains.md#5-markov-chain-monte-carlo"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # III.5 — Markov Chain Monte Carlo (MCMC)
 
-**Section III** · [source problem list](../../topics/section_III_markov_chains.md)
+**Section III** · [source problem list](../../inventory/section_III_markov_chains.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

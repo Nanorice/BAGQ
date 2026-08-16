@@ -4,7 +4,7 @@ id: XIII.2
 name: Lebesgue Integration & Measure
 section: XIII
 section_no: 13
-source: "../../topics/section_XIII_measure_theory.md#2-lebesgue-integration-and-measure"
+source: "../../inventory/section_XIII_measure_theory.md#2-lebesgue-integration-and-measure"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # XIII.2 — Lebesgue Integration & Measure
 
-**Section XIII** · [source problem list](../../topics/section_XIII_measure_theory.md)
+**Section XIII** · [source problem list](../../inventory/section_XIII_measure_theory.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

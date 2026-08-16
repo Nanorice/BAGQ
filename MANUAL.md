@@ -13,8 +13,8 @@
 2. Settings → Community plugins → Browse → install and enable **Dataview**.
 3. Open `vault/HOME.md`. If you see code blocks instead of tables, Dataview isn't on.
 
-`topics/`, `pine_scripts/`, `.claude/`, `src/`, `tests/` are excluded from the vault by
-`.obsidianignore` — deliberately. `topics/` alone is 3,440 lines and would swamp the graph.
+`inventory/`, `pine_scripts/`, `.claude/`, `src/`, `tests/` are excluded from the vault by
+`.obsidianignore` — deliberately. `inventory/` alone is 3,440 lines and would swamp the graph.
 
 ---
 
@@ -27,7 +27,7 @@
 | `stage_maps/<id>_<slug>.md` | **What to do** — checklist, source, problems, code, deliverables | Agent, before the block |
 | `progress/feynman_notes/<id>_<slug>.md` | **What you understood** | **You, always. Never the agent.** |
 
-Everything else — `03_gated_progression.md`, `CAPABILITY_MAP.md`, `vault/**` — is reference you
+Everything else — `vault/method/progression.md`, `CAPABILITY_MAP.md`, `vault/**` — is reference you
 consult, not paperwork you maintain.
 
 **Working mode is "I study, you check."** You read the source and write the teach-back from
@@ -207,14 +207,14 @@ progress/sprints/S16.md    ← today's row, actuals, retro
 stage_maps/                ← what to do, per stage
 progress/feynman_notes/    ← what you understood (yours)
 vault/topics|concepts|applications|roles/   ← the mind map
-03_gated_progression.md    ← what unlocks what. OWNS STUDY ORDER.
+vault/method/progression.md    ← what unlocks what. OWNS STUDY ORDER.
 CAPABILITY_MAP.md          ← why a stage matters (GitHub-readable)
-04_deliverables_spec.md    ← definition of done, D1–D4
-05_commitment_contract.md  ← time budget, invariants, circuit breakers
-topics/                    ← 911-problem inventory. Excluded from vault.
+vault/method/done.md    ← definition of done, D1–D4
+vault/method/contract.md  ← time budget, invariants, circuit breakers
+inventory/                    ← 911-problem inventory. Excluded from vault.
 ```
 
-**Only `03_gated_progression.md` decides study order.** The capability map and the vault are
+**Only `vault/method/progression.md` decides study order.** The capability map and the vault are
 reference. Two competing calendars is exactly what made the DAG's traversal table go stale.
 
 ---
@@ -231,7 +231,7 @@ Each of these came from something going wrong. They are not preferences.
 | **Name the drift move** | Difficulty scattered attention and there was no designated next action |
 | **Build checklists from the source's real headings** | `F1.4`-A5 asked for MGFs that Ross Ch.4 doesn't cover |
 | **Every stretch item resolves** — inline, named source, or deferred *with a reason* | A bare "→ S1.8" is a to-do, not a learning path |
-| **Read the `topics/` heading before assigning a stage ID** | Got wrong twice: `S1.3`, then `F1.4a`/`F1.4b` |
+| **Read the `inventory/` heading before assigning a stage ID** | Got wrong twice: `S1.3`, then `F1.4a`/`F1.4b` |
 | **Small stages localise overrun** | `F1.4` blew its budget; `F1.5` carried cleanly because they were separate |
 | **D4 at +1 week, not at close** | Four stages closed, zero tested — the gap that had no artifact |
 | **No new textbooks** | Ross, Green Book, Hull, CLM. Over-collecting is procrastination. |

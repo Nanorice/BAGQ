@@ -4,7 +4,7 @@ id: X.5
 name: Complexity & Big-O Analysis
 section: X
 section_no: 10
-source: "../../topics/section_X_algorithms_ds.md#5-complexity-and-big-o-analysis"
+source: "../../inventory/section_X_algorithms_ds.md#5-complexity-and-big-o-analysis"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # X.5 — Complexity & Big-O Analysis
 
-**Section X** · [source problem list](../../topics/section_X_algorithms_ds.md)
+**Section X** · [source problem list](../../inventory/section_X_algorithms_ds.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

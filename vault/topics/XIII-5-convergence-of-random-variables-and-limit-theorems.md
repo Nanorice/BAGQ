@@ -4,7 +4,7 @@ id: XIII.5
 name: Convergence of Random Variables & Limit Theorems
 section: XIII
 section_no: 13
-source: "../../topics/section_XIII_measure_theory.md#5-convergence-of-random-variables-and-limit-theorems"
+source: "../../inventory/section_XIII_measure_theory.md#5-convergence-of-random-variables-and-limit-theorems"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # XIII.5 — Convergence of Random Variables & Limit Theorems
 
-**Section XIII** · [source problem list](../../topics/section_XIII_measure_theory.md)
+**Section XIII** · [source problem list](../../inventory/section_XIII_measure_theory.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

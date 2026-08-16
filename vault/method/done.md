@@ -8,7 +8,7 @@
 
 ### D1 — Feynman note (theory)
 - File: `progress/feynman_notes/<stage_id>_<slug>.md`
-- Rubric: all 6 sections of the template in `02_feynman_protocol.md`, zero remaining `⚠️ GAP`.
+- Rubric: all 6 sections of the template in `feynman.md`, zero remaining `⚠️ GAP`.
 
 ### D2 — Problem set (application)
 - **The stage map is the authority.** Problems live in `stage_maps/<stage_id>_<slug>.md`,
@@ -16,9 +16,9 @@
 - **Bar: Tier A is the floor (all of them, unhinted, on paper). Tier B is the target (≥3 of 5).**
   Tier C only if A+B ran short. This replaces the old fixed "N by tier" counts, which assumed
   section-sized stages — we study at day-stage granularity now.
-- `topics/section_*.md` is the **scope inventory, not an indexed problem bank.** Its problems are
+- `inventory/section_*.md` is the **scope inventory, not an indexed problem bank.** Its problems are
   prose bullets with no IDs. Where a stage problem comes from there, cite it by name:
-  `F1.1-A3 — MISSISSIPPI anagram (topics/section_I §1)`. **Do not index all 13 files** — that is
+  `F1.1-A3 — MISSISSIPPI anagram (inventory/section_I §1)`. **Do not index all 13 files** — that is
   speculative work for stages months away.
 - Solutions go on paper. Log which needed hints in the stage map's deliverables block.
   Hint use is fine; hiding it is not.
@@ -81,7 +81,7 @@ reporting layer nobody reads is a reporting layer that rots.*
 on a delay; a same-day test measures short-term memory, which is not what has to survive until
 January. Between close and +1wk the stage sits at `READY_FOR_TEST` — a real state, not a failure.
 
-- **Fresh** questions you have not seen (from `topics/section_*.md`, or generated with the prompt
+- **Fresh** questions you have not seen (from `inventory/section_*.md`, or generated with the prompt
   template below).
 - Format: 3–5 questions, 45–60 min, closed-book (only your Feynman note allowed).
 - **Pass threshold: ≥ 80%** (graded against a rubric — write the rubric *before* you start).

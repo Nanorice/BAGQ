@@ -88,5 +88,5 @@ S3.3 Branching · S4.4 Poisson/jump · S4.5 Stopping times · S5 Stochastic cont
 
 ---
 
-*See `03_gated_progression.md` for the full DAG diagram and per-sprint rationale.*
+*See `progression.md` for the full DAG diagram and per-sprint rationale.*
 

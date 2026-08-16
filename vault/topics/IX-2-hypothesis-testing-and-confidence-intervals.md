@@ -4,7 +4,7 @@ id: IX.2
 name: Hypothesis Testing & Confidence Intervals
 section: IX
 section_no: 9
-source: "../../topics/section_IX_statistics_estimation.md#2-hypothesis-testing-and-confidence-intervals"
+source: "../../inventory/section_IX_statistics_estimation.md#2-hypothesis-testing-and-confidence-intervals"
 concepts: []
 covered_by: []
 coverage: none
@@ -13,7 +13,7 @@ deferred:
 
 # IX.2 — Hypothesis Testing & Confidence Intervals
 
-**Section IX** · [source problem list](../../topics/section_IX_statistics_estimation.md)
+**Section IX** · [source problem list](../../inventory/section_IX_statistics_estimation.md)
 
 ## Concepts this topic carries
 <!-- link concepts here once a stage touches this topic -->

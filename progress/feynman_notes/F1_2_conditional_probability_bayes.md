@@ -6,7 +6,7 @@ id: F1.2
 
 # Conditional Probability & Bayes
 `F1.2` · Completed:
-**Time spent:** __h · **Source(s):** `topics/section_I` §3
+**Time spent:** __h · **Source(s):** `inventory/section_I` §3
 
 > This note is **yours** — what you understood. What to *do* (checklist, problems, code,
 > deliverables) lives in `stage_maps/F1_2_conditional_probability_bayes.md`.
